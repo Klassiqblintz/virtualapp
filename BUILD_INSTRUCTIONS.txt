@@ -2,36 +2,59 @@
 
 ## Prerequisites (install first):
 1. Android SDK with:
-   - SDK Platform 30 (or 34)
-   - Build-tools 30.0.3
-   - NDK 23.1.7779620
-2. JDK 17 (NOT JDK 21 - Gradle 7.5 doesn't support it)
-3. Gradle 7.5 (provided via wrapper)
+   - SDK Platform 34
+   - Build-tools 30.0.3 (or 34.0.0 / 35.0.2)
+   - NDK 21.4.7075529 (or 23.1.7779620 / 25.0.8775105)
+2. JDK 17 (Gradle 7.5 does NOT support JDK 21+)
+3. Gradle 7.5 (bundled with project wrapper)
 
-## Environment Variables:
+## Environment Setup:
+```bash
 export ANDROID_HOME=/path/to/android-sdk
-export ANDROID_NDK_HOME=$ANDROID_HOME/ndk/23.1.7779620
 export JAVA_HOME=/path/to/jdk-17
-export PATH=$JAVA_HOME/bin:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
+export PATH=$JAVA_HOME/bin:$ANDROID_HOME/cmdline-tools/bin:$PATH
+```
 
-## Build Command:
+## Build Commands:
+```bash
+# Clean and assemble (debug)
 ./gradlew clean assembleDebug
 
-For Release APK:
+# Or release build
 ./gradlew clean assembleRelease
 
+# Or build specific ABI variant
+./gradlew clean assembleDebug -Pabi=arm64-v8a
+```
+
 ## Output:
-APKs will be in: app/build/outputs/apk/debug/ or app/build/outputs/apk/release/
+- Debug APKs: `app/build/outputs/apk/debug/`
+- Release APKs: `app/build/outputs/apk/release/`
+- APK names: `VirtualApp-1.0.0-<abi>.apk`
+- Use `arm64-v8a` variant for modern phones
 
-The project builds ABI splits: arm64-v8a, armeabi-v7a, x86_64
-For Android phone deployment, use the arm64-v8a APK.
+## Important Notes:
+- JDK 17 REQUIRED — JDK 21 will fail with "Unsupported class file major version 65"
+- Gradle 7.5 supports JDK up to 18 only
+- NDK 21.4.7075529 preferred (specified in lib/build.gradle)
+- ARM64 aapt2 must be used if building on ARM64 (e.g., Termux)
+- Set `android.aapt2FromMavenOverride` in gradle.properties for ARM64 builds
 
-## Troubleshooting:
-- "Unsupported class file major version 65" -> Switch to JDK 17
-- NDK build fails "Unknown host CPU architecture" on ARM64 host:
-  Patch NDK 23.1's ndk-build script:
-  Add: aarch64) HOST_ARCH=aarch64;;  to the case statement
-  Create symlink: prebuilt/linux-aarch64 -> prebuilt/linux-x86_64
-  Also copy Termux's ARM64 clang to replace x86_64 toolchain
-- AAPT2 daemon fails: Ensure build-tools 30.0.3 or 34.0.0 is installed
-- On x86_64 machines: everything should work out of the box with NDK 23.1
+## Android 14+ Compatibility:
+- This fork targets SDK 34
+- Foreground service permissions updated for Android 14
+- Xposed modules auto-disabled on Android 14+ (API 34+)
+  → Manually enable in VirtualApp settings after installing modules
+
+## Common Build Errors:
+1. "Unsupported class file major version 65" → Use JDK 17, not JDK 21
+2. "aapt2: command not found" or wrong ABI → Set aapt2FromMavenOverride
+3. "NDK not found" → Install NDK 21.4.7075529 via SDK Manager
+4. Manifest merger conflicts → Version codes/names differ from deps
+   → Add tools:replace="android:versionName" or "android:versionCode"
+
+## Xposed Module Installation (inside VirtualApp):
+1. Build the Xposed module JAR from the kyc_bypasser project
+2. Place JAR in VirtualApp's module directory
+3. Enable the module in VirtualApp settings (required on Android 14+)
+4. Restart VirtualApp to load modules

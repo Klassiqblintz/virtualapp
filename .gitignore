@@ -1,30 +1,41 @@
-# Build outputs
-app/build/
-app-plugin/build/
-lib/build/
-**/*.apk
-**/*.aar
-
-# IDE
+# Android Studio / IntelliJ
 .idea/
 *.iml
-.vscode/
-.idea_modules/
+*.iws
+*.ipr
 
-# OS
-.DS_Store
-Thumbs.db
+# Gradle
+.gradle/
+build/
 
 # Local config
 local.properties
+
+# SDK/NDK
+.cxx/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# APK / AAB outputs
+*.apk
+*.aab
+*.ap_
+
+# Signing
+*.jks
+*.keystore
+
+# Logs
 *.log
 
-# NDK obj
-**/obj/
+# Native build intermediates
+*.o
+*.so
+obj/
 
-# Gradle cache
-.gradle/
-
-# Generated
-**/gen/
-**/R.txt
+# ProGuard
+proguard/mapping.txt
+test
