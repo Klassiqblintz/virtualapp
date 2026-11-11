@@ -1,0 +1,30 @@
+# Build outputs
+app/build/
+app-plugin/build/
+lib/build/
+**/*.apk
+**/*.aar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.idea_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local config
+local.properties
+*.log
+
+# NDK obj
+**/obj/
+
+# Gradle cache
+.gradle/
+
+# Generated
+**/gen/
+**/R.txt

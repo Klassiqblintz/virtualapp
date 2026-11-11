@@ -1,0 +1,37 @@
+# VirtualApp Build Instructions for Android 14+
+
+## Prerequisites (install first):
+1. Android SDK with:
+   - SDK Platform 30 (or 34)
+   - Build-tools 30.0.3
+   - NDK 23.1.7779620
+2. JDK 17 (NOT JDK 21 - Gradle 7.5 doesn't support it)
+3. Gradle 7.5 (provided via wrapper)
+
+## Environment Variables:
+export ANDROID_HOME=/path/to/android-sdk
+export ANDROID_NDK_HOME=$ANDROID_HOME/ndk/23.1.7779620
+export JAVA_HOME=/path/to/jdk-17
+export PATH=$JAVA_HOME/bin:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
+
+## Build Command:
+./gradlew clean assembleDebug
+
+For Release APK:
+./gradlew clean assembleRelease
+
+## Output:
+APKs will be in: app/build/outputs/apk/debug/ or app/build/outputs/apk/release/
+
+The project builds ABI splits: arm64-v8a, armeabi-v7a, x86_64
+For Android phone deployment, use the arm64-v8a APK.
+
+## Troubleshooting:
+- "Unsupported class file major version 65" -> Switch to JDK 17
+- NDK build fails "Unknown host CPU architecture" on ARM64 host:
+  Patch NDK 23.1's ndk-build script:
+  Add: aarch64) HOST_ARCH=aarch64;;  to the case statement
+  Create symlink: prebuilt/linux-aarch64 -> prebuilt/linux-x86_64
+  Also copy Termux's ARM64 clang to replace x86_64 toolchain
+- AAPT2 daemon fails: Ensure build-tools 30.0.3 or 34.0.0 is installed
+- On x86_64 machines: everything should work out of the box with NDK 23.1
