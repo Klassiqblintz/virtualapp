@@ -28,12 +28,12 @@ public interface IPackageInstallObserver2 extends IInterface {;
  return new Proxy(obj);
  }
 ;
- @Override;
+ @Override
  public IBinder asBinder() {;
  return this;
  }
 ;
- @Override;
+ @Override
  public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws android.os.RemoteException {;
  switch (code) {;
  case INTERFACE_TRANSACTION:;
@@ -53,7 +53,7 @@ public interface IPackageInstallObserver2 extends IInterface {;
  mRemote = remote;
  }
 ;
- @Override;
+ @Override
  public IBinder asBinder() {;
  return mRemote;
  }
@@ -103,7 +103,7 @@ public interface IPackageInstallObserver2 extends IInterface {;
  void onPackageInstalled(String basePackageName, int returnCode, String msg, in Bundle extras);
 ;
 ;
- @Override;
+ @Override
  public void dump(java.io.FileDescriptor fd, java.io.PrintWriter pw) {;
  }
  }

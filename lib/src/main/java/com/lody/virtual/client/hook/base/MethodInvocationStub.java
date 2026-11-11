@@ -163,7 +163,7 @@ public class MethodInvocationStub<T> {;
  }
 ;
  private class HookInvocationHandler implements InvocationHandler {;
- @Override;
+ @Override
  public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {;
  MethodProxy methodProxy = getMethodProxy(method.getName());
  boolean useProxy = (methodProxy != null && methodProxy.isEnable());

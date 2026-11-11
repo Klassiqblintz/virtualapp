@@ -79,7 +79,7 @@ public class FileBridge extends Thread {;
  return mClient;
  }
 ;
- @Override;
+ @Override
  public void run() {;
  final byte[] temp = new byte[8192];
  try {;

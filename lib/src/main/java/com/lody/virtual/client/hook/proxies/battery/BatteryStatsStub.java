@@ -24,7 +24,7 @@ public class BatteryStatsStub extends BinderInvocationProxy {;
  return SystemHealthManager.mBatteryStats.get(manager);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
 ;

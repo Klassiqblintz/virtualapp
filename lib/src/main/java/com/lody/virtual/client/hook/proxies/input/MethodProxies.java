@@ -15,7 +15,7 @@ class MethodProxies {;
 ;
  static class StartInput extends StartInputOrWindowGainedFocus {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "startInput";
  }
@@ -23,7 +23,7 @@ class MethodProxies {;
 ;
  static class WindowGainedFocus extends StartInputOrWindowGainedFocus {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "windowGainedFocus";
  }
@@ -34,12 +34,12 @@ class MethodProxies {;
  static class StartInputOrWindowGainedFocus extends MethodProxy {;
 ;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "startInputOrWindowGainedFocus";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  int editorInfoIndex = ArrayUtils.indexOfFirst(args, EditorInfo.class);
  if (editorInfoIndex != -1) {;

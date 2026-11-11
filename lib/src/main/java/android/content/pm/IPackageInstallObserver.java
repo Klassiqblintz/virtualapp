@@ -8,9 +8,9 @@ import android.os.IInterface;
  * Stub interface for IPackageInstallObserver.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface IPackageInstallObserver.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements IPackageInstallObserver.java {
- private static final String DESCRIPTOR = "android.content.pm.IPackageInstallObserver.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "android.content.pm.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -19,8 +19,8 @@ public interface IPackageInstallObserver.java extends IInterface {
  public static IPackageInstallObserver.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof IPackageInstallObserver.java) {
- return (IPackageInstallObserver.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (IPackageInstallObserver) iface;
  }
  return new Proxy(obj);
  }
@@ -39,7 +39,7 @@ public interface IPackageInstallObserver.java extends IInterface {
  }
  }
 
- public static class Proxy implements IPackageInstallObserver.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

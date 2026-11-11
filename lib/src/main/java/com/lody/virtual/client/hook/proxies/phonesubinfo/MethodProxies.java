@@ -14,12 +14,12 @@ class MethodProxies {;
  @FakeDeviceMark("fake device id");
  static class GetDeviceId extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getDeviceId";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return getDeviceInfo().deviceId;
  }
@@ -27,7 +27,7 @@ class MethodProxies {;
 ;
  static class GetDeviceIdForSubscriber extends GetDeviceId {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getDeviceIdForSubscriber";
  }
@@ -37,12 +37,12 @@ class MethodProxies {;
  @FakeDeviceMark("fake iccid");
  static class GetIccSerialNumber extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getIccSerialNumber";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return getDeviceInfo().iccId;
  }
@@ -50,7 +50,7 @@ class MethodProxies {;
 ;
 ;
  static class getIccSerialNumberForSubscriber extends GetIccSerialNumber {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getIccSerialNumberForSubscriber";
  }

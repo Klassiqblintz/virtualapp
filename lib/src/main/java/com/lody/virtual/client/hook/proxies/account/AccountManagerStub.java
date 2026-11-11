@@ -24,7 +24,7 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  super(IAccountManager.Stub.asInterface, Context.ACCOUNT_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new getPassword());
@@ -67,12 +67,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class getPassword extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getPassword";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Account account = (Account) args[0];
  return Mgr.getPassword(account);
@@ -80,12 +80,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class getUserData extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getUserData";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Account account = (Account) args[0];
  String key = (String) args[1];
@@ -94,24 +94,24 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class getAuthenticatorTypes extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getAuthenticatorTypes";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return Mgr.getAuthenticatorTypes();
  }
  }
 ;
  private static class getAccounts extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getAccounts";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String accountType = (String) args[0];
  return Mgr.getAccounts(accountType);
@@ -119,12 +119,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class getAccountsForPackage extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getAccountsForPackage";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String packageName = (String) args[0];
  return Mgr.getAccounts(null);
@@ -132,12 +132,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class getAccountsByTypeForPackage extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getAccountsByTypeForPackage";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String type = (String) args[0];
  String packageName = (String) args[1];
@@ -146,12 +146,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class getAccountsAsUser extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getAccountsAsUser";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String accountType = (String) args[0];
  return Mgr.getAccounts(accountType);
@@ -159,12 +159,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class hasFeatures extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "hasFeatures";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IAccountManagerResponse response = (IAccountManagerResponse) args[0];
  Account account = (Account) args[1];
@@ -175,12 +175,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class getAccountsByFeatures extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getAccountsByFeatures";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IAccountManagerResponse response = (IAccountManagerResponse) args[0];
  String accountType = (String) args[1];
@@ -191,12 +191,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class addAccountExplicitly extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "addAccountExplicitly";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Account account = (Account) args[0];
  String password = (String) args[1];
@@ -206,12 +206,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class removeAccount extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "removeAccount";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IAccountManagerResponse response = (IAccountManagerResponse) args[0];
  Account account = (Account) args[1];
@@ -222,12 +222,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class removeAccountAsUser extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "removeAccountAsUser";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IAccountManagerResponse response = (IAccountManagerResponse) args[0];
  Account account = (Account) args[1];
@@ -238,12 +238,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class removeAccountExplicitly extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "removeAccountExplicitly";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Account account = (Account) args[0];
  return Mgr.removeAccountExplicitly(account);
@@ -251,12 +251,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class copyAccountToUser extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "copyAccountToUser";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IAccountManagerResponse response = (IAccountManagerResponse) args[0];
  Account account = (Account) args[1];
@@ -268,12 +268,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class invalidateAuthToken extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "invalidateAuthToken";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String accountType = (String) args[0];
  String authToken = (String) args[1];
@@ -283,12 +283,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class peekAuthToken extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "peekAuthToken";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Account account = (Account) args[0];
  String authTokenType = (String) args[1];
@@ -297,12 +297,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class setAuthToken extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "setAuthToken";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Account account = (Account) args[0];
  String authTokenType = (String) args[1];
@@ -313,12 +313,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class setPassword extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "setPassword";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Account account = (Account) args[0];
  String password = (String) args[1];
@@ -328,12 +328,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class clearPassword extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "clearPassword";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Account account = (Account) args[0];
  Mgr.clearPassword(account);
@@ -342,12 +342,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class setUserData extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "setUserData";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Account account = (Account) args[0];
  String key = (String) args[1];
@@ -358,12 +358,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class updateAppPermission extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "updateAppPermission";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Account account = (Account) args[0];
  String authTokenType = (String) args[1];
@@ -375,12 +375,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class getAuthToken extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getAuthToken";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IAccountManagerResponse response = (IAccountManagerResponse) args[0];
  Account account = (Account) args[1];
@@ -394,12 +394,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class addAccount extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "addAccount";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IAccountManagerResponse response = (IAccountManagerResponse) args[0];
  String accountType = (String) args[1];
@@ -413,12 +413,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class addAccountAsUser extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "addAccountAsUser";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IAccountManagerResponse response = (IAccountManagerResponse) args[0];
  String accountType = (String) args[1];
@@ -432,12 +432,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class updateCredentials extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "updateCredentials";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IAccountManagerResponse response = (IAccountManagerResponse) args[0];
  Account account = (Account) args[1];
@@ -450,12 +450,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class editProperties extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "editProperties";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IAccountManagerResponse response = (IAccountManagerResponse) args[0];
  String authTokenType = (String) args[1];
@@ -466,12 +466,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class confirmCredentialsAsUser extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "confirmCredentialsAsUser";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IAccountManagerResponse response = (IAccountManagerResponse) args[0];
  Account account = (Account) args[1];
@@ -484,12 +484,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class accountAuthenticated extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "accountAuthenticated";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Account account = (Account) args[0];
  return Mgr.accountAuthenticated(account);
@@ -497,12 +497,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class getAuthTokenLabel extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getAuthTokenLabel";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IAccountManagerResponse response = (IAccountManagerResponse) args[0];
  String accountType = (String) args[1];
@@ -513,12 +513,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class addSharedAccountAsUser extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "addSharedAccountAsUser";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Account account = (Account) args[0];
  int userId = (int) args[1];
@@ -527,12 +527,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class getSharedAccountsAsUser extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getSharedAccountsAsUser";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  int userId = (int) args[0];
  return method.invoke(who, args);
@@ -540,12 +540,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class removeSharedAccountAsUser extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "removeSharedAccountAsUser";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Account account = (Account) args[0];
  int userId = (int) args[1];
@@ -554,12 +554,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class renameAccount extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "renameAccount";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IAccountManagerResponse response = (IAccountManagerResponse) args[0];
  Account accountToRename = (Account) args[1];
@@ -570,12 +570,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class getPreviousName extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getPreviousName";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Account account = (Account) args[0];
  return Mgr.getPreviousName(account);
@@ -583,12 +583,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class renameSharedAccountAsUser extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "renameSharedAccountAsUser";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Account accountToRename = (Account) args[0];
  String newName = (String) args[1];
@@ -599,12 +599,12 @@ public class AccountManagerStub extends BinderInvocationProxy {;
 ;
  private static class setAccountVisibility extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "setAccountVisibility";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return true;
  }

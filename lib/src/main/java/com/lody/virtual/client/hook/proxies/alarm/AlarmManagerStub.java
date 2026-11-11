@@ -23,7 +23,7 @@ public class AlarmManagerStub extends BinderInvocationProxy {;
  super(IAlarmManager.Stub.asInterface, Context.ALARM_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new Set());
@@ -32,24 +32,24 @@ public class AlarmManagerStub extends BinderInvocationProxy {;
  }
 ;
  private static class SetTimeZone extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "setTimeZone";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return null;
  }
  }
 ;
  private static class SetTime extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "setTime";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {;
  return false;
@@ -60,12 +60,12 @@ public class AlarmManagerStub extends BinderInvocationProxy {;
 ;
  private static class Set extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "set";
  }
 ;
- @Override;
+ @Override
  public boolean beforeCall(Object who, Method method, Object... args) {;
  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && args[0] instanceof String) {;
  args[0] = getHostPkg();

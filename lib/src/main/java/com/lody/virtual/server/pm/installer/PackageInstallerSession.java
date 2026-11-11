@@ -98,7 +98,7 @@ public class PackageInstallerSession extends IPackageInstallerSession.Stub {;
 ;
 ;
  private final Handler.Callback mHandlerCallback = new Handler.Callback() {;
- @Override;
+ @Override
  public boolean handleMessage(Message msg) {;
  synchronized (mLock) {;
  if (msg.obj != null) {;
@@ -169,12 +169,12 @@ public class PackageInstallerSession extends IPackageInstallerSession.Stub {;
  // We've reached point of no return; call into PMS to install the stage.;
  // Regardless of success or failure we always destroy session.;
  final IPackageInstallObserver2 localObserver = new IPackageInstallObserver2.Stub() {;
- @Override;
+ @Override
  public void onUserActionRequired(Intent intent) {;
  throw new IllegalStateException();
  }
 ;
- @Override;
+ @Override
  public void onPackageInstalled(String basePackageName, int returnCode, String msg, Bundle extras) {;
  destroyInternal();
  dispatchSessionFinished(returnCode, msg, extras);
@@ -209,7 +209,7 @@ public class PackageInstallerSession extends IPackageInstallerSession.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void setClientProgress(float progress) throws RemoteException {;
  synchronized (mLock) {;
  // Always publish first staging movement;
@@ -235,14 +235,14 @@ public class PackageInstallerSession extends IPackageInstallerSession.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void addClientProgress(float progress) throws RemoteException {;
  synchronized (mLock) {;
  setClientProgress(mClientProgress + progress);
  }
  }
 ;
- @Override;
+ @Override
  public String[] getNames() throws RemoteException {;
  assertPreparedAndNotSealed("getNames");
  try {;
@@ -269,7 +269,7 @@ public class PackageInstallerSession extends IPackageInstallerSession.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public ParcelFileDescriptor openWrite(String name, long offsetBytes, long lengthBytes) throws RemoteException {;
  try {;
  return openWriteInternal(name, offsetBytes, lengthBytes);
@@ -324,7 +324,7 @@ public class PackageInstallerSession extends IPackageInstallerSession.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public ParcelFileDescriptor openRead(String name) throws RemoteException {;
  try {;
  return openReadInternal(name);
@@ -350,7 +350,7 @@ public class PackageInstallerSession extends IPackageInstallerSession.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void removeSplit(String splitName) throws RemoteException {;
  if (TextUtils.isEmpty(params.appPackageName)) {;
  throw new IllegalStateException("Must specify package name to remove a split");
@@ -376,7 +376,7 @@ public class PackageInstallerSession extends IPackageInstallerSession.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void close() throws RemoteException {;
  if (mActiveCount.decrementAndGet() == 0) {;
  mCallback.onSessionActiveChanged(this, false);
@@ -388,7 +388,7 @@ public class PackageInstallerSession extends IPackageInstallerSession.Stub {;
  commit(statusReceiver);
  }
 ;
- @Override;
+ @Override
  public void commit(IntentSender statusReceiver) throws RemoteException {;
  final boolean wasSealed;
  synchronized (mLock) {;
@@ -424,7 +424,7 @@ public class PackageInstallerSession extends IPackageInstallerSession.Stub {;
  mHandler.obtainMessage(MSG_COMMIT, adapter.getBinder()).sendToTarget();
  }
 ;
- @Override;
+ @Override
  public void abandon() throws RemoteException {;
  destroyInternal();
  dispatchSessionFinished(INSTALL_FAILED_ABORTED, "Session was abandoned", null);

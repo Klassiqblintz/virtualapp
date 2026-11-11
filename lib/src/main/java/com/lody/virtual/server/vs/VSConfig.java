@@ -15,12 +15,12 @@ public class VSConfig implements Parcelable {;
 ;
  public String vsPath;
 ;
- @Override;
+ @Override
  public int describeContents() {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public void writeToParcel(Parcel dest, int flags) {;
  dest.writeByte(this.enable ? (byte) 1 : (byte) 0);
  dest.writeString(this.vsPath);
@@ -35,12 +35,12 @@ public class VSConfig implements Parcelable {;
  }
 ;
  public static final Parcelable.Creator<VSConfig> CREATOR = new Parcelable.Creator<VSConfig>() {;
- @Override;
+ @Override
  public VSConfig createFromParcel(Parcel source) {;
  return new VSConfig(source);
  }
 ;
- @Override;
+ @Override
  public VSConfig[] newArray(int size) {;
  return new VSConfig[size];
  }

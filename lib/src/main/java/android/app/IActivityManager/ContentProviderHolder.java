@@ -27,10 +27,10 @@ public interface ContentProviderHolder extends IInterface {;
  return new Proxy(obj);
  }
 ;
- @Override;
+ @Override
  public IBinder asBinder() { return this; }
 ;
- @Override;
+ @Override
  public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException {;
  switch (code) {;
  case android.os.IBinder.INTERFACE_TRANSACTION:;
@@ -41,7 +41,7 @@ public interface ContentProviderHolder extends IInterface {;
  }
  }
 ;
- public static class Proxy implements {classname} {{;
+ public static class Proxy implements ContentProviderHolder {;
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

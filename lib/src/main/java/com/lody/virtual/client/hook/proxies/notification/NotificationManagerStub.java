@@ -29,7 +29,7 @@ public class NotificationManagerStub extends MethodInvocationProxy<MethodInvocat
  super(new MethodInvocationStub<IInterface>(NotificationManager.getService.call()));
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ReplaceCallingPkgMethodProxy("enqueueToast"));
@@ -50,14 +50,14 @@ public class NotificationManagerStub extends MethodInvocationProxy<MethodInvocat
  addMethodProxy(new ReplaceCallingPkgMethodProxy("deleteNotificationChannelGroup"));
  addMethodProxy(new ReplaceCallingPkgMethodProxy("createNotificationChannels"));
  addMethodProxy(new ReplaceCallingPkgMethodProxy("getNotificationChannels") {;
- @Override;
+ @Override
  public boolean beforeCall(Object who, Method method, Object... args) {;
  MethodParameterUtils.replaceLastUid(args);
  return super.beforeCall(who, method, args);
  }
  });
  addMethodProxy(new StaticMethodProxy("getNotificationChannel") {;
- @Override;
+ @Override
  public boolean beforeCall(Object who, Method method, Object... args) {;
  MethodParameterUtils.replaceLastUid(args);
  int sequence = BuildCompat.isQ() ? 2 : 1;
@@ -72,13 +72,13 @@ public class NotificationManagerStub extends MethodInvocationProxy<MethodInvocat
  }
  }
 ;
- @Override;
+ @Override
  public void inject() throws Throwable {;
  NotificationManager.sService.set(getInvocationStub().getProxyInterface());
  Toast.sService.set(getInvocationStub().getProxyInterface());
  }
 ;
- @Override;
+ @Override
  public boolean isEnvBad() {;
  return NotificationManager.getService.call() != getInvocationStub().getProxyInterface();
  }

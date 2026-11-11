@@ -9,9 +9,9 @@ import android.content.ComponentName;
  * Stub interface for IServiceConnection.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface IServiceConnection.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements IServiceConnection.java {
- private static final String DESCRIPTOR = "android.app.IServiceConnection.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "android.app.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -20,8 +20,8 @@ public interface IServiceConnection.java extends IInterface {
  public static IServiceConnection.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof IServiceConnection.java) {
- return (IServiceConnection.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (IServiceConnection) iface;
  }
  return new Proxy(obj);
  }
@@ -40,7 +40,7 @@ public interface IServiceConnection.java extends IInterface {
  }
  }
 
- public static class Proxy implements IServiceConnection.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

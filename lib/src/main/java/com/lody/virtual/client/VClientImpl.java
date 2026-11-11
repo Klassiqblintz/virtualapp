@@ -180,12 +180,12 @@ public final class VClientImpl extends IVClient.Stub {;
  mH.sendMessage(msg);
  }
 ;
- @Override;
+ @Override
  public IBinder getAppThread() {;
  return ActivityThread.getApplicationThread.call(VirtualCore.mainThread());
  }
 ;
- @Override;
+ @Override
  public IBinder getToken() {;
  return token;
  }
@@ -249,7 +249,7 @@ public final class VClientImpl extends IVClient.Stub {;
  } else {;
  final ConditionVariable lock = new ConditionVariable();
  VirtualRuntime.getUIHandler().post(new Runnable() {;
- @Override;
+ @Override
  public void run() {;
  bindApplicationNoCheck(packageName, processName, lock);
  lock.open();
@@ -503,7 +503,7 @@ public final class VClientImpl extends IVClient.Stub {;
  final Thread.UncaughtExceptionHandler previousHandler =;
  Thread.getDefaultUncaughtExceptionHandler();
  Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {;
- @Override;
+ @Override
  public void uncaughtException(Thread t, Throwable e) {;
  CrashHandler handler = VClientImpl.gClient.crashHandler;
  if (handler != null) {;
@@ -724,7 +724,7 @@ public final class VClientImpl extends IVClient.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public IBinder acquireProviderClient(ProviderInfo info) {;
  if (mTempLock != null) {;
  mTempLock.block();
@@ -822,12 +822,12 @@ public final class VClientImpl extends IVClient.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void finishActivity(IBinder token) {;
  VActivityManager.get().finishActivity(token);
  }
 ;
- @Override;
+ @Override
  public void scheduleNewIntent(String creator, IBinder token, Intent intent) {;
  NewIntentData data = new NewIntentData();
  data.creator = creator;
@@ -836,7 +836,7 @@ public final class VClientImpl extends IVClient.Stub {;
  sendMessage(NEW_INTENT, data);
  }
 ;
- @Override;
+ @Override
  public void scheduleReceiver(String processName, ComponentName component, Intent intent, PendingResultData resultData) {;
  ReceiverData receiverData = new ReceiverData();
  receiverData.resultData = resultData;
@@ -872,12 +872,12 @@ public final class VClientImpl extends IVClient.Stub {;
  VActivityManager.get().broadcastFinish(data.resultData);
  }
 ;
- @Override;
+ @Override
  public IBinder createProxyService(ComponentName component, IBinder binder) {;
  return ProxyServiceFactory.getProxyService(getCurrentApplication(), component, binder);
  }
 ;
- @Override;
+ @Override
  public String getDebugInfo() {;
  return "process : " + VirtualRuntime.getProcessName() + "\n" +;
  "initialPkg : " + VirtualRuntime.getInitialPackageName() + "\n" +;
@@ -890,7 +890,7 @@ public final class VClientImpl extends IVClient.Stub {;
  super(parent, "VA-Root");
  }
 ;
- @Override;
+ @Override
  public void uncaughtException(Thread t, Throwable e) {;
  CrashHandler handler = VClientImpl.gClient.crashHandler;
  if (handler != null) {;
@@ -928,7 +928,7 @@ public final class VClientImpl extends IVClient.Stub {;
  super(Looper.getMainLooper());
  }
 ;
- @Override;
+ @Override
  public void handleMessage(Message msg) {;
  switch (msg.what) {;
  case NEW_INTENT: {;

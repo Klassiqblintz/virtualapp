@@ -56,12 +56,12 @@ class MethodProxies {;
 ;
  static class IsPackageAvailable extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "isPackageAvailable";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String pkgName = (String) args[0];
  if (isAppPkg(pkgName)) {;
@@ -70,7 +70,7 @@ class MethodProxies {;
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -79,17 +79,17 @@ class MethodProxies {;
 ;
  static class GetInstallerPackageName extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getInstallerPackageName";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return "com.android.vending";
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -97,12 +97,12 @@ class MethodProxies {;
 ;
  static class GetPreferredActivities extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getPreferredActivities";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceLastAppPkg(args);
  return method.invoke(who, args);
@@ -112,12 +112,12 @@ class MethodProxies {;
 ;
  static class GetComponentEnabledSetting extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getComponentEnabledSetting";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  // NOTE: 有4个状态: 0默认 1可用 2禁止 3User Disable;
  ComponentName component = (ComponentName) args[0];
@@ -131,12 +131,12 @@ class MethodProxies {;
 ;
  static class RemovePackageFromPreferred extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "removePackageFromPreferred";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  return method.invoke(who, args);
@@ -151,12 +151,12 @@ class MethodProxies {;
  */;
  static class GetServiceInfo extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getServiceInfo";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  ComponentName componentName = (ComponentName) args[0];
  int flags = ((Number) args[1]).intValue();
@@ -172,7 +172,7 @@ class MethodProxies {;
  return info;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -181,12 +181,12 @@ class MethodProxies {;
 ;
  static class GetPackageUid extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getPackageUid";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String pkgName = (String) args[0];
  if (pkgName.equals(getHostPkg())) {;
@@ -196,7 +196,7 @@ class MethodProxies {;
  return VUserHandle.getAppId(uid);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -212,12 +212,12 @@ class MethodProxies {;
  */;
  static class GetActivityInfo extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getActivityInfo";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  ComponentName componentName = (ComponentName) args[0];
  if (getHostPkg().equals(componentName.getPackageName())) {;
@@ -235,14 +235,14 @@ class MethodProxies {;
  return info;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
  }
 ;
  static class GetPackageUidEtc extends GetPackageUid {;
- @Override;
+ @Override
  public String getMethodName() {;
  return super.getMethodName() + "Etc";
  }
@@ -250,22 +250,22 @@ class MethodProxies {;
 ;
  static class GetPackageInstaller extends MethodProxy {;
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getPackageInstaller";
  }
 ;
- @Override;
+ @Override
  public Object call(final Object who, Method method, Object... args) throws Throwable {;
  final IInterface installer = (IInterface) method.invoke(who, args);
  final IPackageInstaller vInstaller = VPackageManager.get().getPackageInstaller();
  return Proxy.newProxyInstance(installer.getClass().getClassLoader(), installer.getClass().getInterfaces(), new InvocationHandler() {;
- @Override;
+ @Override
  public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {;
  switch (method.getName()) {;
  case "createSession": {;
@@ -336,12 +336,12 @@ class MethodProxies {;
 ;
 ;
  static class FreeStorageAndNotify extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "freeStorageAndNotify";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (args[args.length - 1] instanceof IPackageDataObserver) {;
  IPackageDataObserver observer = (IPackageDataObserver) args[args.length - 1];
@@ -354,18 +354,18 @@ class MethodProxies {;
 ;
  static class GetPackageGids extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getPackageGids";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -375,18 +375,18 @@ class MethodProxies {;
 ;
  static class RevokeRuntimePermission extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "revokeRuntimePermission";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -395,12 +395,12 @@ class MethodProxies {;
 ;
  static class ClearPackagePreferredActivities extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "clearPackagePreferredActivities";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  return method.invoke(who, args);
@@ -410,12 +410,12 @@ class MethodProxies {;
 ;
  static class ResolveContentProvider extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "resolveContentProvider";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String name = (String) args[0];
  int flags = ((Number) args[1]).intValue();
@@ -435,12 +435,12 @@ class MethodProxies {;
  @SuppressWarnings("unchecked");
  static class QueryIntentServices extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "queryIntentServices";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  boolean slice = ParceledListSliceCompat.isReturnParceledListSlice(method);
  int userId = VUserHandle.myUserId();
@@ -466,7 +466,7 @@ class MethodProxies {;
  return appResult;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -475,12 +475,12 @@ class MethodProxies {;
 ;
  static class GetPermissions extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getPermissions";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return method.invoke(who, args);
  }
@@ -488,17 +488,17 @@ class MethodProxies {;
 ;
  static class IsPackageForzen extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "isPackageForzen";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return false;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -507,7 +507,7 @@ class MethodProxies {;
 ;
  static class GetPackageGidsEtc extends GetPackageGids {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return super.getMethodName() + "Etc";
  }
@@ -517,12 +517,12 @@ class MethodProxies {;
  @SuppressWarnings("unchecked");
  static class QueryIntentActivities extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "queryIntentActivities";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  boolean slice = ParceledListSliceCompat.isReturnParceledListSlice(method);
  int userId = VUserHandle.myUserId();
@@ -548,7 +548,7 @@ class MethodProxies {;
  return appResult;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -556,12 +556,12 @@ class MethodProxies {;
 ;
  static class ResolveService extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "resolveService";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Intent intent = (Intent) args[0];
  String resolvedType = (String) args[1];
@@ -578,12 +578,12 @@ class MethodProxies {;
 ;
  static class ClearPackagePersistentPreferredActivities extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "clearPackagePersistentPreferredActivities";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  return method.invoke(who, args);
@@ -592,12 +592,12 @@ class MethodProxies {;
 ;
  static class GetPermissionGroupInfo extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getPermissionGroupInfo";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String name = (String) args[0];
  int flags = ((Number) args[1]).intValue();
@@ -608,7 +608,7 @@ class MethodProxies {;
  return super.call(who, method, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -617,17 +617,17 @@ class MethodProxies {;
 ;
  static final class GetPackageInfo extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getPackageInfo";
  }
 ;
- @Override;
+ @Override
  public boolean beforeCall(Object who, Method method, Object... args) {;
  return args != null && args[0] != null;
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String pkg = (String) args[0];
  int flags = ((Number) args[1]).intValue();
@@ -650,12 +650,12 @@ class MethodProxies {;
 ;
  static class DeleteApplicationCacheFiles extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "deleteApplicationCacheFiles";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  // TODO;
  return method.invoke(who, args);
@@ -665,18 +665,18 @@ class MethodProxies {;
 ;
  static class SetApplicationBlockedSettingAsUser extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "setApplicationBlockedSettingAsUser";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -685,12 +685,12 @@ class MethodProxies {;
 ;
  static class GetApplicationEnabledSetting extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getApplicationEnabledSetting";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  return method.invoke(who, args);
@@ -699,12 +699,12 @@ class MethodProxies {;
 ;
  static class AddPackageToPreferred extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "addPackageToPreferred";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return 0;
  }
@@ -712,12 +712,12 @@ class MethodProxies {;
 ;
  static class CheckPermission extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "checkPermission";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String permName = (String) args[0];
  String pkgName = (String) args[1];
@@ -725,12 +725,12 @@ class MethodProxies {;
  return VPackageManager.get().checkPermission(permName, pkgName, userId);
  }
 ;
- @Override;
+ @Override
  public Object afterCall(Object who, Method method, Object[] args, Object result) throws Throwable {;
  return super.afterCall(who, method, args, result);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -740,12 +740,12 @@ class MethodProxies {;
  static class GetPackagesForUid extends MethodProxy {;
 ;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getPackagesForUid";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  int uid = ((Number) args[0]).intValue();
  int callingUid = Binder.getCallingUid();
@@ -769,7 +769,7 @@ class MethodProxies {;
  return pkgList.toArray(new String[pkgList.size()]);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -779,12 +779,12 @@ class MethodProxies {;
  @SuppressWarnings("unchecked");
  static class QueryContentProviders extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "queryContentProviders";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String processName = (String) args[0];
  int uid = ((Number) args[1]).intValue();
@@ -800,18 +800,18 @@ class MethodProxies {;
 ;
  static class SetApplicationEnabledSetting extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "setApplicationEnabledSetting";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -820,12 +820,12 @@ class MethodProxies {;
  @SuppressLint("PackageManagerGetSignatures");
  static class CheckSignatures extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "checkSignatures";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
 ;
  if (args.length == 2 && args[0] instanceof String && args[1] instanceof String) {;
@@ -868,12 +868,12 @@ class MethodProxies {;
 ;
  static class checkUidSignatures extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "checkUidSignatures";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  int uid1 = ((Number) args[0]).intValue();
  int uid2 = ((Number) args[1]).intValue();
@@ -884,12 +884,12 @@ class MethodProxies {;
 ;
  static class getNameForUid extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getNameForUid";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  int uid = ((Number) args[0]).intValue();
  return VPackageManager.get().getNameForUid(uid);
@@ -899,12 +899,12 @@ class MethodProxies {;
 ;
  static class DeletePackage extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "deletePackage";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String pkgName = (String) args[0];
  try {;
@@ -923,12 +923,12 @@ class MethodProxies {;
 ;
 ;
  static class ActivitySupportsIntent extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "activitySupportsIntent";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  ComponentName component = (ComponentName) args[0];
  Intent intent = (Intent) args[1];
@@ -940,12 +940,12 @@ class MethodProxies {;
 ;
  static class ResolveIntent extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "resolveIntent";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Intent intent = (Intent) args[0];
  String resolvedType = (String) args[1];
@@ -962,12 +962,12 @@ class MethodProxies {;
 ;
  static class GetApplicationInfo extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getApplicationInfo";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String pkg = (String) args[0];
  int flags = ((Number) args[1]).intValue();
@@ -993,7 +993,7 @@ class MethodProxies {;
  return info;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1002,12 +1002,12 @@ class MethodProxies {;
 ;
  static class GetProviderInfo extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getProviderInfo";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  ComponentName componentName = (ComponentName) args[0];
  int flags = ((Number) args[1]).intValue();
@@ -1029,19 +1029,19 @@ class MethodProxies {;
 ;
  static class SetComponentEnabledSetting extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  // return "setComponentEnabledSetting";
  // anti-virus, fuck ESET-NOD32: a variant of Android/AdDisplay.AdLock.AL potentially unwanted;
  return EncodeUtils.decode("c2V0Q29tcG9uZW50RW5hYmxlZFNldHRpbmc=");
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1049,12 +1049,12 @@ class MethodProxies {;
 ;
  static class GetInstalledApplications extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getInstalledApplications";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
 ;
  int flags = ((Number) args[0]).intValue();
@@ -1070,12 +1070,12 @@ class MethodProxies {;
  @SuppressWarnings({"unchecked", "WrongConstant"});
  static class GetInstalledPackages extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getInstalledPackages";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  int flags = ((Number) args[0]).intValue();
  int userId = VUserHandle.myUserId();
@@ -1097,12 +1097,12 @@ class MethodProxies {;
  @SuppressWarnings("unchecked");
  static class QueryIntentReceivers extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "queryIntentReceivers";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  boolean slice = ParceledListSliceCompat.isReturnParceledListSlice(method);
  int userId = VUserHandle.myUserId();
@@ -1130,12 +1130,12 @@ class MethodProxies {;
 ;
  static class GetReceiverInfo extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getReceiverInfo";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  ComponentName componentName = (ComponentName) args[0];
  if (getHostPkg().equals(componentName.getPackageName())) {;
@@ -1152,7 +1152,7 @@ class MethodProxies {;
  return info;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1162,12 +1162,12 @@ class MethodProxies {;
  @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1);
  static class GetPermissionFlags extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getPermissionFlags";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  // TODO;
  return method.invoke(who, args);
@@ -1178,18 +1178,18 @@ class MethodProxies {;
 ;
  static class SetPackageStoppedState extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "setPackageStoppedState";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1200,12 +1200,12 @@ class MethodProxies {;
  @TargetApi(Build.VERSION_CODES.KITKAT);
  static class QueryIntentContentProviders extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "queryIntentContentProviders";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  boolean slice = ParceledListSliceCompat.isReturnParceledListSlice(method);
  int userId = VUserHandle.myUserId();
@@ -1229,7 +1229,7 @@ class MethodProxies {;
  return appResult;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1238,12 +1238,12 @@ class MethodProxies {;
 ;
  static class GetApplicationBlockedSettingAsUser extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getApplicationBlockedSettingAsUser";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  return method.invoke(who, args);
@@ -1259,18 +1259,18 @@ class MethodProxies {;
  */;
  static class SetSplashScreenTheme extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "setSplashScreenTheme";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  // no-op – avoid SecurityException from enforceOwnerRights;
  return null;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1282,17 +1282,17 @@ class MethodProxies {;
  */;
  static class GetSplashScreenTheme extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getSplashScreenTheme";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return null;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }

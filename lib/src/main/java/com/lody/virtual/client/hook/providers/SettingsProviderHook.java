@@ -49,7 +49,7 @@ public class SettingsProviderHook extends ExternalProviderHook {;
  }
 ;
 ;
- @Override;
+ @Override
  public Bundle call(MethodBox methodBox, String method, String arg, Bundle extras) throws InvocationTargetException {;
  if (!VClientImpl.get().isBound()) {;
  return methodBox.call();
@@ -90,7 +90,7 @@ public class SettingsProviderHook extends ExternalProviderHook {;
  return bundle;
  }
 ;
- @Override;
+ @Override
  protected void processArgs(Method method, Object... args) {;
  super.processArgs(method, args);
  }

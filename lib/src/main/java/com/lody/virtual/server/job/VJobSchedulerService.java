@@ -54,7 +54,7 @@ public class VJobSchedulerService extends IJobScheduler.Stub {;
  }
 ;
  private static final Singleton<VJobSchedulerService> gDefault = new Singleton<VJobSchedulerService>() {;
- @Override;
+ @Override
  protected VJobSchedulerService create() {;
  return new VJobSchedulerService();
  }
@@ -87,7 +87,7 @@ public class VJobSchedulerService extends IJobScheduler.Stub {;
  this.clientJobId = in.readInt();
  }
 ;
- @Override;
+ @Override
  public boolean equals(Object o) {;
  if (this == o) return true;
  if (o == null || getClass() != o.getClass()) return false;
@@ -99,7 +99,7 @@ public class VJobSchedulerService extends IJobScheduler.Stub {;
  && TextUtils.equals(packageName, jobId.packageName);
  }
 ;
- @Override;
+ @Override
  public int hashCode() {;
  int result = vuid;
  result = 31 * result + (packageName != null ? packageName.hashCode() : 0);
@@ -107,12 +107,12 @@ public class VJobSchedulerService extends IJobScheduler.Stub {;
  return result;
  }
 ;
- @Override;
+ @Override
  public int describeContents() {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public void writeToParcel(Parcel dest, int flags) {;
  dest.writeInt(this.vuid);
  dest.writeString(this.packageName);
@@ -120,12 +120,12 @@ public class VJobSchedulerService extends IJobScheduler.Stub {;
  }
 ;
  public static final Parcelable.Creator<JobId> CREATOR = new Parcelable.Creator<JobId>() {;
- @Override;
+ @Override
  public JobId createFromParcel(Parcel source) {;
  return new JobId(source);
  }
 ;
- @Override;
+ @Override
  public JobId[] newArray(int size) {;
  return new JobId[size];
  }
@@ -153,12 +153,12 @@ public class VJobSchedulerService extends IJobScheduler.Stub {;
  this.extras = in.readParcelable(PersistableBundle.class.getClassLoader());
  }
 ;
- @Override;
+ @Override
  public int describeContents() {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public void writeToParcel(Parcel dest, int flags) {;
  dest.writeInt(this.virtualJobId);
  dest.writeString(this.serviceName);
@@ -166,12 +166,12 @@ public class VJobSchedulerService extends IJobScheduler.Stub {;
  }
 ;
  public static final Parcelable.Creator<JobConfig> CREATOR = new Parcelable.Creator<JobConfig>() {;
- @Override;
+ @Override
  public JobConfig createFromParcel(Parcel source) {;
  return new JobConfig(source);
  }
 ;
- @Override;
+ @Override
  public JobConfig[] newArray(int size) {;
  return new JobConfig[size];
  }
@@ -179,7 +179,7 @@ public class VJobSchedulerService extends IJobScheduler.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public int schedule(JobInfo job) throws RemoteException {;
  int vuid = VBinder.getCallingUid();
  int id = job.getId();
@@ -257,7 +257,7 @@ public class VJobSchedulerService extends IJobScheduler.Stub {;
 ;
  }
 ;
- @Override;
+ @Override
  public void cancel(int jobId) throws RemoteException {;
  int vuid = VBinder.getCallingUid();
  synchronized (mJobStore) {;
@@ -280,7 +280,7 @@ public class VJobSchedulerService extends IJobScheduler.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void cancelAll() throws RemoteException {;
  int vuid = VBinder.getCallingUid();
  synchronized (mJobStore) {;
@@ -303,7 +303,7 @@ public class VJobSchedulerService extends IJobScheduler.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public List<JobInfo> getAllPendingJobs() throws RemoteException {;
  int vuid = VBinder.getCallingUid();
  List<JobInfo> jobs = mScheduler.getAllPendingJobs();
@@ -334,12 +334,12 @@ public class VJobSchedulerService extends IJobScheduler.Stub {;
  return jobs;
  }
 ;
- @Override;
+ @Override
  public int enqueue(JobInfo job, JobWorkItem work) throws RemoteException {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public JobInfo getPendingJob(int i) throws RemoteException {;
  return null;
  }

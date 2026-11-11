@@ -13,12 +13,12 @@ import com.lody.virtual.remote.InstalledAppInfo;
 public class PackageSetting implements Parcelable {;
 ;
  public static final Parcelable.Creator<PackageSetting> CREATOR = new Parcelable.Creator<PackageSetting>() {;
- @Override;
+ @Override
  public PackageSetting createFromParcel(Parcel source) {;
  return new PackageSetting(source);
  }
 ;
- @Override;
+ @Override
  public PackageSetting[] newArray(int size) {;
  return new PackageSetting[size];
  }
@@ -84,12 +84,12 @@ public class PackageSetting implements Parcelable {;
  userState.delete(userId);
  }
 ;
- @Override;
+ @Override
  public int describeContents() {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public void writeToParcel(Parcel dest, int flags) {;
  dest.writeString(this.packageName);
  dest.writeString(this.apkPath);

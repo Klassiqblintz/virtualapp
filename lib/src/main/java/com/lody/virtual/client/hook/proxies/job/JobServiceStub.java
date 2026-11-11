@@ -28,7 +28,7 @@ public class JobServiceStub extends BinderInvocationProxy {;
  super(IJobScheduler.Stub.asInterface, Context.JOB_SCHEDULER_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new schedule());
@@ -83,12 +83,12 @@ public class JobServiceStub extends BinderInvocationProxy {;
 ;
  private class schedule extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "schedule";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  JobInfo jobInfo = (JobInfo) args[0];
  return VJobScheduler.get().schedule(jobInfo);
@@ -97,12 +97,12 @@ public class JobServiceStub extends BinderInvocationProxy {;
 ;
  private class getAllPendingJobs extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getAllPendingJobs";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return VJobScheduler.get().getAllPendingJobs();
  }
@@ -110,12 +110,12 @@ public class JobServiceStub extends BinderInvocationProxy {;
 ;
  private class cancelAll extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "cancelAll";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  VJobScheduler.get().cancelAll();
  return 0;
@@ -124,12 +124,12 @@ public class JobServiceStub extends BinderInvocationProxy {;
 ;
  private class cancel extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "cancel";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (args[0] == null) return 0;
  int jobId = ((Number) args[0]).intValue();

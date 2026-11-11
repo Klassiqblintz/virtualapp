@@ -185,7 +185,7 @@ class PendIntentCompat {;
  this.index = index;
  }
 ;
- @Override;
+ @Override
  public String toString() {;
  return "RectInfo{" +;
  "rect=" + rect +;

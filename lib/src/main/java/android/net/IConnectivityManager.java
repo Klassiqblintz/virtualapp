@@ -10,9 +10,9 @@ import android.net.LinkProperties;
  * Stub interface for IConnectivityManager.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface IConnectivityManager.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements IConnectivityManager.java {
- private static final String DESCRIPTOR = "android.net.IConnectivityManager.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "android.net.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -21,8 +21,8 @@ public interface IConnectivityManager.java extends IInterface {
  public static IConnectivityManager.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof IConnectivityManager.java) {
- return (IConnectivityManager.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (IConnectivityManager) iface;
  }
  return new Proxy(obj);
  }
@@ -41,7 +41,7 @@ public interface IConnectivityManager.java extends IInterface {
  }
  }
 
- public static class Proxy implements IConnectivityManager.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

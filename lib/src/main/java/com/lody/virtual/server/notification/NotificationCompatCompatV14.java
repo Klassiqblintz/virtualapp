@@ -23,7 +23,7 @@ class NotificationCompatCompatV14 extends NotificationCompat {;
  return mRemoteViewsFixer;
  }
 ;
- @Override;
+ @Override
  public boolean dealNotification(int id, Notification notification, final String packageName) {;
  Context appContext = getAppContext(packageName);
  if (appContext == null) {;

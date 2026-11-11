@@ -83,7 +83,7 @@ public abstract class MethodInvocationProxy<T extends MethodInvocationStub> impl
  protected void afterHookApply(T delegate) {;
  }
 ;
- @Override;
+ @Override
  public abstract void inject() throws Throwable;
 ;
  public Context getContext() {;

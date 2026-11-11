@@ -25,7 +25,7 @@ public class SearchManagerStub extends BinderInvocationProxy {;
  super(ISearchManager.Stub.asInterface, Context.SEARCH_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new StaticMethodProxy("launchLegacyAssist"));
@@ -34,12 +34,12 @@ public class SearchManagerStub extends BinderInvocationProxy {;
 ;
  private static class GetSearchableInfo extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getSearchableInfo";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  ComponentName component = (ComponentName) args[0];
  if (component != null) {;

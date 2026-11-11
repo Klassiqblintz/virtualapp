@@ -8,9 +8,9 @@ import android.os.IInterface;
  * Stub interface for IPackageInstallerCallback.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface IPackageInstallerCallback.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements IPackageInstallerCallback.java {
- private static final String DESCRIPTOR = "android.content.pm.IPackageInstallerCallback.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "android.content.pm.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -19,8 +19,8 @@ public interface IPackageInstallerCallback.java extends IInterface {
  public static IPackageInstallerCallback.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof IPackageInstallerCallback.java) {
- return (IPackageInstallerCallback.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (IPackageInstallerCallback) iface;
  }
  return new Proxy(obj);
  }
@@ -39,7 +39,7 @@ public interface IPackageInstallerCallback.java extends IInterface {
  }
  }
 
- public static class Proxy implements IPackageInstallerCallback.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

@@ -19,12 +19,12 @@ public class GhostWifiScannerImpl extends IWifiScanner.Stub {;
 ;
  private final Handler mHandler = new Handler(Looper.getMainLooper());
 ;
- @Override;
+ @Override
  public Messenger getMessenger() throws RemoteException {;
  return new Messenger(mHandler);
  }
 ;
- @Override;
+ @Override
  public Bundle getAvailableChannels(int band) throws RemoteException {;
  Bundle bundle = new Bundle();
  bundle.putIntegerArrayList(WifiScanner.GET_AVAILABLE_CHANNELS_EXTRA.get(), new ArrayList<Integer>(0));

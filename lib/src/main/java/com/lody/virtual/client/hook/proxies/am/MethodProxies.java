@@ -89,12 +89,12 @@ class MethodProxies {;
 ;
  static class ForceStopPackage extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "forceStopPackage";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String pkg = (String) args[0];
  int userId = VUserHandle.myUserId();
@@ -102,7 +102,7 @@ class MethodProxies {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -111,17 +111,17 @@ class MethodProxies {;
 ;
  static class CrashApplication extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "crashApplication";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -130,18 +130,18 @@ class MethodProxies {;
 ;
  static class AddPackageDependency extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "addPackageDependency";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -149,12 +149,12 @@ class MethodProxies {;
 ;
  static class GetPackageForToken extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getPackageForToken";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IBinder token = (IBinder) args[0];
  String pkg = VActivityManager.get().getPackageForToken(token);
@@ -167,12 +167,12 @@ class MethodProxies {;
 ;
  static class UnbindService extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "unbindService";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IServiceConnection conn = (IServiceConnection) args[0];
  ServiceConnectionDelegate delegate = ServiceConnectionDelegate.removeDelegate(conn);
@@ -182,7 +182,7 @@ class MethodProxies {;
  return VActivityManager.get().unbindService(delegate);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess() || isServerProcess();
  }
@@ -190,34 +190,34 @@ class MethodProxies {;
 ;
  static class GetContentProviderExternal extends GetContentProvider {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getContentProviderExternal";
  }
 ;
- @Override;
+ @Override
  public int getProviderNameIndex() {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public int getPackageIndex() {;
  return -1;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
  }
 ;
  static class StartVoiceActivity extends StartActivity {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "startVoiceActivity";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return super.call(who, method, args);
  }
@@ -226,12 +226,12 @@ class MethodProxies {;
 ;
  static class UnstableProviderDied extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "unstableProviderDied";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (args[0] == null) {;
  return 0;
@@ -243,12 +243,12 @@ class MethodProxies {;
 ;
  static class PeekService extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "peekService";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceLastAppPkg(args);
  Intent service = (Intent) args[0];
@@ -256,7 +256,7 @@ class MethodProxies {;
  return VActivityManager.get().peekService(service, resolvedType);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -265,12 +265,12 @@ class MethodProxies {;
 ;
  static class GetPackageAskScreenCompat extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getPackageAskScreenCompat";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
 ;
  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {;
@@ -281,7 +281,7 @@ class MethodProxies {;
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -294,12 +294,12 @@ class MethodProxies {;
  protected int mResolvedTypesIndex = 6;
  protected int mFlagsIndex = 7;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getIntentSender";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String creator = (String) args[1];
  String[] resolvedTypes = (String[]) args[mResolvedTypesIndex];
@@ -375,7 +375,7 @@ class MethodProxies {;
  return newIntent;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -385,12 +385,12 @@ class MethodProxies {;
 ;
  static class OverridePendingTransition extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "overridePendingTransition";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  // Many application crash/darkscreen if not return null.;
  return null;
@@ -403,12 +403,12 @@ class MethodProxies {;
  private static final String SCHEME_PACKAGE = "package";
  private static final String SCHEME_CONTENT = "content";
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "startActivity";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  int intentIndex = ArrayUtils.indexOfObject(args, Intent.class, 1);
  if (intentIndex < 0) {;
@@ -564,12 +564,12 @@ class MethodProxies {;
 ;
  static class StartActivities extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "startActivities";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Intent[] intents = ArrayUtils.getFirst(args, Intent[].class);
  String[] resolvedTypes = ArrayUtils.getFirst(args, String[].class);
@@ -582,7 +582,7 @@ class MethodProxies {;
  return VActivityManager.get().startActivities(intents, resolvedTypes, token, options, VUserHandle.myUserId());
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -590,12 +590,12 @@ class MethodProxies {;
 ;
 ;
  static class FinishActivity extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "finishActivity";
  }
 ;
- @Override;
+ @Override
  public Object afterCall(Object who, Method method, Object[] args, Object result) throws Throwable {;
  IBinder token = (IBinder) args[0];
  ActivityClientRecord r = VActivityManager.get().getActivityRecord(token);
@@ -620,7 +620,7 @@ class MethodProxies {;
  return super.afterCall(who, method, args, result);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -629,18 +629,18 @@ class MethodProxies {;
 ;
  static class GetCallingPackage extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getCallingPackage";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IBinder token = (IBinder) args[0];
  return VActivityManager.get().getCallingPackage(token);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -648,12 +648,12 @@ class MethodProxies {;
 ;
 ;
  static class GetPackageForIntentSender extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getPackageForIntentSender";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IInterface sender = (IInterface) args[0];
  if (sender != null) {;
@@ -665,7 +665,7 @@ class MethodProxies {;
  return super.call(who, method, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -675,17 +675,17 @@ class MethodProxies {;
  @SuppressWarnings("unchecked");
  static class PublishContentProviders extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "publishContentProviders";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -693,19 +693,19 @@ class MethodProxies {;
 ;
 ;
  static class GetServices extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getServices";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  int maxNum = (int) args[0];
  int flags = (int) args[1];
  return VActivityManager.get().getServices(maxNum, flags).getList();
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -713,18 +713,18 @@ class MethodProxies {;
 ;
  static class GrantUriPermissionFromOwner extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "grantUriPermissionFromOwner";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -732,12 +732,12 @@ class MethodProxies {;
 ;
  static class SetServiceForeground extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "setServiceForeground";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  ComponentName component = (ComponentName) args[0];
  IBinder token = (IBinder) args[1];
@@ -773,7 +773,7 @@ class MethodProxies {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -782,18 +782,18 @@ class MethodProxies {;
 ;
  static class UpdateDeviceOwner extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "updateDeviceOwner";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -803,12 +803,12 @@ class MethodProxies {;
 ;
  static class GetIntentForIntentSender extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getIntentForIntentSender";
  }
 ;
- @Override;
+ @Override
  public Object afterCall(Object who, Method method, Object[] args, Object result) throws Throwable {;
  Intent intent = (Intent) super.afterCall(who, method, args, result);
  if (intent != null && intent.hasExtra("_VA_|_intent_")) {;
@@ -821,12 +821,12 @@ class MethodProxies {;
 ;
  static class UnbindFinished extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "unbindFinished";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IBinder token = (IBinder) args[0];
  Intent service = (Intent) args[1];
@@ -835,19 +835,19 @@ class MethodProxies {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
  }
 ;
  static class StartActivityIntentSender extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "startActivityIntentSender";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
 ;
  return super.call(who, method, args);
@@ -857,12 +857,12 @@ class MethodProxies {;
 ;
  static class BindService extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "bindService";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IInterface caller = (IInterface) args[0];
  IBinder token = (IBinder) args[1];
@@ -888,7 +888,7 @@ class MethodProxies {;
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess() || isServerProcess();
  }
@@ -896,12 +896,12 @@ class MethodProxies {;
 ;
  // http://aospxref.com/android-10.0.0_r2/xref/frameworks/base/core/java/android/app/ContextImpl.java#1735;
  static class BindIsolatedService extends BindService {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "bindIsolatedService";
  }
 ;
- @Override;
+ @Override
  public boolean beforeCall(Object who, Method method, Object... args) {;
  MethodParameterUtils.replaceLastAppPkg(args);
  return super.beforeCall(who, method, args);
@@ -913,12 +913,12 @@ class MethodProxies {;
  // Signature: bindServiceInstance(IApplicationThread, IBinder, Intent, String, IServiceConnection, // long flags, String instanceName, String callingPackage, int userId);
  static class BindServiceInstance extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "bindServiceInstance";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IInterface caller = (IInterface) args[0];
  IBinder token = (IBinder) args[1];
@@ -947,7 +947,7 @@ class MethodProxies {;
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess() || isServerProcess();
  }
@@ -956,12 +956,12 @@ class MethodProxies {;
 ;
  static class StartService extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "startService";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IInterface appThread = (IInterface) args[0];
  Intent service = (Intent) args[1];
@@ -991,7 +991,7 @@ class MethodProxies {;
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess() || isServerProcess();
  }
@@ -1008,12 +1008,12 @@ class MethodProxies {;
  }
 ;
  static class StartActivityAndWait extends StartActivity {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "startActivityAndWait";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return super.call(who, method, args);
  }
@@ -1022,12 +1022,12 @@ class MethodProxies {;
 ;
  static class PublishService extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "publishService";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IBinder token = (IBinder) args[0];
  if (!VActivityManager.get().isVAServiceToken(token)) {;
@@ -1039,7 +1039,7 @@ class MethodProxies {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1049,12 +1049,12 @@ class MethodProxies {;
  @SuppressWarnings("unchecked");
  static class GetRunningAppProcesses extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getRunningAppProcesses";
  }
 ;
- @Override;
+ @Override
  public synchronized Object call(Object who, Method method, Object... args) throws Throwable {;
  List<ActivityManager.RunningAppProcessInfo> infoList = (List<ActivityManager.RunningAppProcessInfo>) method;
  .invoke(who, args);
@@ -1078,12 +1078,12 @@ class MethodProxies {;
 ;
  static class SetPackageAskScreenCompat extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "setPackageAskScreenCompat";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
 ;
  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {;
@@ -1094,7 +1094,7 @@ class MethodProxies {;
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1103,18 +1103,18 @@ class MethodProxies {;
 ;
  static class GetCallingActivity extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getCallingActivity";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IBinder token = (IBinder) args[0];
  return VActivityManager.get().getCallingActivity(token);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1123,12 +1123,12 @@ class MethodProxies {;
 ;
  static class GetCurrentUser extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getCurrentUser";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  try {;
  return UserInfo.ctor.newInstance(0, "user", VUserInfo.FLAG_PRIMARY);
@@ -1142,12 +1142,12 @@ class MethodProxies {;
 ;
  static class KillApplicationProcess extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "killApplicationProcess";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (args.length > 1 && args[0] instanceof String && args[1] instanceof Integer) {;
  String processName = (String) args[0];
@@ -1158,7 +1158,7 @@ class MethodProxies {;
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1167,12 +1167,12 @@ class MethodProxies {;
 ;
  static class StartActivityAsUser extends StartActivity {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "startActivityAsUser";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return super.call(who, method, args);
  }
@@ -1181,12 +1181,12 @@ class MethodProxies {;
 ;
  static class CheckPermission extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "checkPermission";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String permission = (String) args[0];
  if (SpecialComponentList.isWhitePermission(permission)) {;
@@ -1199,7 +1199,7 @@ class MethodProxies {;
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1209,7 +1209,7 @@ class MethodProxies {;
 ;
  static class StartActivityAsCaller extends StartActivity {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "startActivityAsCaller";
  }
@@ -1218,12 +1218,12 @@ class MethodProxies {;
 ;
  static class HandleIncomingUser extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "handleIncomingUser";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  int lastIndex = args.length - 1;
  if (args[lastIndex] instanceof String) {;
@@ -1232,7 +1232,7 @@ class MethodProxies {;
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1243,12 +1243,12 @@ class MethodProxies {;
  @SuppressWarnings("unchecked");
  static class GetTasks extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getTasks";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  List<ActivityManager.RunningTaskInfo> runningTaskInfos = (List<ActivityManager.RunningTaskInfo>) method;
  .invoke(who, args);
@@ -1262,7 +1262,7 @@ class MethodProxies {;
  return runningTaskInfos;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1271,18 +1271,18 @@ class MethodProxies {;
 ;
  static class GetPersistedUriPermissions extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getPersistedUriPermissions";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1294,12 +1294,12 @@ class MethodProxies {;
  // Return an empty list since virtual process exit reasons don't exist at the system level.;
  static class GetHistoricalProcessExitReasons extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getHistoricalProcessExitReasons";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (ParceledListSliceCompat.isReturnParceledListSlice(method)) {;
  return ParceledListSliceCompat.create(new java.util.ArrayList<>());
@@ -1307,7 +1307,7 @@ class MethodProxies {;
  return new java.util.ArrayList<>();
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1328,12 +1328,12 @@ class MethodProxies {;
 ;
  private WeakHashMap<IBinder, IIntentReceiver> mProxyIIntentReceivers = new WeakHashMap<>();
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "registerReceiver";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  args[mRequiredPermissionIndex] = null;
@@ -1345,7 +1345,7 @@ class MethodProxies {;
  final IBinder token = old.asBinder();
  if (token != null) {;
  token.linkToDeath(new IBinder.DeathRecipient() {;
- @Override;
+ @Override
  public void binderDied() {;
  token.unlinkToDeath(this, 0);
  mProxyIIntentReceivers.remove(token);
@@ -1368,7 +1368,7 @@ class MethodProxies {;
  }
 ;
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1416,12 +1416,12 @@ class MethodProxies {;
 ;
  static class StopService extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "stopService";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IInterface caller = (IInterface) args[0];
  Intent intent = (Intent) args[1];
@@ -1441,7 +1441,7 @@ class MethodProxies {;
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess() || isServerProcess();
  }
@@ -1450,12 +1450,12 @@ class MethodProxies {;
 ;
  static class GetContentProvider extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getContentProvider";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  int nameIdx = getProviderNameIndex();
  String name = (String) args[nameIdx];
@@ -1537,7 +1537,7 @@ class MethodProxies {;
  return -1;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1545,12 +1545,12 @@ class MethodProxies {;
 ;
  @TargetApi(Build.VERSION_CODES.LOLLIPOP);
  static class SetTaskDescription extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "setTaskDescription";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  ActivityManager.TaskDescription td = (ActivityManager.TaskDescription) args[1];
  String label = td.getLabel();
@@ -1587,7 +1587,7 @@ class MethodProxies {;
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1595,12 +1595,12 @@ class MethodProxies {;
 ;
  static class StopServiceToken extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "stopServiceToken";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  ComponentName componentName = (ComponentName) args[0];
  IBinder token = (IBinder) args[1];
@@ -1614,31 +1614,31 @@ class MethodProxies {;
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess() || isServerProcess();
  }
  }
 ;
  static class StartActivityWithConfig extends StartActivity {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "startActivityWithConfig";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return super.call(who, method, args);
  }
  }
 ;
  static class StartNextMatchingActivity extends StartActivity {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "startNextMatchingActivity";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return false;
  }
@@ -1647,12 +1647,12 @@ class MethodProxies {;
 ;
  static class BroadcastIntent extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "broadcastIntent";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Intent intent = (Intent) args[1];
  String type = (String) args[2];
@@ -1774,7 +1774,7 @@ class MethodProxies {;
  }
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1783,18 +1783,18 @@ class MethodProxies {;
 ;
  static class GetActivityClassForToken extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getActivityClassForToken";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IBinder token = (IBinder) args[0];
  return VActivityManager.get().getActivityForToken(token);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1803,18 +1803,18 @@ class MethodProxies {;
 ;
  static class CheckGrantUriPermission extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "checkGrantUriPermission";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  return method.invoke(who, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1823,12 +1823,12 @@ class MethodProxies {;
 ;
  static class ServiceDoneExecuting extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "serviceDoneExecuting";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IBinder token = (IBinder) args[0];
  if (!VActivityManager.get().isVAServiceToken(token)) {;
@@ -1841,7 +1841,7 @@ class MethodProxies {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }
@@ -1869,7 +1869,7 @@ class MethodProxies {;
  }
  }
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "registerReceiverWithFeature";
  }
@@ -1884,7 +1884,7 @@ class MethodProxies {;
  mFlagsIndex = 8;
  }
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getIntentSenderWithFeature";
  }

@@ -38,7 +38,7 @@ public class ChooseAccountTypeActivity extends Activity {;
  private HashMap<String, AuthInfo> mTypeToAuthenticatorInfo = new HashMap<String, AuthInfo>();
  private ArrayList<AuthInfo> mAuthenticatorInfosToDisplay;
 ;
- @Override;
+ @Override
  public void onCreate(Bundle savedInstanceState) {;
  super.onCreate(savedInstanceState);
 ;
@@ -150,7 +150,7 @@ public class ChooseAccountTypeActivity extends Activity {;
  Context.LAYOUT_INFLATER_SERVICE);
  }
 ;
- @Override;
+ @Override
  public View getView(int position, View convertView, ViewGroup parent) {;
  ViewHolder holder;
 ;

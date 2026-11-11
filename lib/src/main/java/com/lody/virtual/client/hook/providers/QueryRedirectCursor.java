@@ -24,7 +24,7 @@ class QueryRedirectCursor extends CrossProcessCursorWrapper {;
  dataIndex = cursor.getColumnIndex(columnName);
  }
 ;
- @Override;
+ @Override
  public void copyStringToBuffer(int columnIndex, CharArrayBuffer buffer) {;
  if (columnIndex < 0 || columnIndex != this.dataIndex || buffer == null) {;
  super.copyStringToBuffer(columnIndex, buffer);
@@ -43,7 +43,7 @@ class QueryRedirectCursor extends CrossProcessCursorWrapper {;
  buffer.sizeCopied = v1;
  }
 ;
- @Override;
+ @Override
  public String getString(int columnIndex) {;
  String originalPath = super.getString(columnIndex);
  if (columnIndex < 0 || columnIndex != this.dataIndex) {;

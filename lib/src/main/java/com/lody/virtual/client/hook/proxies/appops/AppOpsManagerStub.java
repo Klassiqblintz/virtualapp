@@ -26,7 +26,7 @@ public class AppOpsManagerStub extends BinderInvocationProxy {;
  super(IAppOpsService.Stub.asInterface, Context.APP_OPS_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new BaseMethodProxy("checkOperation", 1, 2));
@@ -41,12 +41,12 @@ public class AppOpsManagerStub extends BinderInvocationProxy {;
  addMethodProxy(new BaseMethodProxy("setAudioRestriction", 2, -1));
  addMethodProxy(new ReplaceLastPkgMethodProxy("resetAllModes"));
  addMethodProxy(new MethodProxy() {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "noteProxyOperation";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return 0;
  }
@@ -63,7 +63,7 @@ public class AppOpsManagerStub extends BinderInvocationProxy {;
  this.uidIndex = uidIndex;
  }
 ;
- @Override;
+ @Override
  public boolean beforeCall(Object who, Method method, Object... args) {;
  if (pkgIndex != -1 && args.length > pkgIndex && args[pkgIndex] instanceof String) {;
  args[pkgIndex] = getHostPkg();

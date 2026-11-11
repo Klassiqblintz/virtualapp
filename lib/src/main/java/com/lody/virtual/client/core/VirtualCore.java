@@ -558,7 +558,7 @@ public final class VirtualCore {;
  List<ShortcutInfo> dynamicShortcuts = shortcutManager.getDynamicShortcuts();
  if (dynamicShortcuts.size() >= max) {;
  Collections.sort(dynamicShortcuts, new Comparator<ShortcutInfo>() {;
- @Override;
+ @Override
  public int compare(ShortcutInfo o1, ShortcutInfo o2) {;
  long r = o1.getLastChangedTimestamp() - o2.getLastChangedTimestamp();
  return r == 0 ? 0 : (r > 0 ? 1 : -1);
@@ -814,20 +814,20 @@ public final class VirtualCore {;
 ;
  public void setAppRequestListener(final AppRequestListener listener) {;
  IAppRequestListener inner = new IAppRequestListener.Stub() {;
- @Override;
+ @Override
  public void onRequestInstall(final String path) {;
  VirtualRuntime.getUIHandler().post(new Runnable() {;
- @Override;
+ @Override
  public void run() {;
  listener.onRequestInstall(path);
  }
  });
  }
 ;
- @Override;
+ @Override
  public void onRequestUninstall(final String pkg) {;
  VirtualRuntime.getUIHandler().post(new Runnable() {;
- @Override;
+ @Override
  public void run() {;
  listener.onRequestUninstall(pkg);
  }

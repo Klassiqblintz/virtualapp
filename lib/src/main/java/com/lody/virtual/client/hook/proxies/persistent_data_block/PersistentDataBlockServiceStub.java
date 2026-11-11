@@ -14,7 +14,7 @@ public class PersistentDataBlockServiceStub extends BinderInvocationProxy {;
  super(IPersistentDataBlockService.Stub.asInterface, "persistent_data_block");
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ResultStaticMethodProxy("write", -1));

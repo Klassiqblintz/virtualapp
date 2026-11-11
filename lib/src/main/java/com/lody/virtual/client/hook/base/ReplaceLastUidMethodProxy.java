@@ -12,7 +12,7 @@ public class ReplaceLastUidMethodProxy extends StaticMethodProxy {;
  super(name);
  }
 ;
- @Override;
+ @Override
  public boolean beforeCall(Object who, Method method, Object... args) {;
  int index = ArrayUtils.indexOfLast(args, Integer.class);
  if (index != -1) {;

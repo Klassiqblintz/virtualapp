@@ -23,12 +23,12 @@ public class ActivityTaskManagerStub extends BinderInvocationProxy {;
  super(IActivityTaskManager.Stub.TYPE, "activity_task");
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
 ;
  addMethodProxy(new StaticMethodProxy("activityDestroyed") {;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IBinder token = (IBinder) args[0];
  VActivityManager.get().onActivityDestroy(token);
@@ -36,7 +36,7 @@ public class ActivityTaskManagerStub extends BinderInvocationProxy {;
  }
  });
  addMethodProxy(new StaticMethodProxy("activityResumed") {;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IBinder token = (IBinder) args[0];
  VActivityManager.get().onActivityResumed(token);
@@ -44,7 +44,7 @@ public class ActivityTaskManagerStub extends BinderInvocationProxy {;
  }
  });
  addMethodProxy(new StaticMethodProxy("finishActivity") {;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  IBinder token = (IBinder) args[0];
  VActivityManager.get().finishActivity(token);

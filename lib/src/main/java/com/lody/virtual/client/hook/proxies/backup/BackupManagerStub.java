@@ -17,7 +17,7 @@ public class BackupManagerStub extends BinderInvocationProxy {;
  super(IBackupManager.Stub.asInterface, "backup");
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ResultStaticMethodProxy("dataChanged", null));

@@ -19,7 +19,7 @@ public class RestrictionStub extends BinderInvocationProxy {;
  super(IRestrictionsManager.Stub.asInterface, Context.RESTRICTIONS_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ReplaceCallingPkgMethodProxy("getApplicationRestrictions"));

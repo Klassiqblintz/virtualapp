@@ -21,11 +21,11 @@ public class PowerManagerStub extends BinderInvocationProxy {;
  super(IPowerManager.Stub.asInterface, Context.POWER_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ReplaceSequencePkgMethodProxy("acquireWakeLock", 2) {;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  try {;
  return super.call(who, method, args);
@@ -36,7 +36,7 @@ public class PowerManagerStub extends BinderInvocationProxy {;
  });
  addMethodProxy(new ReplaceLastPkgMethodProxy("acquireWakeLockWithUid") {;
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  try {;
  return super.call(who, method, args);

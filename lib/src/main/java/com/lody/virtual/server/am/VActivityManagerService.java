@@ -126,14 +126,14 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public int startActivity(Intent intent, ActivityInfo info, IBinder resultTo, Bundle options, String resultWho, int requestCode, int userId) {;
  synchronized (this) {;
  return mMainStack.startActivityLocked(userId, intent, info, resultTo, options, resultWho, requestCode);
  }
  }
 ;
- @Override;
+ @Override
  public int startActivities(Intent[] intents, String[] resolvedTypes, IBinder token, Bundle options, int userId) {;
  synchronized (this) {;
  ActivityInfo[] infos = new ActivityInfo[intents.length];
@@ -149,7 +149,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public String getPackageForIntentSender(IBinder binder) {;
  PendingIntentData data = mPendingIntents.getPendingIntent(binder);
  if (data != null) {;
@@ -159,27 +159,27 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public PendingIntentData getPendingIntent(IBinder binder) {;
  return mPendingIntents.getPendingIntent(binder);
  }
 ;
- @Override;
+ @Override
  public void addPendingIntent(IBinder binder, String creator) {;
  mPendingIntents.addPendingIntent(binder, creator);
  }
 ;
- @Override;
+ @Override
  public void removePendingIntent(IBinder binder) {;
  mPendingIntents.removePendingIntent(binder);
  }
 ;
- @Override;
+ @Override
  public int getSystemPid() {;
  return VirtualCore.get().myUid();
  }
 ;
- @Override;
+ @Override
  public void onActivityCreated(ComponentName component, ComponentName caller, IBinder token, Intent intent, String affinity, int taskId, int launchMode, int flags) {;
  int pid = Binder.getCallingPid();
  ProcessRecord targetApp = findProcessLocked(pid);
@@ -188,28 +188,28 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void onActivityResumed(int userId, IBinder token) {;
  mMainStack.onActivityResumed(userId, token);
  }
 ;
- @Override;
+ @Override
  public boolean onActivityDestroyed(int userId, IBinder token) {;
  ActivityRecord r = mMainStack.onActivityDestroyed(userId, token);
  return r != null;
  }
 ;
- @Override;
+ @Override
  public AppTaskInfo getTaskInfo(int taskId) {;
  return mMainStack.getTaskInfo(taskId);
  }
 ;
- @Override;
+ @Override
  public String getPackageForToken(int userId, IBinder token) {;
  return mMainStack.getPackageForToken(userId, token);
  }
 ;
- @Override;
+ @Override
  public ComponentName getActivityClassForToken(int userId, IBinder token) {;
  return mMainStack.getActivityClassForToken(userId, token);
  }
@@ -229,7 +229,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public IBinder acquireProviderClient(int userId, ProviderInfo info) {;
  ProcessRecord callerApp;
  synchronized (mPidsSelfLocked) {;
@@ -253,18 +253,18 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  return null;
  }
 ;
- @Override;
+ @Override
  public ComponentName getCallingActivity(int userId, IBinder token) {;
  return mMainStack.getCallingActivity(userId, token);
  }
 ;
- @Override;
+ @Override
  public String getCallingPackage(int userId, IBinder token) {;
  return mMainStack.getCallingPackage(userId, token);
  }
 ;
 ;
- @Override;
+ @Override
  public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {;
  try {;
  return super.onTransact(code, data, reply, flags);
@@ -304,7 +304,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public ComponentName startService(IBinder caller, Intent service, String resolvedType, int userId) {;
  synchronized (this) {;
  return startServiceCommon(service, true, userId);
@@ -352,7 +352,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  return ComponentUtils.toComponentName(serviceInfo);
  }
 ;
- @Override;
+ @Override
  public int stopService(IBinder caller, Intent service, String resolvedType, int userId) {;
  synchronized (this) {;
  ServiceInfo serviceInfo = resolveServiceInfo(service, userId);
@@ -368,7 +368,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public boolean stopServiceToken(ComponentName className, IBinder token, int startId, int userId) {;
  synchronized (this) {;
  ServiceRecord r = (ServiceRecord) token;
@@ -411,7 +411,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
 ;
  }
 ;
- @Override;
+ @Override
  public int bindService(IBinder caller, IBinder token, Intent service, String resolvedType, IServiceConnection connection, int flags, int userId) {;
  synchronized (this) {;
  ServiceInfo serviceInfo = resolveServiceInfo(service, userId);
@@ -455,7 +455,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public boolean unbindService(IServiceConnection connection, int userId) {;
  synchronized (this) {;
  ServiceRecord r = findRecordLocked(connection);
@@ -489,7 +489,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void unbindFinished(IBinder token, Intent service, boolean doRebind, int userId) {;
  synchronized (this) {;
  ServiceRecord r = (ServiceRecord) token;
@@ -503,13 +503,13 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public boolean isVAServiceToken(IBinder token) {;
  return token instanceof ServiceRecord;
  }
 ;
 ;
- @Override;
+ @Override
  public void serviceDoneExecuting(IBinder token, int type, int startId, int res, int userId) {;
  synchronized (this) {;
  ServiceRecord r = (ServiceRecord) token;
@@ -522,7 +522,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public IBinder peekService(Intent service, String resolvedType, int userId) {;
  synchronized (this) {;
  ServiceInfo serviceInfo = resolveServiceInfo(service, userId);
@@ -540,7 +540,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void publishService(IBinder token, Intent intent, IBinder service, int userId) {;
  synchronized (this) {;
  ServiceRecord r = (ServiceRecord) token;
@@ -570,7 +570,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public VParceledListSlice<ActivityManager.RunningServiceInfo> getServices(int maxNum, int flags, int userId) {;
  synchronized (mHistory) {;
  List<ActivityManager.RunningServiceInfo> services = new ArrayList<>(mHistory.size());
@@ -597,7 +597,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void setServiceForeground(ComponentName className, IBinder token, int id, Notification notification, boolean removeNotification, int userId) {;
  ServiceRecord r = (ServiceRecord) token;
  if (r != null) {;
@@ -641,7 +641,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void processRestarted(String packageName, String processName, int userId) {;
  int callingPid = getCallingPid();
  int appId = VAppManagerService.get().getAppId(packageName);
@@ -715,7 +715,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  try {;
  final ProcessRecord record = app;
  clientBinder.linkToDeath(new DeathRecipient() {;
- @Override;
+ @Override
  public void binderDied() {;
  clientBinder.unlinkToDeath(this, 0);
  onProcessDead(record);
@@ -740,12 +740,12 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  record.lock.open();
  }
 ;
- @Override;
+ @Override
  public int getFreeStubCount() {;
  return VASettings.STUB_COUNT - mPidsSelfLocked.size();
  }
 ;
- @Override;
+ @Override
  public int initProcess(String packageName, String processName, int userId) {;
  synchronized (this) {;
  ProcessRecord r = startProcessIfNeedLocked(processName, userId, packageName);
@@ -793,7 +793,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public int getUidByPid(int pid) {;
  synchronized (mPidsSelfLocked) {;
  ProcessRecord r = findProcessLocked(pid);
@@ -840,19 +840,19 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  return -1;
  }
 ;
- @Override;
+ @Override
  public boolean isAppProcess(String processName) {;
  return parseVPid(processName) != -1;
  }
 ;
- @Override;
+ @Override
  public boolean isAppPid(int pid) {;
  synchronized (mPidsSelfLocked) {;
  return findProcessLocked(pid) != null;
  }
  }
 ;
- @Override;
+ @Override
  public String getAppProcessName(int pid) {;
  synchronized (mPidsSelfLocked) {;
  ProcessRecord r = mPidsSelfLocked.get(pid);
@@ -863,7 +863,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  return null;
  }
 ;
- @Override;
+ @Override
  public List<String> getProcessPkgList(int pid) {;
  synchronized (mPidsSelfLocked) {;
  ProcessRecord r = mPidsSelfLocked.get(pid);
@@ -874,7 +874,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  return Collections.emptyList();
  }
 ;
- @Override;
+ @Override
  public void killAllApps() {;
  synchronized (mPidsSelfLocked) {;
  for (int i = 0; i < mPidsSelfLocked.size(); i++) {;
@@ -884,7 +884,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void killAppByPkg(final String pkg, int userId) {;
  synchronized (mProcessNames) {;
  ArrayMap<String, SparseArray<ProcessRecord>> map = mProcessNames.getMap();
@@ -906,7 +906,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public boolean isAppRunning(String packageName, int userId) {;
  boolean running = false;
  synchronized (mPidsSelfLocked) {;
@@ -922,7 +922,7 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void killApplicationProcess(final String processName, int uid) {;
  synchronized (mProcessNames) {;
  ProcessRecord r = mProcessNames.get(processName, uid);
@@ -932,22 +932,22 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void dump() {;
 ;
  }
 ;
- @Override;
+ @Override
  public void registerProcessObserver(IProcessObserver observer) {;
 ;
  }
 ;
- @Override;
+ @Override
  public void unregisterProcessObserver(IProcessObserver observer) {;
 ;
  }
 ;
- @Override;
+ @Override
  public String getInitialPackage(int pid) {;
  synchronized (mPidsSelfLocked) {;
  ProcessRecord r = mPidsSelfLocked.get(pid);
@@ -958,12 +958,12 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void handleApplicationCrash() {;
  // Nothing;
  }
 ;
- @Override;
+ @Override
  public void appDoneExecuting() {;
  synchronized (mPidsSelfLocked) {;
  ProcessRecord r = mPidsSelfLocked.get(VBinder.getCallingPid());
@@ -1107,12 +1107,12 @@ public class VActivityManagerService extends IActivityManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void broadcastFinish(PendingResultData res) {;
  BroadcastSystem.get().broadcastFinish(res);
  }
 ;
- @Override;
+ @Override
  public void notifyBadgerChange(BadgerInfo info) throws RemoteException {;
  Intent intent = new Intent(VASettings.ACTION_BADGER_CHANGE);
  intent.putExtra("userId", info.userId);

@@ -12,9 +12,9 @@ import android.os.ParcelFileDescriptor;
  * Stub interface for IPackageInstallerSession.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface IPackageInstallerSession.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements IPackageInstallerSession.java {
- private static final String DESCRIPTOR = "android.content.pm.IPackageInstallerSession.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "android.content.pm.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -23,8 +23,8 @@ public interface IPackageInstallerSession.java extends IInterface {
  public static IPackageInstallerSession.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof IPackageInstallerSession.java) {
- return (IPackageInstallerSession.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (IPackageInstallerSession) iface;
  }
  return new Proxy(obj);
  }
@@ -43,7 +43,7 @@ public interface IPackageInstallerSession.java extends IInterface {
  }
  }
 
- public static class Proxy implements IPackageInstallerSession.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

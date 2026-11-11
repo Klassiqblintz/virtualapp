@@ -48,13 +48,13 @@ public class DaemonService extends Service {;
  }
  }
 ;
- @Override;
+ @Override
  public void onDestroy() {;
  super.onDestroy();
  startup(this);
  }
 ;
- @Override;
+ @Override
  public IBinder onBind(Intent intent) {;
  return null;
  }
@@ -77,7 +77,7 @@ public class DaemonService extends Service {;
  }
  }
 ;
- @Override;
+ @Override
  public void onCreate() {;
  super.onCreate();
  if (!showNotification) {;
@@ -96,14 +96,14 @@ public class DaemonService extends Service {;
  }
  }
 ;
- @Override;
+ @Override
  public int onStartCommand(Intent intent, int flags, int startId) {;
  return START_STICKY;
  }
 ;
  public static final class InnerService extends Service {;
 ;
- @Override;
+ @Override
  public int onStartCommand(Intent intent, int flags, int startId) {;
  try {;
  startForeground(NOTIFY_ID, buildNotification(this));
@@ -115,7 +115,7 @@ public class DaemonService extends Service {;
  return super.onStartCommand(intent, flags, startId);
  }
 ;
- @Override;
+ @Override
  public IBinder onBind(Intent intent) {;
  return null;
  }

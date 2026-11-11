@@ -64,7 +64,7 @@ public class VAppManagerService extends IAppManager.Stub {;
  return mBooting;
  }
 ;
- @Override;
+ @Override
  public void scanApps() {;
  if (mBooting) {;
  return;
@@ -139,26 +139,26 @@ public class VAppManagerService extends IAppManager.Stub {;
  return true;
  }
 ;
- @Override;
+ @Override
  public boolean isOutsidePackageVisible(String pkg) {;
  return pkg != null && mVisibleOutsidePackages.contains(pkg);
  }
 ;
- @Override;
+ @Override
  public void addVisibleOutsidePackage(String pkg) {;
  if (pkg != null) {;
  mVisibleOutsidePackages.add(pkg);
  }
  }
 ;
- @Override;
+ @Override
  public void removeVisibleOutsidePackage(String pkg) {;
  if (pkg != null) {;
  mVisibleOutsidePackages.remove(pkg);
  }
  }
 ;
- @Override;
+ @Override
  public InstallResult installPackage(String path, int flags) {;
  return installPackage(path, flags, true);
  }
@@ -309,7 +309,7 @@ public class VAppManagerService extends IAppManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public synchronized boolean installPackageAsUser(int userId, String packageName) {;
  if (VUserManagerService.get().exists(userId)) {;
  PackageSetting ps = PackageCacheManager.getSetting(packageName);
@@ -355,7 +355,7 @@ public class VAppManagerService extends IAppManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public synchronized boolean uninstallPackage(String packageName) {;
  PackageSetting ps = PackageCacheManager.getSetting(packageName);
  if (ps != null) {;
@@ -365,7 +365,7 @@ public class VAppManagerService extends IAppManager.Stub {;
  return false;
  }
 ;
- @Override;
+ @Override
  public boolean clearPackageAsUser(int userId, String packageName) throws RemoteException {;
  if (!VUserManagerService.get().exists(userId)) {;
  return false;
@@ -391,7 +391,7 @@ public class VAppManagerService extends IAppManager.Stub {;
  return false;
  }
 ;
- @Override;
+ @Override
  public boolean clearPackage(String packageName) throws RemoteException {;
  try {;
  BroadcastSystem.get().stopApp(packageName);
@@ -407,7 +407,7 @@ public class VAppManagerService extends IAppManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public synchronized boolean uninstallPackageAsUser(String packageName, int userId) {;
  if (!VUserManagerService.get().exists(userId)) {;
  return false;
@@ -454,7 +454,7 @@ public class VAppManagerService extends IAppManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public int[] getPackageInstalledUsers(String packageName) {;
  PackageSetting ps = PackageCacheManager.getSetting(packageName);
  if (ps != null) {;
@@ -470,7 +470,7 @@ public class VAppManagerService extends IAppManager.Stub {;
  return new int[0];
  }
 ;
- @Override;
+ @Override
  public List<InstalledAppInfo> getInstalledApps(int flags) {;
  List<InstalledAppInfo> infoList = new ArrayList<>(getInstalledAppCount());
  for (VPackage p : PackageCacheManager.PACKAGE_CACHE.values()) {;
@@ -480,7 +480,7 @@ public class VAppManagerService extends IAppManager.Stub {;
  return infoList;
  }
 ;
- @Override;
+ @Override
  public List<InstalledAppInfo> getInstalledAppsAsUser(int userId, int flags) {;
  List<InstalledAppInfo> infoList = new ArrayList<>(getInstalledAppCount());
  for (VPackage p : PackageCacheManager.PACKAGE_CACHE.values()) {;
@@ -496,17 +496,17 @@ public class VAppManagerService extends IAppManager.Stub {;
  return infoList;
  }
 ;
- @Override;
+ @Override
  public int getInstalledAppCount() {;
  return PackageCacheManager.PACKAGE_CACHE.size();
  }
 ;
- @Override;
+ @Override
  public boolean isAppInstalled(String packageName) {;
  return packageName != null && PackageCacheManager.PACKAGE_CACHE.containsKey(packageName);
  }
 ;
- @Override;
+ @Override
  public boolean isAppInstalledAsUser(int userId, String packageName) {;
  if (packageName == null || !VUserManagerService.get().exists(userId)) {;
  return false;
@@ -572,7 +572,7 @@ public class VAppManagerService extends IAppManager.Stub {;
  VActivityManagerService.get().sendBroadcastAsUser(intent, VUserHandle.ALL);
  }
 ;
- @Override;
+ @Override
  public void registerObserver(IPackageObserver observer) {;
  try {;
  mRemoteCallbackList.register(observer);
@@ -581,7 +581,7 @@ public class VAppManagerService extends IAppManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void unregisterObserver(IPackageObserver observer) {;
  try {;
  mRemoteCallbackList.unregister(observer);
@@ -590,18 +590,18 @@ public class VAppManagerService extends IAppManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public IAppRequestListener getAppRequestListener() {;
  return mAppRequestListener;
  }
 ;
- @Override;
+ @Override
  public void setAppRequestListener(final IAppRequestListener listener) {;
  this.mAppRequestListener = listener;
  if (listener != null) {;
  try {;
  listener.asBinder().linkToDeath(new DeathRecipient() {;
- @Override;
+ @Override
  public void binderDied() {;
  listener.asBinder().unlinkToDeath(this, 0);
  VAppManagerService.this.mAppRequestListener = null;
@@ -613,12 +613,12 @@ public class VAppManagerService extends IAppManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void clearAppRequestListener() {;
  this.mAppRequestListener = null;
  }
 ;
- @Override;
+ @Override
  public InstalledAppInfo getInstalledAppInfo(String packageName, int flags) {;
  synchronized (PackageCacheManager.class) {;
  if (packageName != null) {;

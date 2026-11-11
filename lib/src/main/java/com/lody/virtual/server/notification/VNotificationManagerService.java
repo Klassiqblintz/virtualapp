@@ -43,7 +43,7 @@ public class VNotificationManagerService extends INotificationManager.Stub {;
  * @param userId user;
  * @return;
  */;
- @Override;
+ @Override
  public int dealNotificationId(int id, String packageName, String tag, int userId) {;
  return id;
  }
@@ -57,7 +57,7 @@ public class VNotificationManagerService extends INotificationManager.Stub {;
  * @param userId user;
  * @return;
  */;
- @Override;
+ @Override
  public String dealNotificationTag(int id, String packageName, String tag, int userId) {;
  if (TextUtils.equals(mContext.getPackageName(), packageName)) {;
  return tag;
@@ -68,12 +68,12 @@ public class VNotificationManagerService extends INotificationManager.Stub {;
  return packageName + ":" + tag + "@" + userId;
  }
 ;
- @Override;
+ @Override
  public boolean areNotificationsEnabledForPackage(String packageName, int userId) {;
  return !mDisables.contains(packageName + ":" + userId);
  }
 ;
- @Override;
+ @Override
  public void setNotificationsEnabledForPackage(String packageName, boolean enable, int userId) {;
  String key = packageName + ":" + userId;
  if (enable) {;
@@ -88,7 +88,7 @@ public class VNotificationManagerService extends INotificationManager.Stub {;
  //TODO: save mDisables ?;
  }
 ;
- @Override;
+ @Override
  public void addNotification(int id, String tag, String packageName, int userId) {;
  NotificationInfo notificationInfo = new NotificationInfo(id, tag, packageName, userId);
  synchronized (mNotifications) {;
@@ -103,7 +103,7 @@ public class VNotificationManagerService extends INotificationManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void cancelAllNotification(String packageName, int userId) {;
  List<NotificationInfo> infos = new ArrayList<>();
  synchronized (mNotifications) {;
@@ -138,7 +138,7 @@ public class VNotificationManagerService extends INotificationManager.Stub {;
  this.userId = userId;
  }
 ;
- @Override;
+ @Override
  public boolean equals(Object obj) {;
  if (obj instanceof NotificationInfo) {;
  NotificationInfo that = (NotificationInfo) obj;

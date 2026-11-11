@@ -18,7 +18,7 @@ public class AudioManagerStub extends BinderInvocationProxy {;
  super(IAudioService.Stub.asInterface, Context.AUDIO_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ReplaceLastPkgMethodProxy("adjustVolume"));

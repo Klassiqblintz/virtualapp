@@ -21,9 +21,9 @@ import android.content.pm.PermissionGroupInfo;
  * Stub interface for IPackageManager.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface IPackageManager.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements IPackageManager.java {
- private static final String DESCRIPTOR = "com.lody.virtual.server.IPackageManager.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "com.lody.virtual.server.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -32,8 +32,8 @@ public interface IPackageManager.java extends IInterface {
  public static IPackageManager.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof IPackageManager.java) {
- return (IPackageManager.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (IPackageManager) iface;
  }
  return new Proxy(obj);
  }
@@ -44,15 +44,15 @@ public interface IPackageManager.java extends IInterface {
  @Override
  public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException {
  switch (code) {
- case android.os.IBinder.INTERFACE_TRANSACTION:
+ case android.os.IBinder.INTERFACE_TRANSACTION:;
  reply.writeString(DESCRIPTOR);
  return true;
- default:
+ default:;
  return super.onTransact(code, data, reply, flags);
  }
  }
 
- public static class Proxy implements IPackageManager.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

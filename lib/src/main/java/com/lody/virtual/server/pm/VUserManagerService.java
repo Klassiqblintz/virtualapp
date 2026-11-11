@@ -164,7 +164,7 @@ public class VUserManagerService extends IUserManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public List<VUserInfo> getUsers(boolean excludeDying) {;
  //checkManageUsersPermission("query users");
  synchronized (mPackagesLock) {;
@@ -182,7 +182,7 @@ public class VUserManagerService extends IUserManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public VUserInfo getUserInfo(int userId) {;
  //checkManageUsersPermission("query user");
  synchronized (mPackagesLock) {;
@@ -209,7 +209,7 @@ public class VUserManagerService extends IUserManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void setUserName(int userId, String name) {;
  checkManageUsersPermission("rename users");
  boolean changed = false;
@@ -230,7 +230,7 @@ public class VUserManagerService extends IUserManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void setUserIcon(int userId, Bitmap bitmap) {;
  checkManageUsersPermission("update users");
  synchronized (mPackagesLock) {;
@@ -252,7 +252,7 @@ public class VUserManagerService extends IUserManager.Stub {;
  VActivityManagerService.get().sendBroadcastAsUser(changedIntent, new VUserHandle(userId));
  }
 ;
- @Override;
+ @Override
  public Bitmap getUserIcon(int userId) {;
  //checkManageUsersPermission("read users");
  synchronized (mPackagesLock) {;
@@ -268,14 +268,14 @@ public class VUserManagerService extends IUserManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public boolean isGuestEnabled() {;
  synchronized (mPackagesLock) {;
  return mGuestEnabled;
  }
  }
 ;
- @Override;
+ @Override
  public void setGuestEnabled(boolean enable) {;
  checkManageUsersPermission("enable guest users");
  synchronized (mPackagesLock) {;
@@ -299,7 +299,7 @@ public class VUserManagerService extends IUserManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void wipeUser(int userHandle) {;
  checkManageUsersPermission("wipe user");
  // TODO:;
@@ -661,7 +661,7 @@ public class VUserManagerService extends IUserManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public VUserInfo createUser(String name, int flags) {;
  checkManageUsersPermission("Only the system can create users");
 ;
@@ -719,11 +719,11 @@ public class VUserManagerService extends IUserManager.Stub {;
  }
  if (DBG) VLog.i(LOG_TAG, "Stopping user " + userHandle);
  int res = VActivityManagerService.get().stopUser(userHandle, new IStopUserCallback.Stub() {;
- @Override;
+ @Override
  public void userStopped(int userId) {;
  finishRemoveUser(userId);
  }
- @Override;
+ @Override
  public void userStopAborted(int userId) {;
  }
  });
@@ -740,7 +740,7 @@ public class VUserManagerService extends IUserManager.Stub {;
  addedIntent.putExtra(Constants.EXTRA_USER_HANDLE, userHandle);
  VActivityManagerService.get().sendOrderedBroadcastAsUser(addedIntent, VUserHandle.ALL, null;
  new BroadcastReceiver() {;
- @Override;
+ @Override
  public void onReceive(Context context, Intent intent) {;
  if (DBG) {;
  VLog.i(LOG_TAG, "USER_REMOVED broadcast sent, cleaning up user data ";
@@ -789,7 +789,7 @@ public class VUserManagerService extends IUserManager.Stub {;
  parent.delete();
  }
 ;
- @Override;
+ @Override
  public int getUserSerialNumber(int userHandle) {;
  synchronized (mPackagesLock) {;
  if (!exists(userHandle)) return -1;
@@ -797,7 +797,7 @@ public class VUserManagerService extends IUserManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public int getUserHandle(int userSerialNumber) {;
  synchronized (mPackagesLock) {;
  for (int userId : mUserIds) {;
@@ -867,7 +867,7 @@ public class VUserManagerService extends IUserManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  protected void dump(FileDescriptor fd, PrintWriter pw, String[] args) {;
 ;
  }

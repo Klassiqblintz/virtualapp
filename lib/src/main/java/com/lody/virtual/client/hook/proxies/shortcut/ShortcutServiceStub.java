@@ -31,12 +31,12 @@ public class ShortcutServiceStub extends BinderInvocationProxy {;
  super(IShortcutService.Stub.asInterface, "shortcut");
  }
 ;
- @Override;
+ @Override
  public void inject() throws Throwable {;
  super.inject();
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ReplaceCallingPkgMethodProxy("getManifestShortcuts"));
@@ -110,7 +110,7 @@ public class ShortcutServiceStub extends BinderInvocationProxy {;
  super(name);
  }
 ;
- @Override;
+ @Override
  public boolean beforeCall(Object who, Method method, Object... args) {;
 ;
  List<ShortcutInfo> shortcutList = findFirstShortcutList(args);
@@ -145,7 +145,7 @@ public class ShortcutServiceStub extends BinderInvocationProxy {;
  }
 ;
  @TargetApi(Build.VERSION_CODES.LOLLIPOP);
- @Override;
+ @Override
  public boolean beforeCall(Object who, Method method, Object... args) {;
  ShortcutInfo shortcutInfo = findFirstShortcutInfo(args);
  replaceShortcutInfo(shortcutInfo, getHostPkg(), getPM());

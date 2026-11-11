@@ -12,7 +12,7 @@ public class StaticMethodProxy extends MethodProxy {;
  this.mName = name;
  }
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return mName;
  }

@@ -20,7 +20,7 @@ public class DevicePolicyManagerStub extends BinderInvocationProxy{;
  super(IDevicePolicyManager.Stub.asInterface, Context.DEVICE_POLICY_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new GetStorageEncryptionStatus());
@@ -28,12 +28,12 @@ public class DevicePolicyManagerStub extends BinderInvocationProxy{;
 ;
  private static class GetStorageEncryptionStatus extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getStorageEncryptionStatus";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  args[0] = VirtualCore.get().getHostPkg();
  return method.invoke(who, args);

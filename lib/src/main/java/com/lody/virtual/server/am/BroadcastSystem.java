@@ -228,7 +228,7 @@ public class BroadcastSystem {;
  }
 ;
  private final class TimeoutHandler extends Handler {;
- @Override;
+ @Override
  public void handleMessage(Message msg) {;
  IBinder token = (IBinder) msg.obj;
  BroadcastRecord r = mBroadcastRecords.remove(token);
@@ -252,7 +252,7 @@ public class BroadcastSystem {;
  this.filter = filter;
  }
 ;
- @Override;
+ @Override
  public void onReceive(Context context, Intent intent) {;
  if (mApp.isBooting()) {;
  return;

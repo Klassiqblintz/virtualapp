@@ -25,24 +25,24 @@ class VSPersistenceLayer extends PersistenceLayer {;
  this.mService = service;
  }
 ;
- @Override;
+ @Override
  public int getCurrentVersion() {;
  return CURRENT_VERSION;
  }
 ;
- @Override;
+ @Override
  public void writeMagic(Parcel p) {;
  p.writeCharArray(MAGIC);
  }
 ;
- @Override;
+ @Override
  public boolean verifyMagic(Parcel p) {;
  char[] magic = p.createCharArray();
  return Arrays.equals(magic, MAGIC);
  }
 ;
 ;
- @Override;
+ @Override
  public void writePersistenceData(Parcel p) {;
  final SparseArray<HashMap<String, VSConfig>> configs = mService.getConfigs();
  int N = configs.size();
@@ -56,7 +56,7 @@ class VSPersistenceLayer extends PersistenceLayer {;
 ;
  }
 ;
- @Override;
+ @Override
  public void readPersistenceData(Parcel p) {;
  final SparseArray<HashMap<String, VSConfig>> configs = mService.getConfigs();
  int N = p.readInt();
@@ -68,13 +68,13 @@ class VSPersistenceLayer extends PersistenceLayer {;
  }
  }
 ;
- @Override;
+ @Override
  public boolean onVersionConflict(int fileVersion, int currentVersion) {;
  return false;
  }
 ;
 ;
- @Override;
+ @Override
  public void onPersistenceFileDamage() {;
 ;
  }

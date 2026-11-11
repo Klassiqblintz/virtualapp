@@ -13,7 +13,7 @@ import com.lody.virtual.os.VUserHandle;
 ;
 public class StubPendingReceiver extends BroadcastReceiver {;
 ;
- @Override;
+ @Override
  public void onReceive(Context context, Intent intent) {;
  Intent realIntent = intent.getParcelableExtra("_VA_|_intent_");
  int userId = intent.getIntExtra("_VA_|_user_id_", VUserHandle.USER_ALL);

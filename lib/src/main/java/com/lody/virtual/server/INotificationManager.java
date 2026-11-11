@@ -9,9 +9,9 @@ import android.app.Notification;
  * Stub interface for INotificationManager.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface INotificationManager.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements INotificationManager.java {
- private static final String DESCRIPTOR = "com.lody.virtual.server.INotificationManager.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "com.lody.virtual.server.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -20,8 +20,8 @@ public interface INotificationManager.java extends IInterface {
  public static INotificationManager.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof INotificationManager.java) {
- return (INotificationManager.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (INotificationManager) iface;
  }
  return new Proxy(obj);
  }
@@ -40,7 +40,7 @@ public interface INotificationManager.java extends IInterface {
  }
  }
 
- public static class Proxy implements INotificationManager.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

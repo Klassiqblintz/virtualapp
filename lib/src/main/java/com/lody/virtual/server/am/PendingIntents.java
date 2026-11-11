@@ -26,7 +26,7 @@ public final class PendingIntents {;
  synchronized (mLruHistory) {;
  try {;
  binder.linkToDeath(new IBinder.DeathRecipient() {;
- @Override;
+ @Override
  public void binderDied() {;
  binder.unlinkToDeath(this, 0);
  mLruHistory.remove(binder);

@@ -15,7 +15,7 @@ public class ReplaceSpecPkgMethodProxy extends StaticMethodProxy {;
  this.index = index;
  }
 ;
- @Override;
+ @Override
  public boolean beforeCall(Object who, Method method, Object... args) {;
  if (args != null) {;
  int i = index;

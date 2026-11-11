@@ -45,122 +45,122 @@ public class TransactionHandlerProxy extends ClientTransactionHandler {;
  this.originalHandler = originalHandler;
  }
 ;
- @Override;
+ @Override
  TransactionExecutor getTransactionExecutor() {;
  return originalHandler.getTransactionExecutor();
  }
 ;
- @Override;
+ @Override
  void sendMessage(int what, Object obj) {;
  originalHandler.sendMessage(what, obj);
  }
 ;
- @Override;
+ @Override
  public void updatePendingConfiguration(Configuration config) {;
  originalHandler.updatePendingConfiguration(config);
  }
 ;
- @Override;
+ @Override
  public void updateProcessState(int processState, boolean fromIpc) {;
  originalHandler.updateProcessState(processState, fromIpc);
  }
 ;
- @Override;
+ @Override
  public void handleDestroyActivity(IBinder token, boolean finishing, int configChanges, boolean getNonConfigInstance, String reason) {;
  originalHandler.handleDestroyActivity(token, finishing, configChanges, getNonConfigInstance, reason);
  }
 ;
- @Override;
+ @Override
  public void handlePauseActivity(IBinder token, boolean finished, boolean userLeaving, int configChanges, PendingTransactionActions pendingActions, String reason) {;
  originalHandler.handlePauseActivity(token, finished, userLeaving, configChanges, pendingActions, reason);
  }
 ;
- @Override;
+ @Override
  public void handleDestroyActivity(ActivityClientRecord r, boolean finishing, int configChanges, boolean getNonConfigInstance, String reason) {;
  originalHandler.handleDestroyActivity(r, finishing, configChanges, getNonConfigInstance, reason);
  }
 ;
  // Android 15 (configChanges removed);
- @Override;
+ @Override
  public void handleDestroyActivity(ActivityClientRecord r, boolean finishing, boolean getNonConfigInstance, String reason) {;
  originalHandler.handleDestroyActivity(r, finishing, getNonConfigInstance, reason);
  }
 ;
- @Override;
+ @Override
  public void handlePauseActivity(ActivityClientRecord r, boolean finished, boolean userLeaving, int configChanges, PendingTransactionActions pendingActions, String reason) {;
  originalHandler.handlePauseActivity(r, finished, userLeaving, configChanges, pendingActions, reason);
  }
 ;
  // Android 14;
- @Override;
+ @Override
  public void handlePauseActivity(ActivityClientRecord r, boolean finished, boolean userLeaving, int configChanges, boolean autoEnteringPip, PendingTransactionActions pendingActions, String reason) {;
  originalHandler.handlePauseActivity(r, finished, userLeaving, configChanges, autoEnteringPip, pendingActions, reason);
  }
 ;
  // Android 15 (configChanges removed);
- @Override;
+ @Override
  public void handlePauseActivity(ActivityClientRecord r, boolean finished, boolean userLeaving, boolean autoEnteringPip, PendingTransactionActions pendingActions, String reason) {;
  originalHandler.handlePauseActivity(r, finished, userLeaving, autoEnteringPip, pendingActions, reason);
  }
 ;
- @Override;
+ @Override
  public void handleResumeActivity(IBinder token, boolean finalStateRequest, boolean isForward, String reason) {;
  originalHandler.handleResumeActivity(token, finalStateRequest, isForward, reason);
  }
 ;
- @Override;
+ @Override
  public void handleResumeActivity(ActivityClientRecord record, boolean finalStateRequest, boolean isForward, String reason) {;
  originalHandler.handleResumeActivity(record, finalStateRequest, isForward, reason);
  }
 ;
  // Android 14;
- @Override;
+ @Override
  public void handleResumeActivity(ActivityClientRecord record, boolean finalStateRequest, boolean isForward, boolean shouldSendCompatFakeFocus, String reason) {;
  originalHandler.handleResumeActivity(record, finalStateRequest, isForward, shouldSendCompatFakeFocus, reason);
  }
 ;
- @Override;
+ @Override
  public void handleStopActivity(IBinder token, boolean show, int configChanges, PendingTransactionActions pendingActions, boolean finalStateRequest, String reason) {;
  originalHandler.handleStopActivity(token, show, configChanges, pendingActions, finalStateRequest, reason);
  }
 ;
- @Override;
+ @Override
  public void handleStopActivity(IBinder token, int configChanges, PendingTransactionActions pendingActions, boolean finalStateRequest, String reason) {;
  originalHandler.handleStopActivity(token, configChanges, pendingActions, finalStateRequest, reason);
  }
 ;
- @Override;
+ @Override
  public void handleStopActivity(ActivityClientRecord r, int configChanges, PendingTransactionActions pendingActions, boolean finalStateRequest, String reason) {;
  originalHandler.handleStopActivity(r, configChanges, pendingActions, finalStateRequest, reason);
  }
 ;
  // Android 15 (configChanges removed);
- @Override;
+ @Override
  public void handleStopActivity(ActivityClientRecord r, PendingTransactionActions pendingActions, boolean finalStateRequest, String reason) {;
  originalHandler.handleStopActivity(r, pendingActions, finalStateRequest, reason);
  }
 ;
- @Override;
+ @Override
  public void reportStop(PendingTransactionActions pendingActions) {;
  originalHandler.reportStop(pendingActions);
  }
 ;
- @Override;
+ @Override
  public void performRestartActivity(IBinder token, boolean start) {;
  originalHandler.performRestartActivity(token, start);
  }
 ;
- @Override;
+ @Override
  public void performRestartActivity(ActivityClientRecord r, boolean start) {;
  originalHandler.performRestartActivity(r, start);
  }
 ;
- @Override;
+ @Override
  public void handleActivityConfigurationChanged(IBinder activityToken, Configuration overrideConfig, int displayId) {;
  originalHandler.handleActivityConfigurationChanged(activityToken, overrideConfig, displayId);
  }
 ;
- @Override;
+ @Override
  public void handleActivityConfigurationChanged(ActivityClientRecord r, Configuration overrideConfig, int displayId) {;
  originalHandler.handleActivityConfigurationChanged(r, overrideConfig, displayId);
  }
@@ -181,52 +181,52 @@ public class TransactionHandlerProxy extends ClientTransactionHandler {;
  }
  }
 ;
- @Override;
+ @Override
  public void handleSendResult(IBinder token, List results, String reason) {;
  originalHandler.handleSendResult(token, results, reason);
  }
 ;
- @Override;
+ @Override
  public void handleSendResult(ActivityClientRecord r, List results, String reason) {;
  originalHandler.handleSendResult(r, results, reason);
  }
 ;
- @Override;
+ @Override
  public void handleMultiWindowModeChanged(IBinder token, boolean isInMultiWindowMode, Configuration overrideConfig) {;
  originalHandler.handleMultiWindowModeChanged(token, isInMultiWindowMode, overrideConfig);
  }
 ;
- @Override;
+ @Override
  public void handleNewIntent(IBinder token, List intents, boolean andPause) {;
  originalHandler.handleNewIntent(token, intents, andPause);
  }
 ;
- @Override;
+ @Override
  public void handlePictureInPictureModeChanged(IBinder token, boolean isInPipMode, Configuration overrideConfig) {;
  originalHandler.handlePictureInPictureModeChanged(token, isInPipMode, overrideConfig);
  }
 ;
- @Override;
+ @Override
  public void handlePictureInPictureRequested(IBinder token) {;
  originalHandler.handlePictureInPictureRequested(token);
  }
 ;
- @Override;
+ @Override
  public void handlePictureInPictureRequested(ActivityClientRecord r) {;
  originalHandler.handlePictureInPictureRequested(r);
  }
 ;
- @Override;
+ @Override
  public void handlePictureInPictureStateChanged(ActivityClientRecord r, Parcelable pipState) {;
  originalHandler.handlePictureInPictureStateChanged(r, pipState);
  }
 ;
- @Override;
+ @Override
  public boolean isHandleSplashScreenExit(IBinder token) {;
  return originalHandler.isHandleSplashScreenExit(token);
  }
 ;
- @Override;
+ @Override
  public void handleAttachSplashScreenView(ActivityClientRecord r, Parcelable parcelable) {;
  originalHandler.handleAttachSplashScreenView(r, parcelable);
  }
@@ -247,17 +247,17 @@ public class TransactionHandlerProxy extends ClientTransactionHandler {;
  }
  }
 ;
- @Override;
+ @Override
  public void handOverSplashScreenView(ActivityClientRecord r) {;
  originalHandler.handOverSplashScreenView(r);
  }
 ;
- @Override;
+ @Override
  public void handleWindowVisibility(IBinder token, boolean show) {;
  originalHandler.handleWindowVisibility(token, show);
  }
 ;
- @Override;
+ @Override
  public Activity handleLaunchActivity(ActivityClientRecord r, PendingTransactionActions pendingActions, Intent customIntent) {;
 ;
  Intent stubIntent = mirror.android.app.ActivityThread.ActivityClientRecord.intent.get(r);
@@ -307,7 +307,7 @@ public class TransactionHandlerProxy extends ClientTransactionHandler {;
  }
 ;
  // Android 14;
- @Override;
+ @Override
  public Activity handleLaunchActivity(ActivityClientRecord r, PendingTransactionActions pendingActions, int deviceId, Intent customIntent) {;
 ;
  Intent stubIntent = mirror.android.app.ActivityThread.ActivityClientRecord.intent.get(r);
@@ -352,45 +352,45 @@ public class TransactionHandlerProxy extends ClientTransactionHandler {;
  return originalHandler.handleLaunchActivity(r, pendingActions, deviceId, customIntent);
  }
 ;
- @Override;
+ @Override
  public void handleStartActivity(ActivityClientRecord r, PendingTransactionActions pendingActions, ActivityOptions options) {;
  originalHandler.handleStartActivity(r, pendingActions, options);
  }
 ;
  // Android 14;
- @Override;
+ @Override
  public void handleStartActivity(ActivityClientRecord r, PendingTransactionActions pendingActions, int deviceId, ActivityOptions options) {;
  originalHandler.handleStartActivity(r, pendingActions, deviceId, options);
  }
 ;
  // Android 15;
- @Override;
+ @Override
  public void handleStartActivity(ActivityClientRecord r, PendingTransactionActions pendingActions, ActivityOptions.SceneTransitionInfo sceneTransitionInfo) {;
  originalHandler.handleStartActivity(r, pendingActions, sceneTransitionInfo);
  }
 ;
- @Override;
+ @Override
  public void handleStartActivity(ActivityClientRecord r, PendingTransactionActions pendingActions) {;
  originalHandler.handleStartActivity(r, pendingActions);
  }
 ;
- @Override;
+ @Override
  public void handleStartActivity(IBinder binder, PendingTransactionActions pendingActions) {;
  originalHandler.handleStartActivity(binder, pendingActions);
  }
 ;
- @Override;
+ @Override
  public LoadedApk getPackageInfoNoCheck(ApplicationInfo ai, CompatibilityInfo compatInfo) {;
  return originalHandler.getPackageInfoNoCheck(ai, compatInfo);
  }
 ;
  // Android 14;
- @Override;
+ @Override
  public LoadedApk getPackageInfoNoCheck(ApplicationInfo ai) {;
  return originalHandler.getPackageInfoNoCheck(ai);
  }
 ;
- @Override;
+ @Override
  public void handleConfigurationChanged(Configuration config) {;
  originalHandler.handleConfigurationChanged(config);
  }
@@ -411,89 +411,89 @@ public class TransactionHandlerProxy extends ClientTransactionHandler {;
  }
  }
 ;
- @Override;
+ @Override
  public void handleFixedRotationAdjustments(IBinder token, DisplayAdjustments.FixedRotationAdjustments fixedRotationAdjustments) {;
  originalHandler.handleFixedRotationAdjustments(token, fixedRotationAdjustments);
  }
 ;
- @Override;
+ @Override
  public void addLaunchingActivity(IBinder token, ActivityClientRecord activity) {;
  originalHandler.addLaunchingActivity(token, activity);
  }
 ;
- @Override;
+ @Override
  public ActivityClientRecord getLaunchingActivity(IBinder token) {;
  return originalHandler.getLaunchingActivity(token);
  }
 ;
- @Override;
+ @Override
  public void removeLaunchingActivity(IBinder token) {;
  originalHandler.removeLaunchingActivity(token);
  }
 ;
- @Override;
+ @Override
  public ActivityClientRecord getActivityClient(IBinder token) {;
  Log.i(TAG, "getActivityClient : " + token);
  return originalHandler.getActivityClient(token);
  }
 ;
- @Override;
+ @Override
  public ActivityClientRecord prepareRelaunchActivity(IBinder token, List pendingResults, List pendingNewIntents, int configChanges, MergedConfiguration config, boolean preserveWindow) {;
  return originalHandler.prepareRelaunchActivity(token, pendingResults, pendingNewIntents, configChanges, config, preserveWindow);
  }
 ;
- @Override;
+ @Override
  public void handleRelaunchActivity(ActivityClientRecord r, PendingTransactionActions pendingActions) {;
  originalHandler.handleRelaunchActivity(r, pendingActions);
  }
 ;
- @Override;
+ @Override
  public void reportRelaunch(IBinder token, PendingTransactionActions pendingActions) {;
  originalHandler.reportRelaunch(token, pendingActions);
  }
 ;
  // Android 15;
- @Override;
+ @Override
  public void reportRelaunch(ActivityClientRecord r) {;
  originalHandler.reportRelaunch(r);
  }
 ;
- @Override;
+ @Override
  public Map getActivitiesToBeDestroyed() {;
  return originalHandler.getActivitiesToBeDestroyed();
  }
 ;
- @Override;
+ @Override
  public Activity getActivity(IBinder token) {;
  return originalHandler.getActivity(token);
  }
 ;
- @Override;
+ @Override
  public void updatePendingActivityConfiguration(IBinder arg1, Configuration arg2) {;
  originalHandler.updatePendingActivityConfiguration(arg1, arg2);
  }
 ;
- @Override;
+ @Override
  public void handleTopResumedActivityChanged(IBinder arg1, boolean arg2, String arg3) {;
  originalHandler.handleTopResumedActivityChanged(arg1, arg2, arg3);
  }
 ;
- @Override;
+ @Override
  public void handleTopResumedActivityChanged(ActivityClientRecord record, boolean arg2, String arg3) {;
  originalHandler.handleTopResumedActivityChanged(record, arg2, arg3);
  }
 ;
- @Override;
+ @Override
  public void countLaunchingActivities(int num) {;
  originalHandler.countLaunchingActivities(num);
  }
 ;
- @Override;
+ @Override
  public void handleNewIntent(IBinder token, List intents) {;
  originalHandler.handleNewIntent(token, intents);
  }
 ;
- @Override;
+ @Override
  public void handleNewIntent(ActivityClientRecord r, List<ReferrerIntent> intents) {;
  originalHandler.handleNewIntent(r, intents);
  }

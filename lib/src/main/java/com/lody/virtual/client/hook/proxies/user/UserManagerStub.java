@@ -23,7 +23,7 @@ public class UserManagerStub extends BinderInvocationProxy {;
  super(IUserManager.Stub.asInterface, Context.USER_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ReplaceCallingPkgMethodProxy("setApplicationRestrictions"));

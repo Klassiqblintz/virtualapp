@@ -154,12 +154,12 @@ abstract class MapCollections<K, V> {;
  mSize = colGetSize();
  }
 ;
- @Override;
+ @Override
  public boolean hasNext() {;
  return mIndex < mSize;
  }
 ;
- @Override;
+ @Override
  public T next() {;
  Object res = colGetEntry(mIndex, mOffset);
  mIndex++;
@@ -167,7 +167,7 @@ abstract class MapCollections<K, V> {;
  return (T)res;
  }
 ;
- @Override;
+ @Override
  public void remove() {;
  if (!mCanRemove) {;
  throw new IllegalStateException();
@@ -189,19 +189,19 @@ abstract class MapCollections<K, V> {;
  mIndex = -1;
  }
 ;
- @Override;
+ @Override
  public boolean hasNext() {;
  return mIndex < mEnd;
  }
 ;
- @Override;
+ @Override
  public Map.Entry<K, V> next() {;
  mIndex++;
  mEntryValid = true;
  return this;
  }
 ;
- @Override;
+ @Override
  public void remove() {;
  if (!mEntryValid) {;
  throw new IllegalStateException();
@@ -212,7 +212,7 @@ abstract class MapCollections<K, V> {;
  mEntryValid = false;
  }
 ;
- @Override;
+ @Override
  public K getKey() {;
  if (!mEntryValid) {;
  throw new IllegalStateException(;
@@ -221,7 +221,7 @@ abstract class MapCollections<K, V> {;
  return (K)colGetEntry(mIndex, 0);
  }
 ;
- @Override;
+ @Override
  public V getValue() {;
  if (!mEntryValid) {;
  throw new IllegalStateException(;
@@ -230,7 +230,7 @@ abstract class MapCollections<K, V> {;
  return (V)colGetEntry(mIndex, 1);
  }
 ;
- @Override;
+ @Override
  public V setValue(V object) {;
  if (!mEntryValid) {;
  throw new IllegalStateException(;
@@ -239,7 +239,7 @@ abstract class MapCollections<K, V> {;
  return colSetValue(mIndex, object);
  }
 ;
- @Override;
+ @Override
  public final boolean equals(Object o) {;
  if (!mEntryValid) {;
  throw new IllegalStateException(;
@@ -253,7 +253,7 @@ abstract class MapCollections<K, V> {;
  && ContainerHelpers.equal(e.getValue(), colGetEntry(mIndex, 1));
  }
 ;
- @Override;
+ @Override
  public final int hashCode() {;
  if (!mEntryValid) {;
  throw new IllegalStateException(;
@@ -265,19 +265,19 @@ abstract class MapCollections<K, V> {;
  (value == null ? 0 : value.hashCode());
  }
 ;
- @Override;
+ @Override
  public final String toString() {;
  return getKey() + "=" + getValue();
  }
  }
 ;
 final class EntrySet implements Set<Map.Entry<K, V>> {;
- @Override;
+ @Override
  public boolean add(Map.Entry<K, V> object) {;
  throw new UnsupportedOperationException();
  }
 ;
- @Override;
+ @Override
  public boolean addAll(Collection<? extends Map.Entry<K, V>> collection) {;
  int oldSize = colGetSize();
  for (Map.Entry<K, V> entry : collection) {;
@@ -286,12 +286,12 @@ final class EntrySet implements Set<Map.Entry<K, V>> {;
  return oldSize != colGetSize();
  }
 ;
- @Override;
+ @Override
  public void clear() {;
  colClear();
  }
 ;
- @Override;
+ @Override
  public boolean contains(Object o) {;
  if (!(o instanceof Map.Entry));
  return false;
@@ -304,7 +304,7 @@ final class EntrySet implements Set<Map.Entry<K, V>> {;
  return ContainerHelpers.equal(foundVal, e.getValue());
  }
 ;
- @Override;
+ @Override
  public boolean containsAll(Collection<?> collection) {;
  Iterator<?> it = collection.iterator();
  while (it.hasNext()) {;
@@ -315,52 +315,52 @@ final class EntrySet implements Set<Map.Entry<K, V>> {;
  return true;
  }
 ;
- @Override;
+ @Override
  public boolean isEmpty() {;
  return colGetSize() == 0;
  }
 ;
- @Override;
+ @Override
  public Iterator<Map.Entry<K, V>> iterator() {;
  return new MapIterator();
  }
 ;
- @Override;
+ @Override
  public boolean remove(Object object) {;
  throw new UnsupportedOperationException();
  }
 ;
- @Override;
+ @Override
  public boolean removeAll(Collection<?> collection) {;
  throw new UnsupportedOperationException();
  }
 ;
- @Override;
+ @Override
  public boolean retainAll(Collection<?> collection) {;
  throw new UnsupportedOperationException();
  }
 ;
- @Override;
+ @Override
  public int size() {;
  return colGetSize();
  }
 ;
- @Override;
+ @Override
  public Object[] toArray() {;
  throw new UnsupportedOperationException();
  }
 ;
- @Override;
+ @Override
  public <T> T[] toArray(T[] array) {;
  throw new UnsupportedOperationException();
  }
 ;
- @Override;
+ @Override
  public boolean equals(Object object) {;
  return equalsSetHelper(this, object);
  }
 ;
- @Override;
+ @Override
  public int hashCode() {;
  int result = 0;
  for (int i=colGetSize()-1; i>=0; i--) {;
@@ -375,42 +375,42 @@ final class EntrySet implements Set<Map.Entry<K, V>> {;
 ;
 final class KeySet implements Set<K> {;
 ;
- @Override;
+ @Override
  public boolean add(K object) {;
  throw new UnsupportedOperationException();
  }
 ;
- @Override;
+ @Override
  public boolean addAll(Collection<? extends K> collection) {;
  throw new UnsupportedOperationException();
  }
 ;
- @Override;
+ @Override
  public void clear() {;
  colClear();
  }
 ;
- @Override;
+ @Override
  public boolean contains(Object object) {;
  return colIndexOfKey(object) >= 0;
  }
 ;
- @Override;
+ @Override
  public boolean containsAll(Collection<?> collection) {;
  return containsAllHelper(colGetMap(), collection);
  }
 ;
- @Override;
+ @Override
  public boolean isEmpty() {;
  return colGetSize() == 0;
  }
 ;
- @Override;
+ @Override
  public Iterator<K> iterator() {;
  return new ArrayIterator<K>(0);
  }
 ;
- @Override;
+ @Override
  public boolean remove(Object object) {;
  int index = colIndexOfKey(object);
  if (index >= 0) {;
@@ -420,37 +420,37 @@ final class KeySet implements Set<K> {;
  return false;
  }
 ;
- @Override;
+ @Override
  public boolean removeAll(Collection<?> collection) {;
  return removeAllHelper(colGetMap(), collection);
  }
 ;
- @Override;
+ @Override
  public boolean retainAll(Collection<?> collection) {;
  return retainAllHelper(colGetMap(), collection);
  }
 ;
- @Override;
+ @Override
  public int size() {;
  return colGetSize();
  }
 ;
- @Override;
+ @Override
  public Object[] toArray() {;
  return toArrayHelper(0);
  }
 ;
- @Override;
+ @Override
  public <T> T[] toArray(T[] array) {;
  return toArrayHelper(array, 0);
  }
 ;
- @Override;
+ @Override
  public boolean equals(Object object) {;
  return equalsSetHelper(this, object);
  }
 ;
- @Override;
+ @Override
  public int hashCode() {;
  int result = 0;
  for (int i=colGetSize()-1; i>=0; i--) {;
@@ -463,27 +463,27 @@ final class KeySet implements Set<K> {;
 ;
 final class ValuesCollection implements Collection<V> {;
 ;
- @Override;
+ @Override
  public boolean add(V object) {;
  throw new UnsupportedOperationException();
  }
 ;
- @Override;
+ @Override
  public boolean addAll(Collection<? extends V> collection) {;
  throw new UnsupportedOperationException();
  }
 ;
- @Override;
+ @Override
  public void clear() {;
  colClear();
  }
 ;
- @Override;
+ @Override
  public boolean contains(Object object) {;
  return colIndexOfValue(object) >= 0;
  }
 ;
- @Override;
+ @Override
  public boolean containsAll(Collection<?> collection) {;
  Iterator<?> it = collection.iterator();
  while (it.hasNext()) {;
@@ -494,17 +494,17 @@ final class ValuesCollection implements Collection<V> {;
  return true;
  }
 ;
- @Override;
+ @Override
  public boolean isEmpty() {;
  return colGetSize() == 0;
  }
 ;
- @Override;
+ @Override
  public Iterator<V> iterator() {;
  return new ArrayIterator<V>(1);
  }
 ;
- @Override;
+ @Override
  public boolean remove(Object object) {;
  int index = colIndexOfValue(object);
  if (index >= 0) {;
@@ -514,7 +514,7 @@ final class ValuesCollection implements Collection<V> {;
  return false;
  }
 ;
- @Override;
+ @Override
  public boolean removeAll(Collection<?> collection) {;
  int N = colGetSize();
  boolean changed = false;
@@ -530,7 +530,7 @@ final class ValuesCollection implements Collection<V> {;
  return changed;
  }
 ;
- @Override;
+ @Override
  public boolean retainAll(Collection<?> collection) {;
  int N = colGetSize();
  boolean changed = false;
@@ -546,17 +546,17 @@ final class ValuesCollection implements Collection<V> {;
  return changed;
  }
 ;
- @Override;
+ @Override
  public int size() {;
  return colGetSize();
  }
 ;
- @Override;
+ @Override
  public Object[] toArray() {;
  return toArrayHelper(1);
  }
 ;
- @Override;
+ @Override
  public <T> T[] toArray(T[] array) {;
  return toArrayHelper(array, 1);
  }

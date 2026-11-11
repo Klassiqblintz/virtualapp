@@ -39,29 +39,29 @@ public class VSyncRecord {;
  this.extras = in.readBundle(getClass().getClassLoader());
  }
 ;
- @Override;
+ @Override
  public int describeContents() {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public void writeToParcel(Parcel dest, int flags) {;
  dest.writeBundle(this.extras);
  }
 ;
  public static final Parcelable.Creator<SyncExtras> CREATOR = new Parcelable.Creator<SyncExtras>() {;
- @Override;
+ @Override
  public SyncExtras createFromParcel(Parcel source) {;
  return new SyncExtras(source);
  }
 ;
- @Override;
+ @Override
  public SyncExtras[] newArray(int size) {;
  return new SyncExtras[size];
  }
  };
 ;
- @Override;
+ @Override
  public boolean equals(Object obj) {;
  return VSyncRecord.equals(this.extras, ((SyncExtras) obj).extras, false);
  }
@@ -82,18 +82,18 @@ public class VSyncRecord {;
  this.authority = in.readString();
  }
 ;
- @Override;
+ @Override
  public int describeContents() {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public void writeToParcel(Parcel dest, int flags) {;
  dest.writeParcelable(this.account, flags);
  dest.writeString(this.authority);
  }
 ;
- @Override;
+ @Override
  public boolean equals(Object o) {;
  if (this == o) return true;
  if (o == null || getClass() != o.getClass()) return false;
@@ -106,12 +106,12 @@ public class VSyncRecord {;
  }
 ;
  public static final Parcelable.Creator<SyncRecordKey> CREATOR = new Parcelable.Creator<SyncRecordKey>() {;
- @Override;
+ @Override
  public SyncRecordKey createFromParcel(Parcel source) {;
  return new SyncRecordKey(source);
  }
 ;
- @Override;
+ @Override
  public SyncRecordKey[] newArray(int size) {;
  return new SyncRecordKey[size];
  }
@@ -152,12 +152,12 @@ public class VSyncRecord {;
  this.syncRunTimeSecs = syncRunTimeSecs;
  }
 ;
- @Override;
+ @Override
  public int describeContents() {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public void writeToParcel(Parcel dest, int flags) {;
  dest.writeLong(this.syncRunTimeSecs);
  }
@@ -167,12 +167,12 @@ public class VSyncRecord {;
  }
 ;
  public static final Parcelable.Creator<PeriodicSyncConfig> CREATOR = new Parcelable.Creator<PeriodicSyncConfig>() {;
- @Override;
+ @Override
  public PeriodicSyncConfig createFromParcel(Parcel source) {;
  return new PeriodicSyncConfig(source);
  }
 ;
- @Override;
+ @Override
  public PeriodicSyncConfig[] newArray(int size) {;
  return new PeriodicSyncConfig[size];
  }

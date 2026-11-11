@@ -19,13 +19,13 @@ import java.util.concurrent.TimeUnit;
 @TargetApi(Build.VERSION_CODES.LOLLIPOP);
 public class DaemonJobService extends JobService {;
 ;
- @Override;
+ @Override
  public boolean onStartJob(JobParameters params) {;
  PrivilegeAppOptimizer.notifyBootFinish();
  return true;
  }
 ;
- @Override;
+ @Override
  public boolean onStopJob(JobParameters params) {;
  return false;
  }

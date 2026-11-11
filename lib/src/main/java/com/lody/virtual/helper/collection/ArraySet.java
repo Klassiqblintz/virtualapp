@@ -125,7 +125,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  }
  mTwiceBaseCache = array;
  mTwiceBaseCacheSize++;
- if (DEBUG) Log.d(TAG, "Storing 2x cache " + array;
+ if (DEBUG) Log.d(TAG, "Storing 2x cache " + array 
  + " now have " + mTwiceBaseCacheSize + " entries");
  }
  }
@@ -139,7 +139,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  }
  mBaseCache = array;
  mBaseCacheSize++;
- if (DEBUG) Log.d(TAG, "Storing 1x cache " + array;
+ if (DEBUG) Log.d(TAG, "Storing 1x cache " + array 
  + " now have " + mBaseCacheSize + " entries");
  }
  }
@@ -232,7 +232,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  mHashes = (int[])array[1];
  array[0] = array[1] = null;
  mTwiceBaseCacheSize--;
- if (DEBUG) Log.d(TAG, "Retrieving 2x cache " + mHashes;
+ if (DEBUG) Log.d(TAG, "Retrieving 2x cache " + mHashes 
  + " now have " + mTwiceBaseCacheSize + " entries");
  return;
  }
@@ -246,7 +246,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  mHashes = (int[])array[1];
  array[0] = array[1] = null;
  mBaseCacheSize--;
- if (DEBUG) Log.d(TAG, "Retrieving 1x cache " + mHashes;
+ if (DEBUG) Log.d(TAG, "Retrieving 1x cache " + mHashes 
  + " now have " + mBaseCacheSize + " entries");
  return;
  }
@@ -260,7 +260,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  /**;
  * Make the array map empty. All storage is released.;
  */;
- @Override;
+ @Override
  public void clear() {;
  if (mSize != 0) {;
  freeArrays(mHashes, mArray, mSize);
@@ -293,7 +293,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  * @param key The value to search for.;
  * @return Returns true if the value exists, else false.;
  */;
- @Override;
+ @Override
  public boolean contains(Object key) {;
  return indexOf(key) >= 0;
  }
@@ -320,7 +320,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  /**;
  * Return true if the array map contains no items.;
  */;
- @Override;
+ @Override
  public boolean isEmpty() {;
  return mSize <= 0;
  }
@@ -334,7 +334,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  * @throws ClassCastException;
  * when the class of the object is inappropriate for this set.;
  */;
- @Override;
+ @Override
  public boolean add(E value) {;
  final int hash;
  int index;
@@ -408,7 +408,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  * @param object the object to remove.;
  * @return {@code true} if this set was modified, {@code false} otherwise.;
  */;
- @Override;
+ @Override
  public boolean remove(Object object) {;
  final int index = indexOf(object);
  if (index >= 0) {;
@@ -452,7 +452,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  System.arraycopy(oarray, 0, mArray, 0, index);
  }
  if (index < mSize) {;
- if (DEBUG) Log.d(TAG, "remove: copy from " + (index+1) + "-" + mSize;
+ if (DEBUG) Log.d(TAG, "remove: copy from " + (index+1) + "-" + mSize 
  + " to " + index);
  System.arraycopy(ohashes, index + 1, mHashes, index, mSize - index);
  System.arraycopy(oarray, index + 1, mArray, index, mSize - index);
@@ -460,7 +460,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  } else {;
  mSize--;
  if (index < mSize) {;
- if (DEBUG) Log.d(TAG, "remove: move " + (index+1) + "-" + mSize;
+ if (DEBUG) Log.d(TAG, "remove: move " + (index+1) + "-" + mSize 
  + " to " + index);
  System.arraycopy(mHashes, index + 1, mHashes, index, mSize - index);
  System.arraycopy(mArray, index + 1, mArray, index, mSize - index);
@@ -494,19 +494,19 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  /**;
  * Return the number of items in this array map.;
  */;
- @Override;
+ @Override
  public int size() {;
  return mSize;
  }
 ;
- @Override;
+ @Override
  public Object[] toArray() {;
  Object[] result = new Object[mSize];
  System.arraycopy(mArray, 0, result, 0, mSize);
  return result;
  }
 ;
- @Override;
+ @Override
  public <T> T[] toArray(T[] array) {;
  if (array.length < mSize) {;
  @SuppressWarnings("unchecked") T[] newArray;
@@ -529,7 +529,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  * If any value doesn't exist, the method returns false; otherwise, it;
  * returns true.;
  */;
- @Override;
+ @Override
  public boolean equals(Object object) {;
  if (this == object) {;
  return true;
@@ -560,7 +560,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  /**;
  * {@inheritDoc}
  */;
- @Override;
+ @Override
  public int hashCode() {;
  final int[] hashes = mHashes;
  int result = 0;
@@ -577,7 +577,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  * this set contains itself as a value, the string "(this Set)";
  * will appear in its place.;
  */;
- @Override;
+ @Override
  public String toString() {;
  if (isEmpty()) {;
  return "{}";
@@ -608,47 +608,47 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  private MapCollections<E, E> getCollection() {;
  if (mCollections == null) {;
  mCollections = new MapCollections<E, E>() {;
- @Override;
+ @Override
  protected int colGetSize() {;
  return mSize;
  }
 ;
- @Override;
+ @Override
  protected Object colGetEntry(int index, int offset) {;
  return mArray[index];
  }
 ;
- @Override;
+ @Override
  protected int colIndexOfKey(Object key) {;
  return indexOf(key);
  }
 ;
- @Override;
+ @Override
  protected int colIndexOfValue(Object value) {;
  return indexOf(value);
  }
 ;
- @Override;
+ @Override
  protected Map<E, E> colGetMap() {;
  throw new UnsupportedOperationException("not a map");
  }
 ;
- @Override;
+ @Override
  protected void colPut(E key, E value) {;
  add(key);
  }
 ;
- @Override;
+ @Override
  protected E colSetValue(int index, E value) {;
  throw new UnsupportedOperationException("not a map");
  }
 ;
- @Override;
+ @Override
  protected void colRemoveAt(int index) {;
  removeAt(index);
  }
 ;
- @Override;
+ @Override
  protected void colClear() {;
  clear();
  }
@@ -664,7 +664,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  * requires generating a number of temporary objects and allocates additional state;
  * information associated with the container that will remain for the life of the container.</p>;
  */;
- @Override;
+ @Override
  public Iterator<E> iterator() {;
  return getCollection().getKeySet().iterator();
  }
@@ -675,7 +675,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  * @return Returns true if this array set contains a value for every entry;
  * in <var>collection</var>, else returns false.;
  */;
- @Override;
+ @Override
  public boolean containsAll(Collection<?> collection) {;
  Iterator<?> it = collection.iterator();
  while (it.hasNext()) {;
@@ -690,7 +690,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  * Perform an {@link #add(Object)} of all values in <var>collection</var>;
  * @param collection The collection whose contents are to be retrieved.;
  */;
- @Override;
+ @Override
  public boolean addAll(Collection<? extends E> collection) {;
  ensureCapacity(mSize + collection.size());
  boolean added = false;
@@ -705,7 +705,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  * @param collection The collection whose contents are to be used to remove values.;
  * @return Returns true if any values were removed from the array set, else false.;
  */;
- @Override;
+ @Override
  public boolean removeAll(Collection<?> collection) {;
  boolean removed = false;
  for (Object value : collection) {;
@@ -720,7 +720,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {;
  * values to keep.;
  * @return Returns true if any values were removed from the array set, else false.;
  */;
- @Override;
+ @Override
  public boolean retainAll(Collection<?> collection) {;
  boolean removed = false;
  for (int i=mSize-1; i>=0; i--) {;

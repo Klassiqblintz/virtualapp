@@ -33,7 +33,7 @@ public class ChooserActivity extends ResolverActivity {;
  }
 ;
  @SuppressLint("MissingSuperCall");
- @Override;
+ @Override
  protected void onCreate(Bundle savedInstanceState) {;
  Intent intent = getIntent();
  int userId = intent.getIntExtra(Constants.EXTRA_USER_HANDLE, VUserHandle.getCallingUserId());

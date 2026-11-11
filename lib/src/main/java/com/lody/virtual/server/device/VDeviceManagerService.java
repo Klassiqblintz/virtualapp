@@ -56,7 +56,7 @@ public class VDeviceManagerService extends IDeviceInfoManager.Stub {;
  mPool.iccIds.add(info.iccId);
  }
 ;
- @Override;
+ @Override
  public VDeviceInfo getDeviceInfo(int userId) throws RemoteException {;
  VDeviceInfo info;
  synchronized (mDeviceInfos) {;
@@ -70,7 +70,7 @@ public class VDeviceManagerService extends IDeviceInfoManager.Stub {;
  return info;
  }
 ;
- @Override;
+ @Override
  public void updateDeviceInfo(int userId, VDeviceInfo info) throws RemoteException {;
  synchronized (mDeviceInfos) {;
  if (info != null) {;

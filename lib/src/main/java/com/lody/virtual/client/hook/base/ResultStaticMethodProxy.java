@@ -19,7 +19,7 @@ public class ResultStaticMethodProxy extends StaticMethodProxy {;
  return mResult;
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return mResult;
  }

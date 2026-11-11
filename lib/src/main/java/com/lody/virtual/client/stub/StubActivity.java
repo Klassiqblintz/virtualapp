@@ -19,7 +19,7 @@ import com.lody.virtual.remote.StubActivityRecord;
  */;
 public abstract class StubActivity extends Activity {;
 ;
- @Override;
+ @Override
  protected void onCreate(Bundle savedInstanceState) {;
  // The savedInstanceState's classLoader is not exist.;
  super.onCreate(null);

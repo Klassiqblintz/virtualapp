@@ -17,7 +17,7 @@ import java.net.URISyntaxException;
 public class ShortcutHandleActivity extends Activity {;
 ;
 ;
- @Override;
+ @Override
  protected void onCreate(Bundle savedInstanceState) {;
  super.onCreate(savedInstanceState);
  finish();

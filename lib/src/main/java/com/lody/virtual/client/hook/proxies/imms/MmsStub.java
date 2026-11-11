@@ -16,7 +16,7 @@ public class MmsStub extends BinderInvocationProxy {;
  super(IMms.Stub.asInterface, "imms");
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  addMethodProxy(new ReplaceSpecPkgMethodProxy("sendMessage", 1));
  addMethodProxy(new ReplaceSpecPkgMethodProxy("downloadMessage", 1));

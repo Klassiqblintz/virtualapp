@@ -47,7 +47,7 @@ public class WifiManagerStub extends BinderInvocationProxy {;
  super(name);
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  int index = ArrayUtils.indexOfFirst(args, WorkSource.class);
  if (index >= 0) {;
@@ -62,16 +62,16 @@ public class WifiManagerStub extends BinderInvocationProxy {;
  super(IWifiManager.Stub.asInterface, Context.WIFI_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new MethodProxy() {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "isWifiEnabled";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (VASettings.Wifi.FAKE_WIFI_STATE) {;
  return true;
@@ -80,12 +80,12 @@ public class WifiManagerStub extends BinderInvocationProxy {;
  }
  });
  addMethodProxy(new MethodProxy() {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getWifiEnabledState";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (VASettings.Wifi.FAKE_WIFI_STATE) {;
  return WifiManager.WIFI_STATE_ENABLED;
@@ -94,12 +94,12 @@ public class WifiManagerStub extends BinderInvocationProxy {;
  }
  });
  addMethodProxy(new MethodProxy() {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "createDhcpInfo";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (VASettings.Wifi.FAKE_WIFI_STATE) {;
  IPInfo ipInfo = getIPInfo();
@@ -127,12 +127,12 @@ public class WifiManagerStub extends BinderInvocationProxy {;
  @FakeLocMark("Fake wifi bssid");
  @FakeDeviceMark("fake wifi MAC");
  private final class GetConnectionInfo extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getConnectionInfo";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  WifiInfo wifiInfo = (WifiInfo) method.invoke(who, args);
  if (isFakeLocationEnable()) {;
@@ -156,7 +156,7 @@ public class WifiManagerStub extends BinderInvocationProxy {;
  super("getScanResults");
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
 // noinspection unchecked;
  if (isFakeLocationEnable()) {;

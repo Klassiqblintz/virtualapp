@@ -73,7 +73,7 @@ import mirror.android.app.IActivityManager;
  return null;
  }
 ;
- @Override;
+ @Override
  public boolean handleMessage(Message msg) {;
  if (!mCalling) {;
  mCalling = true;
@@ -193,13 +193,13 @@ import mirror.android.app.IActivityManager;
  }
  }
 ;
- @Override;
+ @Override
  public void inject() throws Throwable {;
  otherCallback = getHCallback();
  mirror.android.os.Handler.mCallback.set(getH(), this);
  }
 ;
- @Override;
+ @Override
  public boolean isEnvBad() {;
  Handler.Callback callback = getHCallback();
  boolean envBad = callback != this;

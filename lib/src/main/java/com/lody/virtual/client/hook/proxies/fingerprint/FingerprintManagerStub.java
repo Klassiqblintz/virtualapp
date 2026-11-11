@@ -19,7 +19,7 @@ public class FingerprintManagerStub extends BinderInvocationProxy {;
  super(IFingerprintService.Stub.asInterface, Context.FINGERPRINT_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  addMethodProxy(new ReplaceLastPkgMethodProxy("isHardwareDetected"));
  addMethodProxy(new ReplaceLastPkgMethodProxy("hasEnrolledFingerprints"));

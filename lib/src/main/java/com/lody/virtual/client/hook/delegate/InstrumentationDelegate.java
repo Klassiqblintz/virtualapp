@@ -34,307 +34,307 @@ public class InstrumentationDelegate extends Instrumentation {;
  return Instrumentation.newApplication(clazz, context);
  }
 ;
- @Override;
+ @Override
  public void onCreate(Bundle arguments) {;
  base.onCreate(arguments);
  }
 ;
- @Override;
+ @Override
  public void start() {;
  base.start();
  }
 ;
- @Override;
+ @Override
  public void onStart() {;
  base.onStart();
  }
 ;
- @Override;
+ @Override
  public boolean onException(Object obj, Throwable e) {;
  return base.onException(obj, e);
  }
 ;
- @Override;
+ @Override
  public void sendStatus(int resultCode, Bundle results) {;
  base.sendStatus(resultCode, results);
  }
 ;
- @Override;
+ @Override
  public void finish(int resultCode, Bundle results) {;
  base.finish(resultCode, results);
  }
 ;
- @Override;
+ @Override
  public void setAutomaticPerformanceSnapshots() {;
  base.setAutomaticPerformanceSnapshots();
  }
 ;
- @Override;
+ @Override
  public void startPerformanceSnapshot() {;
  base.startPerformanceSnapshot();
  }
 ;
- @Override;
+ @Override
  public void endPerformanceSnapshot() {;
  base.endPerformanceSnapshot();
  }
 ;
- @Override;
+ @Override
  public void onDestroy() {;
  base.onDestroy();
  }
 ;
- @Override;
+ @Override
  public Context getContext() {;
  return base.getContext();
  }
 ;
- @Override;
+ @Override
  public ComponentName getComponentName() {;
  return base.getComponentName();
  }
 ;
- @Override;
+ @Override
  public Context getTargetContext() {;
  return base.getTargetContext();
  }
 ;
- @Override;
+ @Override
  public boolean isProfiling() {;
  return base.isProfiling();
  }
 ;
- @Override;
+ @Override
  public void startProfiling() {;
  base.startProfiling();
  }
 ;
- @Override;
+ @Override
  public void stopProfiling() {;
  base.stopProfiling();
  }
 ;
- @Override;
+ @Override
  public void setInTouchMode(boolean inTouch) {;
  base.setInTouchMode(inTouch);
  }
 ;
- @Override;
+ @Override
  public void waitForIdle(Runnable recipient) {;
  base.waitForIdle(recipient);
  }
 ;
- @Override;
+ @Override
  public void waitForIdleSync() {;
  base.waitForIdleSync();
  }
 ;
- @Override;
+ @Override
  public void runOnMainSync(Runnable runner) {;
  base.runOnMainSync(runner);
  }
 ;
- @Override;
+ @Override
  public Activity startActivitySync(Intent intent) {;
  return base.startActivitySync(intent);
  }
 ;
- @Override;
+ @Override
  public void addMonitor(ActivityMonitor monitor) {;
  base.addMonitor(monitor);
  }
 ;
- @Override;
+ @Override
  public ActivityMonitor addMonitor(IntentFilter filter, ActivityResult result, boolean block) {;
  return base.addMonitor(filter, result, block);
  }
 ;
- @Override;
+ @Override
  public ActivityMonitor addMonitor(String cls, ActivityResult result, boolean block) {;
  return base.addMonitor(cls, result, block);
  }
 ;
- @Override;
+ @Override
  public boolean checkMonitorHit(ActivityMonitor monitor, int minHits) {;
  return base.checkMonitorHit(monitor, minHits);
  }
 ;
- @Override;
+ @Override
  public Activity waitForMonitor(ActivityMonitor monitor) {;
  return base.waitForMonitor(monitor);
  }
 ;
- @Override;
+ @Override
  public Activity waitForMonitorWithTimeout(ActivityMonitor monitor, long timeOut) {;
  return base.waitForMonitorWithTimeout(monitor, timeOut);
  }
 ;
- @Override;
+ @Override
  public void removeMonitor(ActivityMonitor monitor) {;
  base.removeMonitor(monitor);
  }
 ;
- @Override;
+ @Override
  public boolean invokeMenuActionSync(Activity targetActivity, int id, int flag) {;
  return base.invokeMenuActionSync(targetActivity, id, flag);
  }
 ;
- @Override;
+ @Override
  public boolean invokeContextMenuAction(Activity targetActivity, int id, int flag) {;
  return base.invokeContextMenuAction(targetActivity, id, flag);
  }
 ;
- @Override;
+ @Override
  public void sendStringSync(String text) {;
  base.sendStringSync(text);
  }
 ;
- @Override;
+ @Override
  public void sendKeySync(KeyEvent event) {;
  base.sendKeySync(event);
  }
 ;
- @Override;
+ @Override
  public void sendKeyDownUpSync(int key) {;
  base.sendKeyDownUpSync(key);
  }
 ;
- @Override;
+ @Override
  public void sendCharacterSync(int keyCode) {;
  base.sendCharacterSync(keyCode);
  }
 ;
- @Override;
+ @Override
  public void sendPointerSync(MotionEvent event) {;
  base.sendPointerSync(event);
  }
 ;
- @Override;
+ @Override
  public void sendTrackballEventSync(MotionEvent event) {;
  base.sendTrackballEventSync(event);
  }
 ;
- @Override;
+ @Override
  public Application newApplication(ClassLoader cl, String className, Context context);
  throws InstantiationException, IllegalAccessException, ClassNotFoundException {;
  return base.newApplication(cl, className, context);
  }
 ;
- @Override;
+ @Override
  public void callApplicationOnCreate(Application app) {;
  base.callApplicationOnCreate(app);
  }
 ;
- @Override;
+ @Override
  public Activity newActivity(Class<?> clazz, Context context, IBinder token, Application application, Intent intent, ActivityInfo info, CharSequence title, Activity parent, String id, Object lastNonConfigurationInstance);
  throws InstantiationException, IllegalAccessException {;
  return base.newActivity(clazz, context, token, application, intent, info, title, parent, id, lastNonConfigurationInstance);
  }
 ;
- @Override;
+ @Override
  public Activity newActivity(ClassLoader cl, String className, Intent intent);
  throws InstantiationException, IllegalAccessException, ClassNotFoundException {;
  return base.newActivity(cl, className, intent);
  }
 ;
- @Override;
+ @Override
  public void callActivityOnCreate(Activity activity, Bundle icicle) {;
  base.callActivityOnCreate(activity, icicle);
  }
 ;
  @TargetApi(Build.VERSION_CODES.LOLLIPOP);
- @Override;
+ @Override
  public void callActivityOnCreate(Activity activity, Bundle icicle, PersistableBundle persistentState) {;
  base.callActivityOnCreate(activity, icicle, persistentState);
  }
 ;
- @Override;
+ @Override
  public void callActivityOnDestroy(Activity activity) {;
  base.callActivityOnDestroy(activity);
  }
 ;
- @Override;
+ @Override
  public void callActivityOnRestoreInstanceState(Activity activity, Bundle savedInstanceState) {;
  base.callActivityOnRestoreInstanceState(activity, savedInstanceState);
  }
 ;
  @TargetApi(Build.VERSION_CODES.LOLLIPOP);
- @Override;
+ @Override
  public void callActivityOnRestoreInstanceState(Activity activity, Bundle savedInstanceState, PersistableBundle persistentState) {;
  base.callActivityOnRestoreInstanceState(activity, savedInstanceState, persistentState);
  }
 ;
- @Override;
+ @Override
  public void callActivityOnPostCreate(Activity activity, Bundle icicle) {;
  base.callActivityOnPostCreate(activity, icicle);
  }
 ;
  @TargetApi(Build.VERSION_CODES.LOLLIPOP);
- @Override;
+ @Override
  public void callActivityOnPostCreate(Activity activity, Bundle icicle, PersistableBundle persistentState) {;
  base.callActivityOnPostCreate(activity, icicle, persistentState);
  }
 ;
- @Override;
+ @Override
  public void callActivityOnNewIntent(Activity activity, Intent intent) {;
  base.callActivityOnNewIntent(activity, intent);
  }
 ;
 ;
- @Override;
+ @Override
  public void callActivityOnStart(Activity activity) {;
  base.callActivityOnStart(activity);
  }
 ;
- @Override;
+ @Override
  public void callActivityOnRestart(Activity activity) {;
  base.callActivityOnRestart(activity);
  }
 ;
- @Override;
+ @Override
  public void callActivityOnResume(Activity activity) {;
  base.callActivityOnResume(activity);
  }
 ;
- @Override;
+ @Override
  public void callActivityOnStop(Activity activity) {;
  base.callActivityOnStop(activity);
  }
 ;
- @Override;
+ @Override
  public void callActivityOnSaveInstanceState(Activity activity, Bundle outState) {;
  base.callActivityOnSaveInstanceState(activity, outState);
  }
 ;
  @TargetApi(Build.VERSION_CODES.LOLLIPOP);
- @Override;
+ @Override
  public void callActivityOnSaveInstanceState(Activity activity, Bundle outState, PersistableBundle outPersistentState) {;
  base.callActivityOnSaveInstanceState(activity, outState, outPersistentState);
  }
 ;
- @Override;
+ @Override
  public void callActivityOnPause(Activity activity) {;
  base.callActivityOnPause(activity);
  }
 ;
- @Override;
+ @Override
  public void callActivityOnUserLeaving(Activity activity) {;
  base.callActivityOnUserLeaving(activity);
  }
 ;
- @Override;
+ @Override
  public Bundle getAllocCounts() {;
  return base.getAllocCounts();
  }
 ;
- @Override;
+ @Override
  public Bundle getBinderCounts() {;
  return base.getBinderCounts();
  }
 ;
 ;
  @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2);
- @Override;
+ @Override
  public UiAutomation getUiAutomation() {;
  return base.getUiAutomation();
  }

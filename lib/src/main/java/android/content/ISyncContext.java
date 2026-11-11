@@ -9,9 +9,9 @@ import android.content.SyncResult;
  * Stub interface for ISyncContext.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface ISyncContext.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements ISyncContext.java {
- private static final String DESCRIPTOR = "android.content.ISyncContext.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "android.content.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -20,8 +20,8 @@ public interface ISyncContext.java extends IInterface {
  public static ISyncContext.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof ISyncContext.java) {
- return (ISyncContext.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (ISyncContext) iface;
  }
  return new Proxy(obj);
  }
@@ -40,7 +40,7 @@ public interface ISyncContext.java extends IInterface {
  }
  }
 
- public static class Proxy implements ISyncContext.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

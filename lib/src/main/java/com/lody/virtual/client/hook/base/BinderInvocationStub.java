@@ -69,19 +69,19 @@ public class BinderInvocationStub extends MethodInvocationStub<IInterface> imple
 ;
  private final class AsBinder extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "asBinder";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return BinderInvocationStub.this;
  }
  }
 ;
 ;
- @Override;
+ @Override
  public String getInterfaceDescriptor() throws RemoteException {;
  return mBaseBinder.getInterfaceDescriptor();
  }
@@ -90,43 +90,43 @@ public class BinderInvocationStub extends MethodInvocationStub<IInterface> imple
  return VirtualCore.get().getContext();
  }
 ;
- @Override;
+ @Override
  public boolean pingBinder() {;
  return mBaseBinder.pingBinder();
  }
 ;
- @Override;
+ @Override
  public boolean isBinderAlive() {;
  return mBaseBinder.isBinderAlive();
  }
 ;
- @Override;
+ @Override
  public IInterface queryLocalInterface(String descriptor) {;
  return getProxyInterface();
  }
 ;
- @Override;
+ @Override
  public void dump(FileDescriptor fd, String[] args) throws RemoteException {;
  mBaseBinder.dump(fd, args);
  }
 ;
  @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2);
- @Override;
+ @Override
  public void dumpAsync(FileDescriptor fd, String[] args) throws RemoteException {;
  mBaseBinder.dumpAsync(fd, args);
  }
 ;
- @Override;
+ @Override
  public boolean transact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {;
  return mBaseBinder.transact(code, data, reply, flags);
  }
 ;
- @Override;
+ @Override
  public void linkToDeath(DeathRecipient recipient, int flags) throws RemoteException {;
  mBaseBinder.linkToDeath(recipient, flags);
  }
 ;
- @Override;
+ @Override
  public boolean unlinkToDeath(DeathRecipient recipient, int flags) {;
  return mBaseBinder.unlinkToDeath(recipient, flags);
  }

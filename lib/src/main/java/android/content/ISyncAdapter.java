@@ -11,9 +11,9 @@ import android.content.ISyncContext;
  * Stub interface for ISyncAdapter.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface ISyncAdapter.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements ISyncAdapter.java {
- private static final String DESCRIPTOR = "android.content.ISyncAdapter.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "android.content.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -22,8 +22,8 @@ public interface ISyncAdapter.java extends IInterface {
  public static ISyncAdapter.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof ISyncAdapter.java) {
- return (ISyncAdapter.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (ISyncAdapter) iface;
  }
  return new Proxy(obj);
  }
@@ -42,7 +42,7 @@ public interface ISyncAdapter.java extends IInterface {
  }
  }
 
- public static class Proxy implements ISyncAdapter.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

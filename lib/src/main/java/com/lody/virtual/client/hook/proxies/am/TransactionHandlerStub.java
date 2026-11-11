@@ -17,7 +17,7 @@ import mirror.android.app.ActivityThread;
 public class TransactionHandlerStub implements IInjector {;
  private static final String TAG = "TransactionHandlerStub";
 ;
- @Override;
+ @Override
  public void inject() throws Throwable {;
  Log.i(TAG, "inject transaction handler.");
  Object activityThread = ActivityThread.currentActivityThread.call();
@@ -57,7 +57,7 @@ public class TransactionHandlerStub implements IInjector {;
  Log.i(TAG, "executor's handler: " + mTransactionHandlerField.get(transactionExecutor));
  }
 ;
- @Override;
+ @Override
  public boolean isEnvBad() {;
  return false;
  }

@@ -27,7 +27,7 @@ public class TelephonyStub extends BinderInvocationProxy {;
  super(ITelephony.Stub.asInterface, Context.TELEPHONY_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ReplaceCallingPkgMethodProxy("isOffhook"));
@@ -61,7 +61,7 @@ public class TelephonyStub extends BinderInvocationProxy {;
  addMethodProxy(new ReplaceCallingPkgMethodProxy("isVideoCallingEnabled"));
 ;
  addMethodProxy(new ReplaceCallingPkgMethodProxy("getDeviceIdWithFeature") {;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable{;
  try {;
  return super.call(who, method, args);

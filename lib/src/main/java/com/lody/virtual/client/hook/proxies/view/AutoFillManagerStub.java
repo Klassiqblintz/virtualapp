@@ -41,7 +41,7 @@ public class AutoFillManagerStub extends BinderInvocationProxy {;
  }
 ;
  @SuppressLint("WrongConstant");
- @Override;
+ @Override
  public void inject() throws Throwable {;
  super.inject();
  try {;
@@ -83,7 +83,7 @@ public class AutoFillManagerStub extends BinderInvocationProxy {;
  super(name);
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  // Do NOT call through to the real service — system_server will reject;
  // the call due to UID mismatch and silently drop the IResultReceiver;

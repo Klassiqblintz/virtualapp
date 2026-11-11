@@ -8,9 +8,9 @@ import android.os.IInterface;
  * Stub interface for ISyncStatusObserver.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface ISyncStatusObserver.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements ISyncStatusObserver.java {
- private static final String DESCRIPTOR = "android.content.ISyncStatusObserver.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "android.content.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -19,8 +19,8 @@ public interface ISyncStatusObserver.java extends IInterface {
  public static ISyncStatusObserver.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof ISyncStatusObserver.java) {
- return (ISyncStatusObserver.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (ISyncStatusObserver) iface;
  }
  return new Proxy(obj);
  }
@@ -39,7 +39,7 @@ public interface ISyncStatusObserver.java extends IInterface {
  }
  }
 
- public static class Proxy implements ISyncStatusObserver.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

@@ -24,7 +24,7 @@ public abstract class SchedulerTask implements Runnable {;
  }
 ;
  private final Runnable mInnerRunnable = new Runnable() {;
- @Override;
+ @Override
  public void run() {;
  SchedulerTask.this.run();
  if(mDelay > 0) {;

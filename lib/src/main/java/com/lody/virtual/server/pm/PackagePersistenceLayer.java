@@ -24,24 +24,24 @@ class PackagePersistenceLayer extends PersistenceLayer {;
  mService = service;
  }
 ;
- @Override;
+ @Override
  public int getCurrentVersion() {;
  return CURRENT_VERSION;
  }
 ;
- @Override;
+ @Override
  public void writeMagic(Parcel p) {;
  p.writeCharArray(MAGIC);
  }
 ;
- @Override;
+ @Override
  public boolean verifyMagic(Parcel p) {;
  char[] magic = p.createCharArray();
  return Arrays.equals(magic, MAGIC);
  }
 ;
 ;
- @Override;
+ @Override
  public void writePersistenceData(Parcel p) {;
  synchronized (PackageCacheManager.PACKAGE_CACHE) {;
  p.writeInt(PackageCacheManager.PACKAGE_CACHE.size());
@@ -52,7 +52,7 @@ class PackagePersistenceLayer extends PersistenceLayer {;
  }
  }
 ;
- @Override;
+ @Override
  public void readPersistenceData(Parcel p) {;
  int count = p.readInt();
  while (count-- > 0) {;
@@ -61,13 +61,13 @@ class PackagePersistenceLayer extends PersistenceLayer {;
  }
  }
 ;
- @Override;
+ @Override
  public boolean onVersionConflict(int fileVersion, int currentVersion) {;
  // I am so lazy to process it...;
  return false;
  }
 ;
- @Override;
+ @Override
  public void onPersistenceFileDamage() {;
  getPersistenceFile().delete();
  VAppManagerService.get().restoreFactoryState();

@@ -14,7 +14,7 @@ public class ReplaceCallingPkgMethodProxy extends StaticMethodProxy {;
  super(name);
  }
 ;
- @Override;
+ @Override
  public boolean beforeCall(Object who, Method method, Object... args) {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  return super.beforeCall(who, method, args);

@@ -24,7 +24,7 @@ public class UriGrantsManagerStub extends BinderInvocationProxy {;
  super(IUriGrantsManager.Stub.asInterface, URI_GRANTS_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  // ParceledListSlice<UriPermission> getUriPermissions(String packageName, int callingUid, boolean persistedOnly);

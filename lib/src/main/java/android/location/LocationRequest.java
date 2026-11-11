@@ -11,23 +11,23 @@ public final class LocationRequest implements Parcelable {;
 ;
 ;
  public static final Creator<LocationRequest> CREATOR = new Creator<LocationRequest>() {;
- @Override;
+ @Override
  public LocationRequest createFromParcel(Parcel in) {;
  return null;
  }
 ;
- @Override;
+ @Override
  public LocationRequest[] newArray(int size) {;
  return null;
  }
  };
 ;
- @Override;
+ @Override
  public int describeContents() {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public void writeToParcel(Parcel dest, int flags) {;
  }
 }

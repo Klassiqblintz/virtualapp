@@ -17,7 +17,7 @@ public class ContextHubServiceStub extends BinderInvocationProxy {;
  return Build.VERSION.SDK_INT >= 26 ? "contexthub" : "contexthub_service";
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ResultStaticMethodProxy("registerCallback", 0));

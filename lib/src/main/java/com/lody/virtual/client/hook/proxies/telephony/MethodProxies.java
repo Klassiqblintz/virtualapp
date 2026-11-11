@@ -37,7 +37,7 @@ class MethodProxies {;
  super("getDeviceId");
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return getDeviceInfo().deviceId;
  }
@@ -50,7 +50,7 @@ class MethodProxies {;
  super("getCellLocation");
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (isFakeLocationEnable()) {;
  VCell cell = VirtualLocationManager.get().getCell(getAppUserId(), getAppPkg());
@@ -68,7 +68,7 @@ class MethodProxies {;
  super("getAllCellInfoUsingSubId");
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (isFakeLocationEnable()) {;
  return null;
@@ -84,7 +84,7 @@ class MethodProxies {;
  super("getAllCellInfo");
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (isFakeLocationEnable()) {;
  List<VCell> cells = VirtualLocationManager.get().getAllCell(getAppUserId(), getAppPkg());
@@ -108,7 +108,7 @@ class MethodProxies {;
  super("getNeighboringCellInfo");
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (isFakeLocationEnable()) {;
  List<VCell> cells = VirtualLocationManager.get().getNeighboringCell(getAppUserId(), getAppPkg());

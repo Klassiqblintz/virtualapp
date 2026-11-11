@@ -39,7 +39,7 @@ public abstract class AmsTask extends FutureTask<Bundle> implements AccountManag
 ;
  public AmsTask(Activity activity, Handler handler, AccountManagerCallback<Bundle> callback) {;
  super(new Callable<Bundle>() {;
- @Override;
+ @Override
  public Bundle call() throws Exception {;
  throw new IllegalStateException("this should never be called");
  }
@@ -60,7 +60,7 @@ public abstract class AmsTask extends FutureTask<Bundle> implements AccountManag
  return this;
  }
 ;
- @Override;
+ @Override
  protected void set(Bundle bundle) {;
  // TODO: somehow a null is being set as the result of the Future. Log this;
  // case to help debug where this is occurring. When this bug is fixed this;
@@ -109,19 +109,19 @@ public abstract class AmsTask extends FutureTask<Bundle> implements AccountManag
  throw new OperationCanceledException();
  }
 ;
- @Override;
+ @Override
  public Bundle getResult();
  throws OperationCanceledException, IOException, AuthenticatorException {;
  return internalGetResult(null, null);
  }
 ;
- @Override;
+ @Override
  public Bundle getResult(long timeout, TimeUnit unit);
  throws OperationCanceledException, IOException, AuthenticatorException {;
  return internalGetResult(timeout, unit);
  }
 ;
- @Override;
+ @Override
  protected void done() {;
  if (mCallback != null) {;
  postToHandler(mHandler, mCallback, this);
@@ -132,7 +132,7 @@ public abstract class AmsTask extends FutureTask<Bundle> implements AccountManag
  * Handles the responses from the AccountManager;
  */;
  private class Response extends IAccountManagerResponse.Stub {;
- @Override;
+ @Override
  public void onResult(Bundle bundle) {;
  Intent intent = bundle.getParcelable(KEY_INTENT);
  if (intent != null && mActivity != null) {;
@@ -151,7 +151,7 @@ public abstract class AmsTask extends FutureTask<Bundle> implements AccountManag
  }
  }
 ;
- @Override;
+ @Override
  public void onError(int code, String message) {;
  if (code == ERROR_CODE_CANCELED || code == ERROR_CODE_USER_RESTRICTED;
  || code == ERROR_CODE_MANAGEMENT_DISABLED_FOR_ACCOUNT_TYPE) {;
@@ -187,7 +187,7 @@ public abstract class AmsTask extends FutureTask<Bundle> implements AccountManag
  private void postToHandler(Handler handler, final AccountManagerCallback<Bundle> callback, final AccountManagerFuture<Bundle> future) {;
  handler = handler == null ? VirtualRuntime.getUIHandler() : handler;
  handler.post(new Runnable() {;
- @Override;
+ @Override
  public void run() {;
  callback.run(future);
  }

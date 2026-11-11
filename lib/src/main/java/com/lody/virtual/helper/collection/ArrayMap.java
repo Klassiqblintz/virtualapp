@@ -67,47 +67,47 @@ public class ArrayMap<K, V> extends SimpleArrayMap<K, V> implements Map<K, V> {;
  private MapCollections<K, V> getCollection() {;
  if (mCollections == null) {;
  mCollections = new MapCollections<K, V>() {;
- @Override;
+ @Override
  protected int colGetSize() {;
  return mSize;
  }
 ;
- @Override;
+ @Override
  protected Object colGetEntry(int index, int offset) {;
  return mArray[(index<<1) + offset];
  }
 ;
- @Override;
+ @Override
  protected int colIndexOfKey(Object key) {;
  return indexOfKey(key);
  }
 ;
- @Override;
+ @Override
  protected int colIndexOfValue(Object value) {;
  return indexOfValue(value);
  }
 ;
- @Override;
+ @Override
  protected Map<K, V> colGetMap() {;
  return ArrayMap.this;
  }
 ;
- @Override;
+ @Override
  protected void colPut(K key, V value) {;
  put(key, value);
  }
 ;
- @Override;
+ @Override
  protected V colSetValue(int index, V value) {;
  return setValueAt(index, value);
  }
 ;
- @Override;
+ @Override
  protected void colRemoveAt(int index) {;
  removeAt(index);
  }
 ;
- @Override;
+ @Override
  protected void colClear() {;
  clear();
  }
@@ -130,7 +130,7 @@ public class ArrayMap<K, V> extends SimpleArrayMap<K, V> implements Map<K, V> {;
  * Perform a {@link #put(Object, Object)} of all key/value pairs in <var>map</var>;
  * @param map The map whose contents are to be retrieved.;
  */;
- @Override;
+ @Override
  public void putAll(Map<? extends K, ? extends V> map) {;
  ensureCapacity(mSize + map.size());
  for (Map.Entry<? extends K, ? extends V> entry : map.entrySet()) {;
@@ -169,7 +169,7 @@ public class ArrayMap<K, V> extends SimpleArrayMap<K, V> implements Map<K, V> {;
  * object that exists for the entire iterator, so you can <b>not</b> hold on to it;
  * after calling {@link java.util.Iterator#next() Iterator.next}.</p>;
  */;
- @Override;
+ @Override
  public Set<Entry<K, V>> entrySet() {;
  return getCollection().getEntrySet();
  }
@@ -181,7 +181,7 @@ public class ArrayMap<K, V> extends SimpleArrayMap<K, V> implements Map<K, V> {;
  * <p><b>Note:</b> this is a fairly inefficient way to access the array contents, it;
  * requires generating a number of temporary objects.</p>;
  */;
- @Override;
+ @Override
  public Set<K> keySet() {;
  return getCollection().getKeySet();
  }
@@ -193,7 +193,7 @@ public class ArrayMap<K, V> extends SimpleArrayMap<K, V> implements Map<K, V> {;
  * <p><b>Note:</b> this is a fairly inefficient way to access the array contents, it;
  * requires generating a number of temporary objects.</p>;
  */;
- @Override;
+ @Override
  public Collection<V> values() {;
  return getCollection().getValues();
  }

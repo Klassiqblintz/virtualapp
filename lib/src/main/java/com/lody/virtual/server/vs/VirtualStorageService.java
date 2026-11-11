@@ -30,7 +30,7 @@ public class VirtualStorageService extends IVirtualStorageService.Stub {;
  return mConfigs;
  }
 ;
- @Override;
+ @Override
  public void setVirtualStorage(String packageName, int userId, String vsPath) throws RemoteException {;
  checkUserId(userId);
  synchronized (mConfigs) {;
@@ -56,7 +56,7 @@ public class VirtualStorageService extends IVirtualStorageService.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public String getVirtualStorage(String packageName, int userId) throws RemoteException {;
  checkUserId(userId);
  synchronized (mConfigs) {;
@@ -65,7 +65,7 @@ public class VirtualStorageService extends IVirtualStorageService.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void setVirtualStorageState(String packageName, int userId, boolean enable) throws RemoteException {;
  checkUserId(userId);
  synchronized (mConfigs) {;
@@ -76,7 +76,7 @@ public class VirtualStorageService extends IVirtualStorageService.Stub {;
 ;
  }
 ;
- @Override;
+ @Override
  public boolean isVirtualStorageEnable(String packageName, int userId) throws RemoteException {;
  checkUserId(userId);
  synchronized (mConfigs) {;

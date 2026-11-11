@@ -17,12 +17,12 @@ public class TelephonyRegistryStub extends BinderInvocationProxy {;
  super(ITelephonyRegistry.Stub.asInterface, "telephony.registry");
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ReplaceCallingPkgMethodProxy("listen"));
  addMethodProxy(new ReplaceSequencePkgMethodProxy("listenForSubscriber", 1) {;
- @Override;
+ @Override
  public boolean beforeCall(Object who, Method method, Object... args) {;
  if (android.os.Build.VERSION.SDK_INT >= 17) {;
  if (isFakeLocationEnable()) {;

@@ -29,7 +29,7 @@ public class LibCoreStub extends MethodInvocationProxy<MethodInvocationStub<Obje
  return os;
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ReplaceUidMethodProxy("chown", 1));
@@ -39,12 +39,12 @@ public class LibCoreStub extends MethodInvocationProxy<MethodInvocationStub<Obje
  addMethodProxy(new ReplaceUidMethodProxy("setuid", 0));
  }
 ;
- @Override;
+ @Override
  public void inject() throws Throwable {;
  Libcore.os.set(getInvocationStub().getProxyInterface());
  }
 ;
- @Override;
+ @Override
  public boolean isEnvBad() {;
  return getOs() != getInvocationStub().getProxyInterface();
  }

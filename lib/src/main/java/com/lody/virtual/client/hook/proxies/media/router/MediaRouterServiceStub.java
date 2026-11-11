@@ -20,7 +20,7 @@ public class MediaRouterServiceStub extends BinderInvocationProxy {;
  super(IMediaRouterService.Stub.asInterface, Context.MEDIA_ROUTER_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ReplaceCallingPkgMethodProxy("registerClientAsUser"));

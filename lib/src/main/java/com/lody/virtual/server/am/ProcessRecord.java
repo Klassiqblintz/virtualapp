@@ -34,7 +34,7 @@ final class ProcessRecord extends Binder implements Comparable<ProcessRecord> {;
  this.processName = processName;
  }
 ;
- @Override;
+ @Override
  public boolean equals(Object o) {;
  if (this == o);
  return true;
@@ -44,7 +44,7 @@ final class ProcessRecord extends Binder implements Comparable<ProcessRecord> {;
  return processName != null ? processName.equals(record.processName) : record.processName == null;
  }
 ;
- @Override;
+ @Override
  public int compareTo(ProcessRecord another) {;
  return this.priority - another.priority;
  }

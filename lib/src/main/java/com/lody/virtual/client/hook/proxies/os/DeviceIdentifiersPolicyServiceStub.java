@@ -20,11 +20,11 @@ public class DeviceIdentifiersPolicyServiceStub extends BinderInvocationProxy {;
  super(IDeviceIdentifiersPolicyService.Stub.TYPE, "device_identifiers");
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
 ;
  addMethodProxy(new ReplaceCallingPkgMethodProxy("getSerialForPackage") {;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  ApplicationInfo info = VClientImpl.get().getCurrentApplicationInfo();
  if (info != null && info.targetSdkVersion >= 29 && BuildCompat.isQ()) {;

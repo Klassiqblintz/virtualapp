@@ -18,7 +18,7 @@ public class UsageStatsManagerStub extends BinderInvocationProxy {;
  public UsageStatsManagerStub() {;
  super(IUsageStatsManager.Stub.asInterface, Context.USAGE_STATS_SERVICE);
  }
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ReplaceLastPkgMethodProxy("queryUsageStats"));

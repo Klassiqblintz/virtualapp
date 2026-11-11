@@ -23,14 +23,14 @@ public class LauncherAppsStub extends BinderInvocationProxy {;
  return mirror.android.content.pm.LauncherApps.mService.get(cm);
  }
 ;
- @Override;
+ @Override
  public void inject() throws Throwable {;
  super.inject();
  LauncherApps cm = (LauncherApps) VirtualCore.get().getContext().getSystemService(Context.LAUNCHER_APPS_SERVICE);
  mirror.android.content.pm.LauncherApps.mService.set(cm, getInvocationStub().getProxyInterface());
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ReplaceCallingPkgMethodProxy("addOnAppsChangedListener"));

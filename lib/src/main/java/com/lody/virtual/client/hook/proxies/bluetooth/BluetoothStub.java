@@ -22,7 +22,7 @@ public class BluetoothStub extends BinderInvocationProxy {;
  super(IBluetooth.Stub.asInterface, SERVICE_NAME);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new GetAddress());
@@ -35,7 +35,7 @@ public class BluetoothStub extends BinderInvocationProxy {;
  super("getAddress");
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return getDeviceInfo().bluetoothMac;
  }

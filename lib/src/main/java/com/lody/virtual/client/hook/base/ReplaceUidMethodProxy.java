@@ -10,7 +10,7 @@ public class ReplaceUidMethodProxy extends StaticMethodProxy {;
  this.index = index;
  }
 ;
- @Override;
+ @Override
  public boolean beforeCall(Object who, Method method, Object... args) {;
  int uid = (int) args[index];
  if (uid == getVUid() || uid == getBaseVUid()) {;

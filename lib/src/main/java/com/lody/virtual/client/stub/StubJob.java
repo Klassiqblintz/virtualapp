@@ -38,7 +38,7 @@ public class StubJob extends Service {;
  private JobScheduler mScheduler;
  private final IJobService mService = new IJobService.Stub() {;
 ;
- @Override;
+ @Override
  public void startJob(JobParameters jobParams) throws RemoteException {;
  int jobId = jobParams.getJobId();
  IBinder binder = mirror.android.app.job.JobParameters.callback.get(jobParams);
@@ -80,7 +80,7 @@ public class StubJob extends Service {;
  }
  }
 ;
- @Override;
+ @Override
  public void stopJob(JobParameters jobParams) throws RemoteException {;
  int jobId = jobParams.getJobId();
  synchronized (mJobSessions) {;
@@ -104,14 +104,14 @@ public class StubJob extends Service {;
  }
  }
 ;
- @Override;
+ @Override
  public void onCreate() {;
  super.onCreate();
  InvocationStubManager.getInstance().checkEnv(ActivityManagerStub.class);
  mScheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
  }
 ;
- @Override;
+ @Override
  public IBinder onBind(Intent intent) {;
  return mService.asBinder();
  }
@@ -129,22 +129,22 @@ public class StubJob extends Service {;
  this.jobParams = jobParams;
  }
 ;
- @Override;
+ @Override
  public void acknowledgeStartMessage(int jobId, boolean ongoing) throws RemoteException {;
  clientCallback.acknowledgeStartMessage(jobId, ongoing);
  }
 ;
- @Override;
+ @Override
  public void acknowledgeStopMessage(int jobId, boolean reschedule) throws RemoteException {;
  clientCallback.acknowledgeStopMessage(jobId, reschedule);
  }
 ;
- @Override;
+ @Override
  public void jobFinished(int jobId, boolean reschedule) throws RemoteException {;
  clientCallback.jobFinished(jobId, reschedule);
  }
 ;
- @Override;
+ @Override
  public void onServiceConnected(ComponentName name, IBinder service) {;
  clientJobService = IJobService.Stub.asInterface(service);
  if (clientJobService == null) {;
@@ -160,7 +160,7 @@ public class StubJob extends Service {;
  }
  }
 ;
- @Override;
+ @Override
  public void onServiceDisconnected(ComponentName name) {;
 ;
  }

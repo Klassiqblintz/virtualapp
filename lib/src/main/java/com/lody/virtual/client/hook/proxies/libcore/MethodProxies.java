@@ -19,19 +19,19 @@ class MethodProxies {;
 ;
  static class Lstat extends Stat {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "lstat";
  }
  }
 ;
  static class Getpwnam extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getpwnam";
  }
 ;
- @Override;
+ @Override
  public Object afterCall(Object who, Method method, Object[] args, Object result) throws Throwable {;
  if (result != null) {;
  Reflect pwd = Reflect.on(result);
@@ -46,12 +46,12 @@ class MethodProxies {;
 ;
  static class GetUid extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getuid";
  }
 ;
- @Override;
+ @Override
  public Object afterCall(Object who, Method method, Object[] args, Object result) throws Throwable {;
  int uid = (int) result;
  return NativeEngine.onGetUid(uid);
@@ -59,12 +59,12 @@ class MethodProxies {;
  }
 ;
  static class GetsockoptUcred extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getsockoptUcred";
  }
 ;
- @Override;
+ @Override
  public Object afterCall(Object who, Method method, Object[] args, Object result) throws Throwable {;
  if (result != null) {;
  Reflect ucred = Reflect.on(result);
@@ -92,7 +92,7 @@ class MethodProxies {;
  }
  }
 ;
- @Override;
+ @Override
  public Object afterCall(Object who, Method method, Object[] args, Object result) throws Throwable {;
  int uid = (int) st_uid.get(result);
  if (uid == VirtualCore.get().myUid()) {;
@@ -101,7 +101,7 @@ class MethodProxies {;
  return result;
  }
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "stat";
  }

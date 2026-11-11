@@ -76,7 +76,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
  }
 ;
  @SuppressLint("MissingSuperCall");
- @Override;
+ @Override
  protected void onCreate(Bundle savedInstanceState) {;
  final int titleResource;
  final Intent intent = makeMyIntent();
@@ -138,7 +138,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
  builder.setMessage(R.string.noApplications);
  }
  builder.setOnCancelListener(new DialogInterface.OnCancelListener() {;
- @Override;
+ @Override
  public void onCancel(DialogInterface dialog) {;
  finish();
  }
@@ -163,7 +163,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
 // }
  }
 ;
- @Override;
+ @Override
  protected void onDestroy() {;
  if (dialog != null && dialog.isShowing()) {;
  dialog.dismiss();
@@ -205,7 +205,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
  return ri.loadIcon(mPm);
  }
 ;
- @Override;
+ @Override
  protected void onRestart() {;
  super.onRestart();
  if (!mRegistered) {;
@@ -214,7 +214,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
  mAdapter.handlePackagesChanged();
  }
 ;
- @Override;
+ @Override
  protected void onStop() {;
  super.onStop();
  if (mRegistered) {;
@@ -233,7 +233,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
  }
  }
 ;
- @Override;
+ @Override
  protected void onRestoreInstanceState(Bundle savedInstanceState) {;
  super.onRestoreInstanceState(savedInstanceState);
  if (mAlwaysUseOption) {;
@@ -248,7 +248,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
  }
  }
 ;
- @Override;
+ @Override
  public void onItemClick(AdapterView<?> parent, View view, int position, long id) {;
  final int checkedPos = mListView.getCheckedItemPosition();
  final boolean hasValidSelection = checkedPos != ListView.INVALID_POSITION;
@@ -703,7 +703,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
 ;
  class ItemLongClickListener implements AdapterView.OnItemLongClickListener {;
 ;
- @Override;
+ @Override
  public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {;
  ResolveInfo ri = mAdapter.resolveInfoForPosition(position);
  showAppDetails(ri);
@@ -713,7 +713,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
  }
 ;
  class LoadIconTask extends AsyncTask<DisplayResolveInfo, Void, DisplayResolveInfo> {;
- @Override;
+ @Override
  protected DisplayResolveInfo doInBackground(DisplayResolveInfo... params) {;
  final DisplayResolveInfo info = params[0];
  if (info.displayIcon == null) {;
@@ -722,7 +722,7 @@ public class ResolverActivity extends Activity implements AdapterView.OnItemClic
  return info;
  }
 ;
- @Override;
+ @Override
  protected void onPostExecute(DisplayResolveInfo info) {;
  mAdapter.notifyDataSetChanged();
  }

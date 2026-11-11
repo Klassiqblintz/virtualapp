@@ -42,19 +42,19 @@ public class ProviderHook implements InvocationHandler {;
 ;
  static {;
  PROVIDER_MAP.put("settings", new HookFetcher() {;
- @Override;
+ @Override
  public ProviderHook fetch(boolean external, IInterface provider) {;
  return new SettingsProviderHook(provider);
  }
  });
  PROVIDER_MAP.put("downloads", new HookFetcher() {;
- @Override;
+ @Override
  public ProviderHook fetch(boolean external, IInterface provider) {;
  return new DownloadProviderHook(provider);
  }
  });
  PROVIDER_MAP.put("media", new HookFetcher() {;
- @Override;
+ @Override
  public ProviderHook fetch(boolean external, IInterface provider) {;
  return new MediaProviderHook(provider);
  }
@@ -71,7 +71,7 @@ public class ProviderHook implements InvocationHandler {;
  HookFetcher fetcher = PROVIDER_MAP.get(authority);
  if (fetcher == null) {;
  fetcher = new HookFetcher() {;
- @Override;
+ @Override
  public ProviderHook fetch(boolean external, IInterface provider) {;
  if (external) {;
  return new ExternalProviderHook(provider);
@@ -144,7 +144,7 @@ public class ProviderHook implements InvocationHandler {;
  return (AssetFileDescriptor) methodBox.call();
  }
 ;
- @Override;
+ @Override
  public Object invoke(Object proxy, Method method, Object... args) throws Throwable {;
  try {;
  processArgs(method, args);

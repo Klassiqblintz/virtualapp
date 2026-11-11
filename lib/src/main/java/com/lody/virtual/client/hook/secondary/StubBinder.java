@@ -25,17 +25,17 @@ abstract class StubBinder implements IBinder {;
  this.mBase = base;
  }
 ;
- @Override;
+ @Override
  public String getInterfaceDescriptor() throws RemoteException {;
  return mBase.getInterfaceDescriptor();
  }
 ;
- @Override;
+ @Override
  public boolean pingBinder() {;
  return mBase.pingBinder();
  }
 ;
- @Override;
+ @Override
  public boolean isBinderAlive() {;
  return mBase.isBinderAlive();
  }
@@ -47,7 +47,7 @@ abstract class StubBinder implements IBinder {;
  * Search the AidlClass.Stub.asInterface(IBinder) method by the StackTrace.;
  *;
  */;
- @Override;
+ @Override
  public IInterface queryLocalInterface(String descriptor) {;
  if (mInterface == null) {;
  StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
@@ -89,27 +89,27 @@ abstract class StubBinder implements IBinder {;
  public abstract InvocationHandler createHandler(Class<?> interfaceClass, IInterface iInterface);
 ;
 ;
- @Override;
+ @Override
  public void dump(FileDescriptor fd, String[] args) throws RemoteException {;
  mBase.dump(fd, args);
  }
 ;
- @Override;
+ @Override
  public void dumpAsync(FileDescriptor fd, String[] args) throws RemoteException {;
  mBase.dumpAsync(fd, args);
  }
 ;
- @Override;
+ @Override
  public boolean transact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {;
  return mBase.transact(code, data, reply, flags);
  }
 ;
- @Override;
+ @Override
  public void linkToDeath(DeathRecipient recipient, int flags) throws RemoteException {;
  mBase.linkToDeath(recipient, flags);
  }
 ;
- @Override;
+ @Override
  public boolean unlinkToDeath(DeathRecipient recipient, int flags) {;
  return mBase.unlinkToDeath(recipient, flags);
  }

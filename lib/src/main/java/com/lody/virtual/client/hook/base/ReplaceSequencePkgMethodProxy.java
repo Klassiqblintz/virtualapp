@@ -17,7 +17,7 @@ public class ReplaceSequencePkgMethodProxy extends StaticMethodProxy {;
  this.sequence = sequence;
  }
 ;
- @Override;
+ @Override
  public boolean beforeCall(Object who, Method method, Object... args) {;
  MethodParameterUtils.replaceSequenceAppPkg(args, sequence);
  return super.beforeCall(who, method, args);

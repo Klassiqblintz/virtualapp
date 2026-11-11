@@ -15,7 +15,7 @@ public class DropBoxManagerStub extends BinderInvocationProxy {;
  super(IDropBoxManagerService.Stub.asInterface, Context.DROPBOX_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ResultStaticMethodProxy("getNextEntry", null));

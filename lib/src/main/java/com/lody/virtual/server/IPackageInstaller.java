@@ -14,9 +14,9 @@ import android.graphics.Bitmap;
  * Stub interface for IPackageInstaller.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface IPackageInstaller.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements IPackageInstaller.java {
- private static final String DESCRIPTOR = "com.lody.virtual.server.IPackageInstaller.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "com.lody.virtual.server.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -25,8 +25,8 @@ public interface IPackageInstaller.java extends IInterface {
  public static IPackageInstaller.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof IPackageInstaller.java) {
- return (IPackageInstaller.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (IPackageInstaller) iface;
  }
  return new Proxy(obj);
  }
@@ -37,15 +37,15 @@ public interface IPackageInstaller.java extends IInterface {
  @Override
  public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException {
  switch (code) {
- case android.os.IBinder.INTERFACE_TRANSACTION:
+ case android.os.IBinder.INTERFACE_TRANSACTION:;
  reply.writeString(DESCRIPTOR);
  return true;
- default:
+ default:;
  return super.onTransact(code, data, reply, flags);
  }
  }
 
- public static class Proxy implements IPackageInstaller.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

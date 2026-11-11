@@ -27,7 +27,7 @@ import static com.lody.virtual.os.VEnvironment.getPackageResourcePath;
  super();
  }
 ;
- @Override;
+ @Override
  public boolean dealNotification(int id, Notification notification, String packageName) {;
  Context appContext = getAppContext(packageName);
  return resolveRemoteViews(appContext, packageName, notification);

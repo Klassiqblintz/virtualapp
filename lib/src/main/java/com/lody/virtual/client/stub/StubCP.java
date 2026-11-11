@@ -19,12 +19,12 @@ import com.lody.virtual.helper.compat.BundleCompat;
  */;
 public class StubCP extends ContentProvider {;
 ;
- @Override;
+ @Override
  public boolean onCreate() {;
  return true;
  }
 ;
- @Override;
+ @Override
  public Bundle call(String method, String arg, Bundle extras) {;
  if ("_VA_|_init_process_".equals(method)) {;
  return initProcess(extras);
@@ -47,27 +47,27 @@ public class StubCP extends ContentProvider {;
  return res;
  }
 ;
- @Override;
+ @Override
  public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {;
  return null;
  }
 ;
- @Override;
+ @Override
  public String getType(Uri uri) {;
  return null;
  }
 ;
- @Override;
+ @Override
  public Uri insert(Uri uri, ContentValues values) {;
  return null;
  }
 ;
- @Override;
+ @Override
  public int delete(Uri uri, String selection, String[] selectionArgs) {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {;
  return 0;
  }

@@ -8,9 +8,9 @@ import android.os.IInterface;
  * Stub interface for IStopUserCallback.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface IStopUserCallback.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements IStopUserCallback.java {
- private static final String DESCRIPTOR = "android.app.IStopUserCallback.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "android.app.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -19,8 +19,8 @@ public interface IStopUserCallback.java extends IInterface {
  public static IStopUserCallback.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof IStopUserCallback.java) {
- return (IStopUserCallback.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (IStopUserCallback) iface;
  }
  return new Proxy(obj);
  }
@@ -39,7 +39,7 @@ public interface IStopUserCallback.java extends IInterface {
  }
  }
 
- public static class Proxy implements IStopUserCallback.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

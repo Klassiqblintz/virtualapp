@@ -78,7 +78,7 @@ public class ArtDexOptimizer {;
 ;
  static void consumeInputStream(final InputStream is) {;
  STREAM_CONSUMER.execute(new Runnable() {;
- @Override;
+ @Override
  public void run() {;
  if (is == null) {;
  return;

@@ -23,13 +23,13 @@ public class ProxyServiceFactory {;
 ;
  static {;
  sHookSecondaryServiceMap.put("com.google.android.auth.IAuthManagerService", new ServiceFetcher() {;
- @Override;
+ @Override
  public IBinder getService(final Context context, ClassLoader classLoader, IBinder binder) {;
  return new StubBinder(classLoader, binder) {;
- @Override;
+ @Override
  public InvocationHandler createHandler(Class<?> interfaceClass, final IInterface base) {;
  return new InvocationHandler() {;
- @Override;
+ @Override
  public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {;
  try {;
  return method.invoke(base, args);
@@ -47,13 +47,13 @@ public class ProxyServiceFactory {;
  });
 ;
  sHookSecondaryServiceMap.put("com.android.vending.billing.IInAppBillingService", new ServiceFetcher() {;
- @Override;
+ @Override
  public IBinder getService(final Context context, ClassLoader classLoader, IBinder binder) {;
  return new StubBinder(classLoader, binder) {;
- @Override;
+ @Override
  public InvocationHandler createHandler(Class<?> interfaceClass, final IInterface base) {;
  return new InvocationHandler() {;
- @Override;
+ @Override
  public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {;
  try {;
  return method.invoke(base, args);
@@ -71,14 +71,14 @@ public class ProxyServiceFactory {;
  });
 ;
  sHookSecondaryServiceMap.put("com.google.android.gms.common.internal.IGmsServiceBroker", new ServiceFetcher() {;
- @Override;
+ @Override
  public IBinder getService(final Context context, ClassLoader classLoader, IBinder binder) {;
  return new StubBinder(classLoader, binder) {;
 ;
- @Override;
+ @Override
  public InvocationHandler createHandler(Class<?> interfaceClass, final IInterface base) {;
  return new InvocationHandler() {;
- @Override;
+ @Override
  public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {;
  try {;
  return method.invoke(base, args);

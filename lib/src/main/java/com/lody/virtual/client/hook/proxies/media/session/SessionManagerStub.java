@@ -19,7 +19,7 @@ public class SessionManagerStub extends BinderInvocationProxy {;
  super(ISessionManager.Stub.asInterface, Context.MEDIA_SESSION_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ReplaceCallingPkgMethodProxy("createSession"));

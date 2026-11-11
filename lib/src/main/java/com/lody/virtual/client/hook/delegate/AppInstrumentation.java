@@ -58,18 +58,18 @@ public final class AppInstrumentation extends InstrumentationDelegate implements
  }
 ;
 ;
- @Override;
+ @Override
  public void inject() throws Throwable {;
  base = ActivityThread.mInstrumentation.get(VirtualCore.mainThread());
  ActivityThread.mInstrumentation.set(VirtualCore.mainThread(), this);
  }
 ;
- @Override;
+ @Override
  public boolean isEnvBad() {;
  return !(ActivityThread.mInstrumentation.get(VirtualCore.mainThread()) instanceof AppInstrumentation);
  }
 ;
- @Override;
+ @Override
  public void callActivityOnCreate(Activity activity, Bundle icicle) {;
  if (icicle != null) {;
  BundleCompat.clearParcelledData(icicle);
@@ -118,7 +118,7 @@ public final class AppInstrumentation extends InstrumentationDelegate implements
  VirtualCore.get().getComponentDelegate().afterActivityCreate(activity);
  }
 ;
- @Override;
+ @Override
  public Activity newActivity(Class<?> clazz, Context context, IBinder token, Application application, Intent intent, ActivityInfo info, CharSequence title, Activity parent, String id, Object lastNonConfigurationInstance) throws InstantiationException, IllegalAccessException {;
  try {;
  return super.newActivity(clazz, context, token, application, intent, info, title, parent, id, lastNonConfigurationInstance);
@@ -131,7 +131,7 @@ public final class AppInstrumentation extends InstrumentationDelegate implements
  }
  }
 ;
- @Override;
+ @Override
  public Activity newActivity(ClassLoader cl, String className, Intent intent) throws InstantiationException, IllegalAccessException, ClassNotFoundException {;
  try {;
  return super.newActivity(cl, className, intent);
@@ -144,7 +144,7 @@ public final class AppInstrumentation extends InstrumentationDelegate implements
  }
  }
 ;
- @Override;
+ @Override
  public void callActivityOnCreate(Activity activity, Bundle icicle, PersistableBundle persistentState) {;
  if (icicle != null) {;
  BundleCompat.clearParcelledData(icicle);
@@ -152,7 +152,7 @@ public final class AppInstrumentation extends InstrumentationDelegate implements
  super.callActivityOnCreate(activity, icicle, persistentState);
  }
 ;
- @Override;
+ @Override
  public void callActivityOnResume(Activity activity) {;
  VirtualCore.get().getComponentDelegate().beforeActivityResume(activity);
  VActivityManager.get().onActivityResumed(activity);
@@ -164,14 +164,14 @@ public final class AppInstrumentation extends InstrumentationDelegate implements
  }
 ;
 ;
- @Override;
+ @Override
  public void callActivityOnDestroy(Activity activity) {;
  VirtualCore.get().getComponentDelegate().beforeActivityDestroy(activity);
  super.callActivityOnDestroy(activity);
  VirtualCore.get().getComponentDelegate().afterActivityDestroy(activity);
  }
 ;
- @Override;
+ @Override
  public void callActivityOnPause(Activity activity) {;
  VirtualCore.get().getComponentDelegate().beforeActivityPause(activity);
  super.callActivityOnPause(activity);
@@ -179,7 +179,7 @@ public final class AppInstrumentation extends InstrumentationDelegate implements
  }
 ;
 ;
- @Override;
+ @Override
  public void callApplicationOnCreate(Application app) {;
  super.callApplicationOnCreate(app);
  }

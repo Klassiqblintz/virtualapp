@@ -24,7 +24,7 @@ public class InputMethodManagerStub extends BinderInvocationProxy {;
  VirtualCore.get().getContext().getSystemService(Context.INPUT_METHOD_SERVICE)), Context.INPUT_METHOD_SERVICE);
  }
 ;
- @Override;
+ @Override
  public void inject() throws Throwable {;
  Object inputMethodManager = getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
  InputMethodManager.mService.set(inputMethodManager, getInvocationStub().getProxyInterface());
@@ -32,7 +32,7 @@ public class InputMethodManagerStub extends BinderInvocationProxy {;
  }
 ;
 ;
- @Override;
+ @Override
  public boolean isEnvBad() {;
  Object inputMethodManager = getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
  return InputMethodManager;

@@ -21,7 +21,7 @@ public class ConnectivityStub extends BinderInvocationProxy {;
  super(IConnectivityManager.Stub.asInterface, Context.CONNECTIVITY_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  }

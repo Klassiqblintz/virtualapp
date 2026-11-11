@@ -9,9 +9,9 @@ import android.content.ComponentName;
  * Stub interface for IBinderDelegateService.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface IBinderDelegateService.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements IBinderDelegateService.java {
- private static final String DESCRIPTOR = "com.lody.virtual.server.IBinderDelegateService.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "com.lody.virtual.server.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -20,8 +20,8 @@ public interface IBinderDelegateService.java extends IInterface {
  public static IBinderDelegateService.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof IBinderDelegateService.java) {
- return (IBinderDelegateService.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (IBinderDelegateService) iface;
  }
  return new Proxy(obj);
  }
@@ -40,7 +40,7 @@ public interface IBinderDelegateService.java extends IInterface {
  }
  }
 
- public static class Proxy implements IBinderDelegateService.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

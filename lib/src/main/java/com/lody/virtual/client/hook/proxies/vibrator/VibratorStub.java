@@ -19,7 +19,7 @@ public class VibratorStub extends BinderInvocationProxy {;
  super(IVibratorService.Stub.asInterface, Context.VIBRATOR_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  //Samsung {;
  addMethodProxy(new VibrateMethodProxy("vibrateMagnitude"));
@@ -35,7 +35,7 @@ public class VibratorStub extends BinderInvocationProxy {;
  super(name);
  }
 ;
- @Override;
+ @Override
  public boolean beforeCall(Object who, Method method, Object... args) {;
  if (args[0] instanceof Integer) {;
  args[0] = getRealUid();

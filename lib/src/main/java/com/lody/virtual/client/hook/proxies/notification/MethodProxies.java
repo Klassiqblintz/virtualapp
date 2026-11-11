@@ -21,12 +21,12 @@ class MethodProxies {;
 ;
  static class EnqueueNotification extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "enqueueNotification";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String pkg = (String) args[0];
  if (getHostPkg().equals(pkg)) {;
@@ -49,12 +49,12 @@ class MethodProxies {;
 ;
  /* package */ static class EnqueueNotificationWithTag extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "enqueueNotificationWithTag";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String pkg = (String) args[0];
  if (getHostPkg().equals(pkg)) {;
@@ -86,7 +86,7 @@ class MethodProxies {;
 ;
  /* package */ static class EnqueueNotificationWithTagPriority extends EnqueueNotificationWithTag {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "enqueueNotificationWithTagPriority";
  }
@@ -94,12 +94,12 @@ class MethodProxies {;
 ;
  /* package */ static class CancelNotificationWithTag extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "cancelNotificationWithTag";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String pkg = MethodParameterUtils.replaceFirstAppPkg(args);
  if (getHostPkg().equals(pkg)) {;
@@ -131,12 +131,12 @@ class MethodProxies {;
  */;
  /* package */ static class CancelAllNotifications extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "cancelAllNotifications";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String pkg = MethodParameterUtils.replaceFirstAppPkg(args);
  if (VirtualCore.get().isAppInstalled(pkg)) {;
@@ -148,12 +148,12 @@ class MethodProxies {;
  }
 ;
  static class AreNotificationsEnabledForPackage extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "areNotificationsEnabledForPackage";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String pkg = (String) args[0];
  if (getHostPkg().equals(pkg)) {;
@@ -164,12 +164,12 @@ class MethodProxies {;
  }
 ;
  static class SetNotificationsEnabledForPackage extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "setNotificationsEnabledForPackage";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  String pkg = (String) args[0];
  if (getHostPkg().equals(pkg)) {;

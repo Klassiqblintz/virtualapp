@@ -53,7 +53,7 @@ public class SparseArray<E> implements Cloneable {;
  mSize = 0;
  }
 ;
- @Override;
+ @Override
  @SuppressWarnings("unchecked");
  public SparseArray<E> clone() {;
  SparseArray<E> clone = null;
@@ -309,8 +309,8 @@ public class SparseArray<E> implements Cloneable {;
  gc();
  }
 ;
- for (int i = 0; i < mSize; i++);
- if (mValues[i] == value);
+ for (int i = 0; i < mSize; i++)
+ if (mValues[i] == value)
  return i;
 ;
  return -1;
@@ -372,7 +372,7 @@ public class SparseArray<E> implements Cloneable {;
  * this map contains itself as a value, the string "(this Map)";
  * will appear in its place.;
  */;
- @Override;
+ @Override
  public String toString() {;
  if (size() <= 0) {;
  return "{}";

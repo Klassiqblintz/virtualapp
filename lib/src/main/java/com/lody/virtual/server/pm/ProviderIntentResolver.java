@@ -83,7 +83,7 @@ final class ProviderIntentResolver extends IntentResolver<VPackage.ProviderInten
  }
 ;
  @TargetApi(Build.VERSION_CODES.KITKAT);
- @Override;
+ @Override
  protected boolean allowFilterResult(VPackage.ProviderIntentInfo filter, List<ResolveInfo> dest) {;
  ProviderInfo filterPi = filter.provider.info;
  for (int i = dest.size() - 1; i >= 0; i--) {;
@@ -96,23 +96,23 @@ final class ProviderIntentResolver extends IntentResolver<VPackage.ProviderInten
  return true;
  }
 ;
- @Override;
+ @Override
  protected VPackage.ProviderIntentInfo[] newArray(int size) {;
  return new VPackage.ProviderIntentInfo[size];
  }
 ;
- @Override;
+ @Override
  protected boolean isFilterStopped(VPackage.ProviderIntentInfo filter) {;
  return false;
  }
 ;
- @Override;
+ @Override
  protected boolean isPackageForFilter(String packageName, VPackage.ProviderIntentInfo info) {;
  return packageName.equals(info.provider.owner.packageName);
  }
 ;
  @TargetApi(Build.VERSION_CODES.KITKAT);
- @Override;
+ @Override
  protected ResolveInfo newResult(VPackage.ProviderIntentInfo filter, int match, int userId) {;
  final VPackage.ProviderComponent provider = filter.provider;
  PackageSetting ps = (PackageSetting) provider.owner.mExtras;
@@ -135,17 +135,17 @@ final class ProviderIntentResolver extends IntentResolver<VPackage.ProviderInten
  return res;
  }
 ;
- @Override;
+ @Override
  protected void sortResults(List<ResolveInfo> results) {;
  Collections.sort(results, VPackageManagerService.sResolvePrioritySorter);
  }
 ;
- @Override;
+ @Override
  protected void dumpFilter(PrintWriter out, String prefix, VPackage.ProviderIntentInfo filter) {;
 ;
  }
 ;
- @Override;
+ @Override
  protected Object filterToLabel(VPackage.ProviderIntentInfo filter) {;
  return filter.provider;
  }

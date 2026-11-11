@@ -45,7 +45,7 @@ public class MethodProxies {;
  super(name);
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (isFakeLocationEnable()) {;
  Object transport = ArrayUtils.getFirst(args, mirror.android.location.LocationManager.GpsStatusListenerTransport.TYPE);
@@ -70,7 +70,7 @@ public class MethodProxies {;
  super("requestLocationUpdates");
  }
 ;
- @Override;
+ @Override
  public Object call(final Object who, Method method, Object... args) throws Throwable {;
  if (Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN) {;
  LocationRequest request = (LocationRequest) args[0];
@@ -100,7 +100,7 @@ public class MethodProxies {;
  super("removeUpdates");
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (isFakeLocationEnable()) {;
  // TODO;
@@ -116,7 +116,7 @@ public class MethodProxies {;
  super("getLastLocation");
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (!(args[0] instanceof String)) {;
  LocationRequest request = (LocationRequest) args[0];
@@ -135,7 +135,7 @@ public class MethodProxies {;
  }
 ;
  static class GetLastKnownLocation extends GetLastLocation {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getLastKnownLocation";
  }
@@ -148,24 +148,24 @@ public class MethodProxies {;
  LocationManager.NETWORK_PROVIDER;
  );
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getProviders";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  return PROVIDERS;
  }
  }
 ;
  static class IsProviderEnabled extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "isProviderEnabled";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (isFakeLocationEnable()) {;
  String provider = (String) args[0];
@@ -187,19 +187,19 @@ public class MethodProxies {;
 ;
  static class getAllProviders extends getProviders {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getAllProviders";
  }
  }
 ;
  static class GetBestProvider extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getBestProvider";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (isFakeLocationEnable()) {;
  return LocationManager.GPS_PROVIDER;
@@ -218,7 +218,7 @@ public class MethodProxies {;
  super(name);
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (isFakeLocationEnable()) {;
  return 0;
@@ -229,12 +229,12 @@ public class MethodProxies {;
 ;
  static class sendExtraCommand extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "sendExtraCommand";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (isFakeLocationEnable()) {;
  return true;
@@ -252,12 +252,12 @@ public class MethodProxies {;
 ;
  static class RegisterGnssStatusCallback extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "registerGnssStatusCallback";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  if (!isFakeLocationEnable()) {;
@@ -281,12 +281,12 @@ public class MethodProxies {;
 ;
  static class getProviderProperties extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getProviderProperties";
  }
 ;
- @Override;
+ @Override
  public Object afterCall(Object who, Method method, Object[] args, Object result) throws Throwable {;
  if (isFakeLocationEnable()) {;
  return super.afterCall(who, method, args, result);
@@ -303,7 +303,7 @@ public class MethodProxies {;
 ;
  static class locationCallbackFinished extends MethodProxy {;
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (isFakeLocationEnable()) {;
  return true;
@@ -311,7 +311,7 @@ public class MethodProxies {;
  return super.call(who, method, args);
  }
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "locationCallbackFinished";
  }

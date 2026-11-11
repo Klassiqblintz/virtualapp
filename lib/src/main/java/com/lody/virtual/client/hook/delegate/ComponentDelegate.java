@@ -10,57 +10,57 @@ public interface ComponentDelegate {;
 ;
  ComponentDelegate EMPTY = new ComponentDelegate() {;
 ;
- @Override;
+ @Override
  public void beforeActivityCreate(Activity activity) {;
  // Empty;
  }
 ;
- @Override;
+ @Override
  public void beforeActivityResume(Activity activity) {;
  // Empty;
  }
 ;
- @Override;
+ @Override
  public void beforeActivityPause(Activity activity) {;
  // Empty;
  }
 ;
- @Override;
+ @Override
  public void beforeActivityDestroy(Activity activity) {;
  // Empty;
  }
 ;
- @Override;
+ @Override
  public void afterActivityCreate(Activity activity) {;
  // Empty;
  }
 ;
- @Override;
+ @Override
  public void afterActivityResume(Activity activity) {;
  // Empty;
  }
 ;
- @Override;
+ @Override
  public void afterActivityPause(Activity activity) {;
  // Empty;
  }
 ;
- @Override;
+ @Override
  public void afterActivityDestroy(Activity activity) {;
  // Empty;
  }
 ;
- @Override;
+ @Override
  public void onSendBroadcast(Intent intent) {;
  // Empty;
  }
 ;
- @Override;
+ @Override
  public void beforeApplicationCreate(Application application) {;
  // Empty;
  }
 ;
- @Override;
+ @Override
  public void afterApplicationCreate(Application application) {;
  // Empty;
  }

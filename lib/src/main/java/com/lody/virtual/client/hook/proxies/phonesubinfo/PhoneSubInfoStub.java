@@ -16,7 +16,7 @@ public class PhoneSubInfoStub extends BinderInvocationProxy {;
  super(IPhoneSubInfo.Stub.asInterface, "iphonesubinfo");
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ReplaceLastPkgMethodProxy("getNaiForSubscriber"));

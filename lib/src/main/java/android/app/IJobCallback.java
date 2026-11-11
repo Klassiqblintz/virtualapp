@@ -28,12 +28,12 @@ public interface IJobCallback extends IInterface {;
  return new Proxy(obj);
  }
 ;
- @Override;
+ @Override
  public IBinder asBinder() {;
  return this;
  }
 ;
- @Override;
+ @Override
  public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws android.os.RemoteException {;
  switch (code) {;
  case INTERFACE_TRANSACTION:;
@@ -53,7 +53,7 @@ public interface IJobCallback extends IInterface {;
  mRemote = remote;
  }
 ;
- @Override;
+ @Override
  public IBinder asBinder() {;
  return mRemote;
  }
@@ -111,7 +111,7 @@ public interface IJobCallback extends IInterface {;
  void jobFinished(int jobId, boolean reschedule);
 ;
 ;
- @Override;
+ @Override
  public void dump(java.io.FileDescriptor fd, java.io.PrintWriter pw) {;
  }
  }

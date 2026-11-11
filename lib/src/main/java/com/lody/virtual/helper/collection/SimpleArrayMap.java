@@ -522,7 +522,7 @@ public class SimpleArrayMap<K, V> {;
  * if the maps have different sizes. Otherwise, for each key in this map, * values of both maps are compared. If the values for any key are not;
  * equal, the method returns false, otherwise it returns true.;
  */;
- @Override;
+ @Override
  public boolean equals(Object object) {;
  if (this == object) {;
  return true;
@@ -559,7 +559,7 @@ public class SimpleArrayMap<K, V> {;
  /**;
  * {@inheritDoc}
  */;
- @Override;
+ @Override
  public int hashCode() {;
  final int[] hashes = mHashes;
  final Object[] array = mArray;
@@ -578,7 +578,7 @@ public class SimpleArrayMap<K, V> {;
  * this map contains itself as a key or a value, the string "(this Map)";
  * will appear in its place.;
  */;
- @Override;
+ @Override
  public String toString() {;
  if (isEmpty()) {;
  return "{}";

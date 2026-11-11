@@ -22,7 +22,7 @@ class MediaProviderHook extends ProviderHook {;
  super(base);
  }
 ;
- @Override;
+ @Override
  public Uri insert(MethodBox methodBox, Uri url, ContentValues initialValues) throws InvocationTargetException {;
  if (!(MediaStore.Audio.Media.INTERNAL_CONTENT_URI.equals(url) ||;
  MediaStore.Audio.Media.EXTERNAL_CONTENT_URI.equals(url)) ||;
@@ -43,7 +43,7 @@ class MediaProviderHook extends ProviderHook {;
  return super.insert(methodBox, url, initialValues);
  }
 ;
- @Override;
+ @Override
  public Cursor query(MethodBox methodBox, Uri url, String[] projection, String selection, String[] selectionArgs, String sortOrder, Bundle originQueryArgs) throws InvocationTargetException {;
  Cursor cursor = super.query(methodBox, url, projection, selection, selectionArgs, sortOrder, originQueryArgs);
  return new QueryRedirectCursor(cursor, COLUMN_NAME);

@@ -15,7 +15,7 @@ public class GraphicsStatsStub extends BinderInvocationProxy {;
  super(IGraphicsStats.Stub.asInterface, "graphicsstats");
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ReplaceCallingPkgMethodProxy("requestBufferForProcess"));

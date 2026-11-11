@@ -18,7 +18,7 @@ public class ISmsStub extends BinderInvocationProxy {;
  super(ISms.Stub.asInterface, "isms");
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {;

@@ -34,7 +34,7 @@ public final class BinderProvider extends ContentProvider {;
 ;
  private final ServiceFetcher mServiceFetcher = new ServiceFetcher();
 ;
- @Override;
+ @Override
  public boolean onCreate() {;
  Context context = getContext();
  DaemonService.startup(context);
@@ -68,7 +68,7 @@ public final class BinderProvider extends ContentProvider {;
  ServiceCache.addService(name, service);
  }
 ;
- @Override;
+ @Override
  public Bundle call(String method, String arg, Bundle extras) {;
  if ("@".equals(method)) {;
  Bundle bundle = new Bundle();
@@ -78,33 +78,33 @@ public final class BinderProvider extends ContentProvider {;
  return null;
  }
 ;
- @Override;
+ @Override
  public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {;
  return null;
  }
 ;
- @Override;
+ @Override
  public String getType(Uri uri) {;
  return null;
  }
 ;
- @Override;
+ @Override
  public Uri insert(Uri uri, ContentValues values) {;
  return null;
  }
 ;
- @Override;
+ @Override
  public int delete(Uri uri, String selection, String[] selectionArgs) {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {;
  return 0;
  }
 ;
  private class ServiceFetcher extends IServiceFetcher.Stub {;
- @Override;
+ @Override
  public IBinder getService(String name) throws RemoteException {;
  if (name != null) {;
  return ServiceCache.getService(name);
@@ -112,14 +112,14 @@ public final class BinderProvider extends ContentProvider {;
  return null;
  }
 ;
- @Override;
+ @Override
  public void addService(String name, IBinder service) throws RemoteException {;
  if (name != null && service != null) {;
  ServiceCache.addService(name, service);
  }
  }
 ;
- @Override;
+ @Override
  public void removeService(String name) throws RemoteException {;
  if (name != null) {;
  ServiceCache.removeService(name);

@@ -13,12 +13,12 @@ import java.util.Map;
 ;
 public class VAccount implements Parcelable {;
  public static final Parcelable.Creator<VAccount> CREATOR = new Parcelable.Creator<VAccount>() {;
- @Override;
+ @Override
  public VAccount createFromParcel(Parcel source) {;
  return new VAccount(source);
  }
 ;
- @Override;
+ @Override
  public VAccount[] newArray(int size) {;
  return new VAccount[size];
  }
@@ -64,12 +64,12 @@ public class VAccount implements Parcelable {;
  }
  }
 ;
- @Override;
+ @Override
  public int describeContents() {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public void writeToParcel(Parcel dest, int flags) {;
  dest.writeInt(userId);
  dest.writeString(name);

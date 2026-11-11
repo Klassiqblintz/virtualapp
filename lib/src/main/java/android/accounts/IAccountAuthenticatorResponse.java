@@ -9,9 +9,9 @@ import android.os.Bundle;
  * Stub interface for IAccountAuthenticatorResponse.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface IAccountAuthenticatorResponse.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements IAccountAuthenticatorResponse.java {
- private static final String DESCRIPTOR = "android.accounts.IAccountAuthenticatorResponse.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "android.accounts.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -20,8 +20,8 @@ public interface IAccountAuthenticatorResponse.java extends IInterface {
  public static IAccountAuthenticatorResponse.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof IAccountAuthenticatorResponse.java) {
- return (IAccountAuthenticatorResponse.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (IAccountAuthenticatorResponse) iface;
  }
  return new Proxy(obj);
  }
@@ -40,7 +40,7 @@ public interface IAccountAuthenticatorResponse.java extends IInterface {
  }
  }
 
- public static class Proxy implements IAccountAuthenticatorResponse.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

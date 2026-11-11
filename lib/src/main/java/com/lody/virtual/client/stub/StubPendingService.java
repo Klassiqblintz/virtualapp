@@ -12,12 +12,12 @@ import android.os.IBinder;
  */;
 ;
 public class StubPendingService extends Service {;
- @Override;
+ @Override
  public IBinder onBind(Intent intent) {;
  return null;
  }
 ;
- @Override;
+ @Override
  public int onStartCommand(Intent intent, int flags, int startId) {;
  // _VA_|_from_inner_ marked;
  if (intent != null) {;

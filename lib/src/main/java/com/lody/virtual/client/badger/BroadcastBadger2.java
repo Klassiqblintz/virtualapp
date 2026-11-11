@@ -16,7 +16,7 @@ public abstract class BroadcastBadger2 implements IBadger {;
 ;
  public abstract String getCountKey();
 ;
- @Override;
+ @Override
  public BadgerInfo handleBadger(Intent intent) {;
  BadgerInfo info = new BadgerInfo();
  String componentName = intent.getStringExtra(getComponentKey());
@@ -33,18 +33,18 @@ public abstract class BroadcastBadger2 implements IBadger {;
 ;
  static class NewHtcHomeBadger1 extends BroadcastBadger2 {;
 ;
- @Override;
+ @Override
  public String getAction() {;
  return "com.htc.launcher.action.SET_NOTIFICATION";
  }
 ;
- @Override;
+ @Override
  public String getComponentKey() {;
  return "com.htc.launcher.extra.COMPONENT";
  }
 ;
 ;
- @Override;
+ @Override
  public String getCountKey() {;
  return "com.htc.launcher.extra.COUNT";
  }

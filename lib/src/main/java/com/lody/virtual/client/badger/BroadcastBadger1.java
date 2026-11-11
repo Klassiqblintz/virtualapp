@@ -17,7 +17,7 @@ public abstract class BroadcastBadger1 implements IBadger {;
 ;
  public abstract String getCountKey();
 ;
- @Override;
+ @Override
  public BadgerInfo handleBadger(Intent intent) {;
  BadgerInfo info = new BadgerInfo();
  info.packageName = intent.getStringExtra(getPackageKey());
@@ -31,22 +31,22 @@ public abstract class BroadcastBadger1 implements IBadger {;
 ;
  static class LGHomeBadger extends BroadcastBadger1 {;
 ;
- @Override;
+ @Override
  public String getAction() {;
  return "android.intent.action.BADGE_COUNT_UPDATE";
  }
 ;
- @Override;
+ @Override
  public String getPackageKey() {;
  return "badge_count_package_name";
  }
 ;
- @Override;
+ @Override
  public String getClassNameKey() {;
  return "badge_count_class_name";
  }
 ;
- @Override;
+ @Override
  public String getCountKey() {;
  return "badge_count";
  }
@@ -54,22 +54,22 @@ public abstract class BroadcastBadger1 implements IBadger {;
 ;
  static class AdwHomeBadger extends BroadcastBadger1 {;
 ;
- @Override;
+ @Override
  public String getAction() {;
  return "org.adw.launcher.counter.SEND";
  }
 ;
- @Override;
+ @Override
  public String getPackageKey() {;
  return "PNAME";
  }
 ;
- @Override;
+ @Override
  public String getClassNameKey() {;
  return "CNAME";
  }
 ;
- @Override;
+ @Override
  public String getCountKey() {;
  return "COUNT";
  }
@@ -77,22 +77,22 @@ public abstract class BroadcastBadger1 implements IBadger {;
 ;
  static class AospHomeBadger extends BroadcastBadger1 {;
 ;
- @Override;
+ @Override
  public String getAction() {;
  return "android.intent.action.BADGE_COUNT_UPDATE";
  }
 ;
- @Override;
+ @Override
  public String getPackageKey() {;
  return "badge_count_package_name";
  }
 ;
- @Override;
+ @Override
  public String getClassNameKey() {;
  return "badge_count_class_name";
  }
 ;
- @Override;
+ @Override
  public String getCountKey() {;
  return "badge_count";
  }
@@ -101,22 +101,22 @@ public abstract class BroadcastBadger1 implements IBadger {;
 ;
  static class NewHtcHomeBadger2 extends BroadcastBadger1 {;
 ;
- @Override;
+ @Override
  public String getAction() {;
  return "com.htc.launcher.action.UPDATE_SHORTCUT";
  }
 ;
- @Override;
+ @Override
  public String getPackageKey() {;
  return "packagename";
  }
 ;
- @Override;
+ @Override
  public String getClassNameKey() {;
  return null;
  }
 ;
- @Override;
+ @Override
  public String getCountKey() {;
  return "count";
  }
@@ -125,22 +125,22 @@ public abstract class BroadcastBadger1 implements IBadger {;
 ;
  static class OPPOHomeBader extends BroadcastBadger1 {;
 ;
- @Override;
+ @Override
  public String getAction() {;
  return "com.oppo.unsettledevent";
  }
 ;
- @Override;
+ @Override
  public String getPackageKey() {;
  return "pakeageName";
  }
 ;
- @Override;
+ @Override
  public String getClassNameKey() {;
  return null;
  }
 ;
- @Override;
+ @Override
  public String getCountKey() {;
  return "number";
  }

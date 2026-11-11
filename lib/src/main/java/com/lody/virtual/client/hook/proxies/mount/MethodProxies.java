@@ -61,12 +61,12 @@ class MethodProxies {;
 ;
  static class GetVolumeList extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "getVolumeList";
  }
 ;
- @Override;
+ @Override
  public boolean beforeCall(Object who, Method method, Object... args) {;
  if (args == null || args.length == 0) {;
  return super.beforeCall(who, method, args);
@@ -87,7 +87,7 @@ class MethodProxies {;
  return super.beforeCall(who, method, args);
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  // If bypass flag is set, don't intercept — just call the real method directly;
  if (Boolean.TRUE.equals(sBypassHook.get())) {;
@@ -115,7 +115,7 @@ class MethodProxies {;
  }
  }
 ;
- @Override;
+ @Override
  public Object afterCall(Object who, Method method, Object[] args, Object result) throws Throwable {;
  return result;
  }
@@ -123,18 +123,18 @@ class MethodProxies {;
 ;
  static class Mkdirs extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "mkdirs";
  }
 ;
- @Override;
+ @Override
  public boolean beforeCall(Object who, Method method, Object... args) {;
  MethodParameterUtils.replaceFirstAppPkg(args);
  return super.beforeCall(who, method, args);
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {;
  return super.call(who, method, args);

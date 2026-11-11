@@ -13,7 +13,7 @@ import com.lody.virtual.remote.StubActivityRecord;
 ;
 public class StubPendingActivity extends Activity {;
 ;
- @Override;
+ @Override
  protected void onCreate(Bundle savedInstanceState) {;
  super.onCreate(savedInstanceState);
  finish();

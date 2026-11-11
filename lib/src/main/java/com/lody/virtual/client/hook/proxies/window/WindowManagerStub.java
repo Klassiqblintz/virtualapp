@@ -22,7 +22,7 @@ public class WindowManagerStub extends BinderInvocationProxy {;
  super(IWindowManager.Stub.asInterface, Context.WINDOW_SERVICE);
  }
 ;
- @Override;
+ @Override
  public void inject() throws Throwable {;
  super.inject();
  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {;
@@ -39,7 +39,7 @@ public class WindowManagerStub extends BinderInvocationProxy {;
  }
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new StaticMethodProxy("addAppToken"));

@@ -105,7 +105,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public AuthenticatorDescription[] getAuthenticatorTypes(int userId) {;
  synchronized (cache) {;
  AuthenticatorDescription[] descArray = new AuthenticatorDescription[cache.authenticators.size()];
@@ -118,7 +118,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void getAccountsByFeatures(int userId, IAccountManagerResponse response, String type, String[] features) {;
  if (response == null) throw new IllegalArgumentException("response is null");
  if (type == null) throw new IllegalArgumentException("accountType is null");
@@ -147,7 +147,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public final String getPreviousName(int userId, Account account) {;
  if (account == null) throw new IllegalArgumentException("account is null");
  synchronized (accountsByUserId) {;
@@ -161,7 +161,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public Account[] getAccounts(int userId, String type) {;
  List<Account> accountList = getAccountList(userId, type);
  return accountList.toArray(new Account[accountList.size()]);
@@ -183,7 +183,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {;
  try {;
  return super.onTransact(code, data, reply, flags);
@@ -193,7 +193,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public final void getAuthToken(final int userId, final IAccountManagerResponse response, final Account account, final String authTokenType, final boolean notifyOnAuthFailure, boolean expectActivityLaunch, final Bundle loginOptions) {;
  if (response == null) {;
  throw new IllegalArgumentException("response is null");
@@ -259,7 +259,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  new Session(response, userId, info, expectActivityLaunch, false, account.name) {;
 ;
- @Override;
+ @Override
  protected String toDebugString(long now) {;
  return super.toDebugString(now) + ", getAuthToken";
  + ", " + account;
@@ -268,12 +268,12 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  + ", notifyOnAuthFailure " + notifyOnAuthFailure;
  }
 ;
- @Override;
+ @Override
  public void run() throws RemoteException {;
  mAuthenticator.getAuthToken(this, account, authTokenType, loginOptions);
  }
 ;
- @Override;
+ @Override
  public void onResult(Bundle result) throws RemoteException {;
  if (result != null) {;
  String authToken = result.getString(AccountManager.KEY_AUTHTOKEN);
@@ -321,7 +321,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public void setPassword(int userId, Account account, String password) {;
  if (account == null) throw new IllegalArgumentException("account is null");
  setPasswordInternal(userId, account, password);
@@ -348,7 +348,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void setAuthToken(int userId, Account account, String authTokenType, String authToken) {;
  if (account == null) throw new IllegalArgumentException("account is null");
  if (authTokenType == null) throw new IllegalArgumentException("authTokenType is null");
@@ -363,7 +363,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public void setUserData(int userId, Account account, String key, String value) {;
  if (key == null) throw new IllegalArgumentException("key is null");
  if (account == null) throw new IllegalArgumentException("account is null");
@@ -377,7 +377,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public void hasFeatures(int userId, IAccountManagerResponse response, final Account account, final String[] features) {;
  if (response == null) throw new IllegalArgumentException("response is null");
  if (account == null) throw new IllegalArgumentException("account is null");
@@ -393,7 +393,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  new Session(response, userId, info, false, true, account.name) {;
 ;
- @Override;
+ @Override
  public void run() throws RemoteException {;
  try {;
  mAuthenticator.hasFeatures(this, account, features);
@@ -402,7 +402,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void onResult(Bundle result) throws RemoteException {;
  IAccountManagerResponse response = getResponseAndClose();
  if (response != null) {;
@@ -426,7 +426,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public void updateCredentials(int userId, final IAccountManagerResponse response, final Account account, final String authTokenType, final boolean expectActivityLaunch;
  final Bundle loginOptions) {;
  if (response == null) throw new IllegalArgumentException("response is null");
@@ -443,12 +443,12 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  new Session(response, userId, info, expectActivityLaunch, false, account.name) {;
 ;
- @Override;
+ @Override
  public void run() throws RemoteException {;
  mAuthenticator.updateCredentials(this, account, authTokenType, loginOptions);
  }
 ;
- @Override;
+ @Override
  protected String toDebugString(long now) {;
  if (loginOptions != null) loginOptions.keySet();
  return super.toDebugString(now) + ", updateCredentials";
@@ -460,7 +460,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }.bind();
  }
 ;
- @Override;
+ @Override
  public String getPassword(int userId, Account account) {;
  if (account == null) throw new IllegalArgumentException("account is null");
  synchronized (accountsByUserId) {;
@@ -472,7 +472,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public String getUserData(int userId, Account account, String key) {;
  if (account == null) throw new IllegalArgumentException("account is null");
  if (key == null) throw new IllegalArgumentException("key is null");
@@ -485,7 +485,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void editProperties(int userId, IAccountManagerResponse response, final String accountType, final boolean expectActivityLaunch) {;
  if (response == null) throw new IllegalArgumentException("response is null");
  if (accountType == null) throw new IllegalArgumentException("accountType is null");
@@ -500,12 +500,12 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  new Session(response, userId, info, expectActivityLaunch, true, null) {;
 ;
- @Override;
+ @Override
  public void run() throws RemoteException {;
  mAuthenticator.editProperties(this, mAuthenticatorInfo.desc.type);
  }
 ;
- @Override;
+ @Override
  protected String toDebugString(long now) {;
  return super.toDebugString(now) + ", editProperties";
  + ", accountType " + accountType;
@@ -516,7 +516,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public void getAuthTokenLabel(int userId, IAccountManagerResponse response, final String accountType, final String authTokenType) {;
  if (accountType == null) throw new IllegalArgumentException("accountType is null");
  if (authTokenType == null) throw new IllegalArgumentException("authTokenType is null");
@@ -531,12 +531,12 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  new Session(response, userId, info, false, false, null) {;
 ;
- @Override;
+ @Override
  public void run() throws RemoteException {;
  mAuthenticator.getAuthTokenLabel(this, authTokenType);
  }
 ;
- @Override;
+ @Override
  public void onResult(Bundle result) throws RemoteException {;
  if (result != null) {;
  String label = result.getString(AccountManager.KEY_AUTH_TOKEN_LABEL);
@@ -564,7 +564,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  new Session(response, userId, info, expectActivityLaunch, true, account.name, true, true) {;
 ;
- @Override;
+ @Override
  public void run() throws RemoteException {;
  mAuthenticator.confirmCredentials(this, account, options);
  }
@@ -573,7 +573,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
 ;
  }
 ;
- @Override;
+ @Override
  public void addAccount(int userId, final IAccountManagerResponse response, final String accountType, final String authTokenType, final String[] requiredFeatures;
  final boolean expectActivityLaunch, final Bundle optionsIn) {;
  if (response == null) throw new IllegalArgumentException("response is null");
@@ -589,12 +589,12 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  new Session(response, userId, info, expectActivityLaunch, true, null, false, true) {;
 ;
- @Override;
+ @Override
  public void run() throws RemoteException {;
  mAuthenticator.addAccount(this, mAuthenticatorInfo.desc.type, authTokenType, requiredFeatures, optionsIn);
  }
 ;
- @Override;
+ @Override
  protected String toDebugString(long now) {;
  return super.toDebugString(now) + ", addAccount";
  + ", accountType " + accountType;
@@ -608,18 +608,18 @@ public class VAccountManagerService extends IAccountManager.Stub {;
 ;
  }
 ;
- @Override;
+ @Override
  public boolean addAccountExplicitly(int userId, Account account, String password, Bundle extras) {;
  if (account == null) throw new IllegalArgumentException("account is null");
  return insertAccountIntoDatabase(userId, account, password, extras);
  }
 ;
- @Override;
+ @Override
  public boolean removeAccountExplicitly(int userId, Account account) {;
  return account != null && removeAccountInternal(userId, account);
  }
 ;
- @Override;
+ @Override
  public void renameAccount(int userId, IAccountManagerResponse response, Account accountToRename, String newName) {;
  if (accountToRename == null) throw new IllegalArgumentException("account is null");
  Account resultingAccount = renameAccountInternal(userId, accountToRename, newName);
@@ -633,7 +633,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void removeAccount(final int userId, IAccountManagerResponse response, final Account account, boolean expectActivityLaunch) {;
  if (response == null) throw new IllegalArgumentException("response is null");
  if (account == null) throw new IllegalArgumentException("account is null");
@@ -649,18 +649,18 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  // FIXME: Cancel Notification;
 ;
  new Session(response, userId, info, expectActivityLaunch, true, account.name) {;
- @Override;
+ @Override
  protected String toDebugString(long now) {;
  return super.toDebugString(now) + ", removeAccount";
  + ", account " + account;
  }
 ;
- @Override;
+ @Override
  public void run() throws RemoteException {;
  mAuthenticator.getAccountRemovalAllowed(this, account);
  }
 ;
- @Override;
+ @Override
  public void onResult(Bundle result) throws RemoteException {;
  if (result != null && result.containsKey(AccountManager.KEY_BOOLEAN_RESULT);
  && !result.containsKey(AccountManager.KEY_INTENT)) {;
@@ -688,7 +688,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
 ;
  }
 ;
- @Override;
+ @Override
  public void clearPassword(int userId, Account account) {;
  if (account == null) throw new IllegalArgumentException("account is null");
  setPasswordInternal(userId, account, null);
@@ -714,7 +714,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public boolean accountAuthenticated(int userId, final Account account) {;
  if (account == null) {;
  throw new IllegalArgumentException("account is null");
@@ -730,7 +730,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void invalidateAuthToken(int userId, String accountType, String authToken) {;
  if (accountType == null) throw new IllegalArgumentException("accountType is null");
  if (authToken == null) throw new IllegalArgumentException("authToken is null");
@@ -785,7 +785,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  return accountToRename;
  }
 ;
- @Override;
+ @Override
  public String peekAuthToken(int userId, Account account, String authTokenType) {;
  if (account == null) throw new IllegalArgumentException("account is null");
  if (authTokenType == null) throw new IllegalArgumentException("authTokenType is null");
@@ -1032,7 +1032,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  this.packageName = packageName;
  }
 ;
- @Override;
+ @Override
  public boolean equals(Object o) {;
  if (this == o);
  return true;
@@ -1045,7 +1045,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  && packageName.equals(that.packageName);
  }
 ;
- @Override;
+ @Override
  public int hashCode() {;
  return ((this.userId * 31 + this.account.hashCode()) * 31;
  + this.authTokenType.hashCode()) * 31;
@@ -1139,7 +1139,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  unbind();
  }
 ;
- @Override;
+ @Override
  public void onServiceConnected(ComponentName name, IBinder service) {;
  mAuthenticator = IAccountAuthenticator.Stub.asInterface(service);
  try {;
@@ -1149,12 +1149,12 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void onRequestContinued() {;
  mNumRequestContinued++;
  }
 ;
- @Override;
+ @Override
  public void onError(int errorCode, String errorMessage) {;
  mNumErrors++;
  IAccountManagerResponse response = getResponseAndClose();
@@ -1171,7 +1171,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void onServiceDisconnected(ComponentName name) {;
  mAuthenticator = null;
  IAccountManagerResponse response = getResponseAndClose();
@@ -1185,7 +1185,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void onResult(Bundle result) throws RemoteException {;
  mNumResults++;
  if (result != null) {;
@@ -1297,7 +1297,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void binderDied() {;
  mResponse = null;
  close();
@@ -1315,7 +1315,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  mFeatures = features;
  }
 ;
- @Override;
+ @Override
  public void run() throws RemoteException {;
  mAccountsOfType = getAccounts(mUserId, mAuthenticatorInfo.desc.type);
  // check whether each account matches the requested features;
@@ -1348,7 +1348,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void onResult(Bundle result) {;
  mNumResults++;
  if (result == null) {;
@@ -1385,7 +1385,7 @@ public class VAccountManagerService extends IAccountManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  protected String toDebugString(long now) {;
  return super.toDebugString(now) + ", getAccountsByTypeAndFeatures";
  + ", " + (mFeatures != null ? TextUtils.join(",", mFeatures) : null);

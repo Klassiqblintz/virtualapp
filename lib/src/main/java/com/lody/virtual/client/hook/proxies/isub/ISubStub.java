@@ -15,7 +15,7 @@ public class ISubStub extends BinderInvocationProxy {;
  super(ISub.Stub.asInterface, "isub");
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ReplaceCallingPkgMethodProxy("getAllSubInfoList"));

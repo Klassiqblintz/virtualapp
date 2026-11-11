@@ -34,7 +34,7 @@ class DownloadProviderHook extends ExternalProviderHook {;
  super(base);
  }
 ;
- @Override;
+ @Override
  public Uri insert(MethodBox methodBox, Uri url, ContentValues initialValues) throws InvocationTargetException {;
  if (initialValues.containsKey(COLUMN_NOTIFICATION_PACKAGE)) {;
  initialValues.put(COLUMN_NOTIFICATION_PACKAGE, VirtualCore.get().getHostPkg());
@@ -61,7 +61,7 @@ class DownloadProviderHook extends ExternalProviderHook {;
  return super.insert(methodBox, url, initialValues);
  }
 ;
- @Override;
+ @Override
  public Cursor query(MethodBox methodBox, Uri url, String[] projection, String selection, String[] selectionArgs, String sortOrder, Bundle originQueryArgs) throws InvocationTargetException {;
  Cursor cursor = super.query(methodBox, url, projection, selection, selectionArgs, sortOrder, originQueryArgs);
  return new QueryRedirectCursor(cursor, DownloadManager.COLUMN_LOCAL_FILENAME);

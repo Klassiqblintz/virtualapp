@@ -20,22 +20,22 @@ public class DeviceInfoPersistenceLayer extends PersistenceLayer {;
  this.mService = service;
  }
 ;
- @Override;
+ @Override
  public int getCurrentVersion() {;
  return 1;
  }
 ;
- @Override;
+ @Override
  public void writeMagic(Parcel p) {;
 ;
  }
 ;
- @Override;
+ @Override
  public boolean verifyMagic(Parcel p) {;
  return true;
  }
 ;
- @Override;
+ @Override
  public void writePersistenceData(Parcel p) {;
  SparseArray<VDeviceInfo> infos = mService.getDeviceInfos();
  int size = infos.size();
@@ -48,7 +48,7 @@ public class DeviceInfoPersistenceLayer extends PersistenceLayer {;
  }
  }
 ;
- @Override;
+ @Override
  public void readPersistenceData(Parcel p) {;
  SparseArray<VDeviceInfo> infos = mService.getDeviceInfos();
  infos.clear();
@@ -60,12 +60,12 @@ public class DeviceInfoPersistenceLayer extends PersistenceLayer {;
  }
  }
 ;
- @Override;
+ @Override
  public boolean onVersionConflict(int fileVersion, int currentVersion) {;
  return false;
  }
 ;
- @Override;
+ @Override
  public void onPersistenceFileDamage() {;
  getPersistenceFile().delete();
  }

@@ -21,7 +21,7 @@ public class AppWidgetManagerStub extends BinderInvocationProxy {;
  super(IAppWidgetService.Stub.asInterface, Context.APPWIDGET_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ResultStaticMethodProxy("startListening", new int[0]));

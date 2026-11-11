@@ -16,7 +16,7 @@ import java.lang.reflect.Method;
  super(name);
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  int index = ArrayUtils.indexOfFirst(args, WindowManager.LayoutParams.class);
  if (index != -1) {;

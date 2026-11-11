@@ -362,12 +362,12 @@ public final class VUserHandle implements Parcelable {;
  return mHandle;
  }
 ;
- @Override;
+ @Override
  public String toString() {;
  return "VUserHandle{" + mHandle + "}";
  }
 ;
- @Override;
+ @Override
  public boolean equals(Object obj) {;
  try {;
  if (obj != null) {;
@@ -379,7 +379,7 @@ public final class VUserHandle implements Parcelable {;
  return false;
  }
 ;
- @Override;
+ @Override
  public int hashCode() {;
  return mHandle;
  }

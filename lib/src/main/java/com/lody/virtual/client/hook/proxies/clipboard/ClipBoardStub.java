@@ -33,7 +33,7 @@ public class ClipBoardStub extends BinderInvocationProxy {;
  }
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ReplaceLastPkgMethodProxy("getPrimaryClip"));
@@ -47,7 +47,7 @@ public class ClipBoardStub extends BinderInvocationProxy {;
  }
  }
 ;
- @Override;
+ @Override
  public void inject() throws Throwable {;
  super.inject();
  if (isOreo()) {;

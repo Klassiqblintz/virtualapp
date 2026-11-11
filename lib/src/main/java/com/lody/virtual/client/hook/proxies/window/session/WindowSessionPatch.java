@@ -15,7 +15,7 @@ public class WindowSessionPatch extends MethodInvocationProxy<MethodInvocationSt
  super(new MethodInvocationStub<>(session));
  }
 ;
- @Override;
+ @Override
  public void onBindMethods() {;
  addMethodProxy(new BaseMethodProxy("add"));
  addMethodProxy(new BaseMethodProxy("addToDisplay"));
@@ -31,12 +31,12 @@ public class WindowSessionPatch extends MethodInvocationProxy<MethodInvocationSt
  }
 ;
 ;
- @Override;
+ @Override
  public void inject() throws Throwable {;
  // <EMPTY>;
  }
 ;
- @Override;
+ @Override
  public boolean isEnvBad() {;
  return getInvocationStub().getProxyInterface() != null;
  }

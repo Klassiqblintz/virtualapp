@@ -33,12 +33,12 @@ import java.util.Set;
 public class VPackage implements Parcelable {;
 ;
  public static final Creator<VPackage> CREATOR = new Creator<VPackage>() {;
- @Override;
+ @Override
  public VPackage createFromParcel(Parcel source) {;
  return new VPackage(source);
  }
 ;
- @Override;
+ @Override
  public VPackage[] newArray(int size) {;
  return new VPackage[size];
  }
@@ -150,12 +150,12 @@ public class VPackage implements Parcelable {;
  }
  }
 ;
- @Override;
+ @Override
  public int describeContents() {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public void writeToParcel(Parcel dest, int flags) {;
  dest.writeInt(this.activities.size());
  for (ActivityComponent component : activities) {;
@@ -306,12 +306,12 @@ public class VPackage implements Parcelable {;
 ;
  public static class IntentInfo implements Parcelable {;
  public static final Creator<IntentInfo> CREATOR = new Creator<IntentInfo>() {;
- @Override;
+ @Override
  public IntentInfo createFromParcel(Parcel source) {;
  return new IntentInfo(source);
  }
 ;
- @Override;
+ @Override
  public IntentInfo[] newArray(int size) {;
  return new IntentInfo[size];
  }
@@ -349,12 +349,12 @@ public class VPackage implements Parcelable {;
  this.banner = in.readInt();
  }
 ;
- @Override;
+ @Override
  public int describeContents() {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public void writeToParcel(Parcel dest, int flags) {;
  dest.writeParcelable(this.filter, flags);
  dest.writeByte(this.hasDefault ? (byte) 1 : (byte) 0);
@@ -495,7 +495,7 @@ public class VPackage implements Parcelable {;
  public static class PermissionComponent extends Component<IntentInfo> {;
 ;
  // https://developer.android.com/guide/topics/security/permissions?hl=zh-cn;
- public static Set<String> DANGEROUS_PERMISSION = new HashSet<String>() {{;
+ public static Set<String> DANGEROUS_PERMISSION = new HashSet<String>() {;
  // CALENDAR group;
  add(Manifest.permission.READ_CALENDAR);
  add(Manifest.permission.WRITE_CALENDAR);
@@ -534,7 +534,7 @@ public class VPackage implements Parcelable {;
  // STORAGE;
  add(Manifest.permission.READ_EXTERNAL_STORAGE);
  add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
- }};
+ };
 ;
  public PermissionInfo info;
 ;

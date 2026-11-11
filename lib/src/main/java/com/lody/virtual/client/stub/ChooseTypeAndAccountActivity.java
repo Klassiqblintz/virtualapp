@@ -115,7 +115,7 @@ public class ChooseTypeAndAccountActivity extends Activity;
  private int mCallingUserId;
  private boolean mDontShowPicker;
 ;
- @Override;
+ @Override
  public void onCreate(Bundle savedInstanceState) {;
  // save some items we use frequently;
  final Intent intent = getIntent();
@@ -188,7 +188,7 @@ public class ChooseTypeAndAccountActivity extends Activity;
  mOkButton.setEnabled(mSelectedItemIndex != SELECTED_ITEM_NONE);
  }
 ;
- @Override;
+ @Override
  protected void onDestroy() {;
  if (Log.isLoggable(TAG, Log.VERBOSE)) {;
  Log.v(TAG, "ChooseTypeAndAccountActivity.onDestroy()");
@@ -196,7 +196,7 @@ public class ChooseTypeAndAccountActivity extends Activity;
  super.onDestroy();
  }
 ;
- @Override;
+ @Override
  protected void onSaveInstanceState(final Bundle outState) {;
  super.onSaveInstanceState(outState);
  outState.putInt(KEY_INSTANCE_STATE_PENDING_REQUEST, mPendingRequest);
@@ -230,7 +230,7 @@ public class ChooseTypeAndAccountActivity extends Activity;
  // Called when the choose account type activity (for adding an account) returns.;
  // If it was a success read the account and set it in the result. In all cases;
  // return the result and finish this activity.;
- @Override;
+ @Override
  protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {;
  if (Log.isLoggable(TAG, Log.VERBOSE)) {;
  if (data != null && data.getExtras() != null) data.getExtras().keySet();
@@ -314,7 +314,7 @@ public class ChooseTypeAndAccountActivity extends Activity;
  VAccountManager.get().addAccount(mCallingUserId, type, authTokenType, requiredFeatures, options, null /* activity */, this /* callback */, null /* Handler */);
  }
 ;
- @Override;
+ @Override
  public void run(final AccountManagerFuture<Bundle> accountManagerFuture) {;
  try {;
  final Bundle accountManagerResult = accountManagerFuture.getResult();
@@ -501,7 +501,7 @@ public class ChooseTypeAndAccountActivity extends Activity;
  list.setItemsCanFocus(false);
  list.setOnItemClickListener(;
  new AdapterView.OnItemClickListener() {;
- @Override;
+ @Override
  public void onItemClick(AdapterView<?> parent, View v, int position, long id) {;
  mSelectedItemIndex = position;
  mOkButton.setEnabled(true);

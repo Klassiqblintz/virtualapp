@@ -10,12 +10,12 @@ import android.os.Parcelable;
 public class PackageUserState implements Parcelable {;
 ;
  public static final Parcelable.Creator<PackageUserState> CREATOR = new Parcelable.Creator<PackageUserState>() {;
- @Override;
+ @Override
  public PackageUserState createFromParcel(Parcel source) {;
  return new PackageUserState(source);
  }
 ;
- @Override;
+ @Override
  public PackageUserState[] newArray(int size) {;
  return new PackageUserState[size];
  }
@@ -36,12 +36,12 @@ public class PackageUserState implements Parcelable {;
  this.installed = in.readByte() != 0;
  }
 ;
- @Override;
+ @Override
  public int describeContents() {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public void writeToParcel(Parcel dest, int flags) {;
  dest.writeByte(this.launched ? (byte) 1 : (byte) 0);
  dest.writeByte(this.hidden ? (byte) 1 : (byte) 0);

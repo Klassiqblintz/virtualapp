@@ -429,7 +429,7 @@ import static android.content.pm.ActivityInfo.LAUNCH_SINGLE_TOP;
  continue;
  }
  VirtualRuntime.getUIHandler().post(new Runnable() {;
- @Override;
+ @Override
  public void run() {;
  try {;
  r.process.client.finishActivity(r.token);

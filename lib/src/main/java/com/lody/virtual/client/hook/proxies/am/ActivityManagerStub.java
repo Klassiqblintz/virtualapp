@@ -45,7 +45,7 @@ public class ActivityManagerStub extends MethodInvocationProxy<MethodInvocationS
  super(new MethodInvocationStub<>(ActivityManagerNative.getDefault.call()));
  }
 ;
- @Override;
+ @Override
  public void inject() throws Throwable {;
  if (BuildCompat.isOreo()) {;
  //Android Oreo(8.X);
@@ -64,12 +64,12 @@ public class ActivityManagerStub extends MethodInvocationProxy<MethodInvocationS
  ServiceManager.sCache.get().put(Context.ACTIVITY_SERVICE, hookAMBinder);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  if (VirtualCore.get().isVAppProcess()) {;
  addMethodProxy(new StaticMethodProxy("navigateUpTo") {;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  // throw new RuntimeException("Call navigateUpTo!!!!");
  VLog.e("VA", "Call navigateUpTo!!!!");
@@ -81,13 +81,13 @@ public class ActivityManagerStub extends MethodInvocationProxy<MethodInvocationS
  addMethodProxy(new ResultStaticMethodProxy("updateConfiguration", 0));
  addMethodProxy(new ReplaceCallingPkgMethodProxy("setAppLockedVerifying"));
  addMethodProxy(new StaticMethodProxy("checkUriPermission") {;
- @Override;
+ @Override
  public Object afterCall(Object who, Method method, Object[] args, Object result) throws Throwable {;
  return PackageManager.PERMISSION_GRANTED;
  }
  });
  addMethodProxy(new StaticMethodProxy("getRecentTasks") {;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Object _infos = method.invoke(who, args);
  //noinspection unchecked;
@@ -119,7 +119,7 @@ public class ActivityManagerStub extends MethodInvocationProxy<MethodInvocationS
  }
  });
  addMethodProxy(new StaticMethodProxy("getRunningTasks") {;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Object _infos = method.invoke(who, args);
  //noinspection unchecked;
@@ -142,18 +142,18 @@ public class ActivityManagerStub extends MethodInvocationProxy<MethodInvocationS
  }
  }
 ;
- @Override;
+ @Override
  public boolean isEnvBad() {;
  return ActivityManagerNative.getDefault.call() != getInvocationStub().getProxyInterface();
  }
 ;
  private class isUserRunning extends MethodProxy {;
- @Override;
+ @Override
  public String getMethodName() {;
  return "isUserRunning";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) {;
  int userId = (int) args[0];
  return userId == 0;

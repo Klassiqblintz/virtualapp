@@ -277,7 +277,7 @@ public class VAccountManager {;
  optionsIn.putString(KEY_ANDROID_PACKAGE_NAME, "android");
 ;
  return new AmsTask(activity, handler, callback) {;
- @Override;
+ @Override
  public void doWork() throws RemoteException {;
  addAccount(userId, mResponse, accountType, authTokenType, requiredFeatures, activity != null, optionsIn);
  }

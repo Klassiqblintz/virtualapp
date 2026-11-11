@@ -215,7 +215,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public List<String> getSharedLibraries(String packageName) {;
  synchronized (mPackages) {;
  VPackage p = mPackages.get(packageName);
@@ -233,7 +233,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public int checkPermission(String permName, String pkgName, int userId) {;
  if ("android.permission.INTERACT_ACROSS_USERS".equals(permName);
  || "android.permission.INTERACT_ACROSS_USERS_FULL".equals(permName)) {;
@@ -242,7 +242,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  return VirtualCore.get().getPackageManager().checkPermission(permName, VirtualCore.get().getHostPkg());
  }
 ;
- @Override;
+ @Override
  public PackageInfo getPackageInfo(String packageName, int flags, int userId) {;
  checkUserId(userId);
  synchronized (mPackages) {;
@@ -291,7 +291,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public ActivityInfo getActivityInfo(ComponentName component, int flags, int userId) {;
  checkUserId(userId);
  flags = updateFlagsNought(flags);
@@ -310,7 +310,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  return null;
  }
 ;
- @Override;
+ @Override
  public boolean activitySupportsIntent(ComponentName component, Intent intent, String resolvedType) {;
  synchronized (mPackages) {;
  VPackage.ActivityComponent a = mActivities.mActivities.get(component);
@@ -326,7 +326,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public ActivityInfo getReceiverInfo(ComponentName component, int flags, int userId) {;
  checkUserId(userId);
  flags = updateFlagsNought(flags);
@@ -345,7 +345,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  return null;
  }
 ;
- @Override;
+ @Override
  public ServiceInfo getServiceInfo(ComponentName component, int flags, int userId) {;
  checkUserId(userId);
  flags = updateFlagsNought(flags);
@@ -364,7 +364,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  return null;
  }
 ;
- @Override;
+ @Override
  public ProviderInfo getProviderInfo(ComponentName component, int flags, int userId) {;
  checkUserId(userId);
  flags = updateFlagsNought(flags);
@@ -383,7 +383,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  return null;
  }
 ;
- @Override;
+ @Override
  public ResolveInfo resolveIntent(Intent intent, String resolvedType, int flags, int userId) {;
  checkUserId(userId);
  flags = updateFlagsNought(flags);
@@ -424,7 +424,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  return null;
  }
 ;
- @Override;
+ @Override
  public List<ResolveInfo> queryIntentActivities(Intent intent, String resolvedType, int flags, int userId) {;
  checkUserId(userId);
  flags = updateFlagsNought(flags);
@@ -462,7 +462,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public List<ResolveInfo> queryIntentReceivers(Intent intent, String resolvedType, int flags, int userId) {;
  checkUserId(userId);
  flags = updateFlagsNought(flags);
@@ -500,7 +500,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public ResolveInfo resolveService(Intent intent, String resolvedType, int flags, int userId) {;
  checkUserId(userId);
  flags = updateFlagsNought(flags);
@@ -514,7 +514,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  return null;
  }
 ;
- @Override;
+ @Override
  public List<ResolveInfo> queryIntentServices(Intent intent, String resolvedType, int flags, int userId) {;
  checkUserId(userId);
  flags = updateFlagsNought(flags);
@@ -553,7 +553,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  }
 ;
  @TargetApi(Build.VERSION_CODES.KITKAT);
- @Override;
+ @Override
  public List<ResolveInfo> queryIntentContentProviders(Intent intent, String resolvedType, int flags, int userId) {;
  checkUserId(userId);
  flags = updateFlagsNought(flags);
@@ -590,7 +590,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public VParceledListSlice<ProviderInfo> queryContentProviders(String processName, int vuid, int flags) {;
  int userId = VUserHandle.getUserId(vuid);
  checkUserId(userId);
@@ -612,7 +612,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  return new VParceledListSlice<>(finalList);
  }
 ;
- @Override;
+ @Override
  public VParceledListSlice<PackageInfo> getInstalledPackages(int flags, int userId) {;
  checkUserId(userId);
  ArrayList<PackageInfo> pkgList = new ArrayList<>(mPackages.size());
@@ -628,7 +628,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  return new VParceledListSlice<>(pkgList);
  }
 ;
- @Override;
+ @Override
  public VParceledListSlice<ApplicationInfo> getInstalledApplications(int flags, int userId) {;
  checkUserId(userId);
  flags = updateFlagsNought(flags);
@@ -643,7 +643,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  return new VParceledListSlice<>(list);
  }
 ;
- @Override;
+ @Override
  public PermissionInfo getPermissionInfo(String name, int flags) {;
  synchronized (mPackages) {;
  VPackage.PermissionComponent p = mPermissions.get(name);
@@ -654,14 +654,14 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  return null;
  }
 ;
- @Override;
+ @Override
  public List<PermissionInfo> queryPermissionsByGroup(String group, int flags) {;
  synchronized (mPackages) {;
  return null;
  }
  }
 ;
- @Override;
+ @Override
  public PermissionGroupInfo getPermissionGroupInfo(String name, int flags) {;
  synchronized (mPackages) {;
  VPackage.PermissionGroupComponent p = mPermissionGroups.get(name);
@@ -672,7 +672,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  return null;
  }
 ;
- @Override;
+ @Override
  public List<PermissionGroupInfo> getAllPermissionGroups(int flags) {;
  synchronized (mPackages) {;
  final int N = mPermissionGroups.size();
@@ -684,7 +684,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public ProviderInfo resolveContentProvider(String name, int flags, int userId) {;
  checkUserId(userId);
  flags = updateFlagsNought(flags);
@@ -704,7 +704,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  return null;
  }
 ;
- @Override;
+ @Override
  public ApplicationInfo getApplicationInfo(String packageName, int flags, int userId) {;
  checkUserId(userId);
  flags = updateFlagsNought(flags);
@@ -718,7 +718,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  return null;
  }
 ;
- @Override;
+ @Override
  public String[] getPackagesForUid(int uid) {;
  int userId = VUserHandle.getUserId(uid);
  checkUserId(userId);
@@ -734,7 +734,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public int getPackageUid(String packageName, int userId) {;
  checkUserId(userId);
  synchronized (mPackages) {;
@@ -747,7 +747,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public String getNameForUid(int uid) {;
  int appId = VUserHandle.getAppId(uid);
  synchronized (mPackages) {;
@@ -762,7 +762,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  }
 ;
 ;
- @Override;
+ @Override
  public List<String> querySharedPackages(String packageName) {;
  synchronized (mPackages) {;
  VPackage p = mPackages.get(packageName);
@@ -780,7 +780,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {;
  try {;
  return super.onTransact(code, data, reply, flags);
@@ -790,7 +790,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public IPackageInstaller getPackageInstaller() {;
  return VPackageInstallerService.get();
  }
@@ -870,7 +870,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  protected boolean allowFilterResult(VPackage.ActivityIntentInfo filter, List<ResolveInfo> dest) {;
  ActivityInfo filterAi = filter.activity.info;
  for (int i = dest.size() - 1; i >= 0; i--) {;
@@ -882,22 +882,22 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  return true;
  }
 ;
- @Override;
+ @Override
  protected VPackage.ActivityIntentInfo[] newArray(int size) {;
  return new VPackage.ActivityIntentInfo[size];
  }
 ;
- @Override;
+ @Override
  protected boolean isFilterStopped(VPackage.ActivityIntentInfo filter) {;
  return false;
  }
 ;
- @Override;
+ @Override
  protected boolean isPackageForFilter(String packageName, VPackage.ActivityIntentInfo info) {;
  return packageName.equals(info.activity.owner.packageName);
  }
 ;
- @Override;
+ @Override
  protected ResolveInfo newResult(VPackage.ActivityIntentInfo info, int match, int userId) {;
  final VPackage.ActivityComponent activity = info.activity;
  PackageSetting ps = (PackageSetting) activity.owner.mExtras;
@@ -920,17 +920,17 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  return res;
  }
 ;
- @Override;
+ @Override
  protected void sortResults(List<ResolveInfo> results) {;
  Collections.sort(results, sResolvePrioritySorter);
  }
 ;
- @Override;
+ @Override
  protected void dumpFilter(PrintWriter out, String prefix, VPackage.ActivityIntentInfo filter) {;
 ;
  }
 ;
- @Override;
+ @Override
  protected Object filterToLabel(VPackage.ActivityIntentInfo filter) {;
  return filter.activity;
  }
@@ -996,7 +996,7 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  protected boolean allowFilterResult(VPackage.ServiceIntentInfo filter, List<ResolveInfo> dest) {;
  ServiceInfo filterSi = filter.service.info;
  for (int i = dest.size() - 1; i >= 0; i--) {;
@@ -1009,22 +1009,22 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  return true;
  }
 ;
- @Override;
+ @Override
  protected VPackage.ServiceIntentInfo[] newArray(int size) {;
  return new VPackage.ServiceIntentInfo[size];
  }
 ;
- @Override;
+ @Override
  protected boolean isFilterStopped(VPackage.ServiceIntentInfo filter) {;
  return false;
  }
 ;
- @Override;
+ @Override
  protected boolean isPackageForFilter(String packageName, VPackage.ServiceIntentInfo info) {;
  return packageName.equals(info.service.owner.packageName);
  }
 ;
- @Override;
+ @Override
  protected ResolveInfo newResult(VPackage.ServiceIntentInfo filter, int match, int userId) {;
  final VPackage.ServiceComponent service = filter.service;
  PackageSetting ps = (PackageSetting) service.owner.mExtras;
@@ -1047,17 +1047,17 @@ public class VPackageManagerService extends IPackageManager.Stub {;
  return res;
  }
 ;
- @Override;
+ @Override
  protected void sortResults(List<ResolveInfo> results) {;
  Collections.sort(results, sResolvePrioritySorter);
  }
 ;
- @Override;
+ @Override
  protected void dumpFilter(PrintWriter out, String prefix, VPackage.ServiceIntentInfo filter) {;
 ;
  }
 ;
- @Override;
+ @Override
  protected Object filterToLabel(VPackage.ServiceIntentInfo filter) {;
  return filter.service;
  }

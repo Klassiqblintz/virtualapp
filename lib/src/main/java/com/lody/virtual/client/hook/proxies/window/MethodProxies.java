@@ -16,7 +16,7 @@ class MethodProxies {;
 ;
  static class OpenSession extends BasePatchSession {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "openSession";
  }
@@ -25,12 +25,12 @@ class MethodProxies {;
 ;
  static class OverridePendingAppTransition extends BasePatchSession {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "overridePendingAppTransition";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (args[0] instanceof String) {;
  args[0] = getHostPkg();
@@ -42,12 +42,12 @@ class MethodProxies {;
 ;
  static class OverridePendingAppTransitionInPlace extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "overridePendingAppTransitionInPlace";
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (args[0] instanceof String) {;
  args[0] = getHostPkg();
@@ -59,7 +59,7 @@ class MethodProxies {;
 ;
  static class SetAppStartingWindow extends BasePatchSession {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "setAppStartingWindow";
  }
@@ -67,7 +67,7 @@ class MethodProxies {;
 ;
  abstract static class BasePatchSession extends MethodProxy {;
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  Object session = method.invoke(who, args);
  if (session instanceof IInterface) {;

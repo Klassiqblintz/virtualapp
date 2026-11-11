@@ -32,12 +32,12 @@ public abstract class BinderInvocationProxy extends MethodInvocationProxy<Binder
  this.mServiceName = serviceName;
  }
 ;
- @Override;
+ @Override
  public void inject() throws Throwable {;
  getInvocationStub().replaceService(mServiceName);
  }
 ;
- @Override;
+ @Override
  public boolean isEnvBad() {;
  IBinder binder = ServiceManager.getService.call(mServiceName);
  return binder != null && getInvocationStub() != binder;

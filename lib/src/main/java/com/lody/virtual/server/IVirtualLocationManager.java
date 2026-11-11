@@ -9,9 +9,9 @@ import java.util.List;
  * Stub interface for IVirtualLocationManager.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface IVirtualLocationManager.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements IVirtualLocationManager.java {
- private static final String DESCRIPTOR = "com.lody.virtual.server.IVirtualLocationManager.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "com.lody.virtual.server.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -20,8 +20,8 @@ public interface IVirtualLocationManager.java extends IInterface {
  public static IVirtualLocationManager.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof IVirtualLocationManager.java) {
- return (IVirtualLocationManager.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (IVirtualLocationManager) iface;
  }
  return new Proxy(obj);
  }
@@ -40,7 +40,7 @@ public interface IVirtualLocationManager.java extends IInterface {
  }
  }
 
- public static class Proxy implements IVirtualLocationManager.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

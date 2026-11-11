@@ -20,19 +20,19 @@ public class DisplayStub extends MethodInvocationProxy<MethodInvocationStub<IInt
  DisplayManagerGlobal.mDm.get(DisplayManagerGlobal.getInstance.call())));
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ReplaceCallingPkgMethodProxy("createVirtualDisplay"));
  }
 ;
- @Override;
+ @Override
  public void inject() throws Throwable {;
  Object dmg = DisplayManagerGlobal.getInstance.call();
  DisplayManagerGlobal.mDm.set(dmg, getInvocationStub().getProxyInterface());
  }
 ;
- @Override;
+ @Override
  public boolean isEnvBad() {;
  Object dmg = DisplayManagerGlobal.getInstance.call();
  IInterface mDm = DisplayManagerGlobal.mDm.get(dmg);

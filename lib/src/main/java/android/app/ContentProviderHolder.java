@@ -14,16 +14,16 @@ public class ContentProviderHolder implements Parcelable {;
 ;
  public ContentProviderHolder() {}
 ;
- @Override;
+ @Override
  public void writeToParcel(Parcel dest, int flags) {}
 ;
- @Override;
+ @Override
  public int describeContents() { return 0; }
 ;
  public static final Creator<ContentProviderHolder> CREATOR = new Creator<ContentProviderHolder>() {;
- @Override;
+ @Override
  public ContentProviderHolder createFromParcel(Parcel in) { return null; }
- @Override;
+ @Override
  public ContentProviderHolder[] newArray(int size) { return new ContentProviderHolder[size]; }
  };
 }

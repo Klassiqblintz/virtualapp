@@ -9,9 +9,9 @@ import android.content.Intent;
  * Stub interface for IPackageDeleteObserver2.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface IPackageDeleteObserver2.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements IPackageDeleteObserver2.java {
- private static final String DESCRIPTOR = "android.content.pm.IPackageDeleteObserver2.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "android.content.pm.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -20,8 +20,8 @@ public interface IPackageDeleteObserver2.java extends IInterface {
  public static IPackageDeleteObserver2.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof IPackageDeleteObserver2.java) {
- return (IPackageDeleteObserver2.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (IPackageDeleteObserver2) iface;
  }
  return new Proxy(obj);
  }
@@ -40,7 +40,7 @@ public interface IPackageDeleteObserver2.java extends IInterface {
  }
  }
 
- public static class Proxy implements IPackageDeleteObserver2.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

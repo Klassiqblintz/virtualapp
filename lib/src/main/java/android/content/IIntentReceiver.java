@@ -10,9 +10,9 @@ import android.os.Bundle;
  * Stub interface for IIntentReceiver.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface IIntentReceiver.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements IIntentReceiver.java {
- private static final String DESCRIPTOR = "android.content.IIntentReceiver.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "android.content.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -21,8 +21,8 @@ public interface IIntentReceiver.java extends IInterface {
  public static IIntentReceiver.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof IIntentReceiver.java) {
- return (IIntentReceiver.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (IIntentReceiver) iface;
  }
  return new Proxy(obj);
  }
@@ -41,7 +41,7 @@ public interface IIntentReceiver.java extends IInterface {
  }
  }
 
- public static class Proxy implements IIntentReceiver.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

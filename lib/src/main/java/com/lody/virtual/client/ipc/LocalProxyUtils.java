@@ -23,7 +23,7 @@ public class LocalProxyUtils {;
  }
  //noinspection unchecked;
  return (T) Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class[]{ interfaceClass }, new InvocationHandler() {;
- @Override;
+ @Override
  public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {;
  try {;
  return method.invoke(base, args);

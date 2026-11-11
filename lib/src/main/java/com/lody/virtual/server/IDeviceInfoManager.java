@@ -8,9 +8,9 @@ import android.os.IInterface;
  * Stub interface for IDeviceInfoManager.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface IDeviceInfoManager.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements IDeviceInfoManager.java {
- private static final String DESCRIPTOR = "com.lody.virtual.server.IDeviceInfoManager.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "com.lody.virtual.server.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -19,8 +19,8 @@ public interface IDeviceInfoManager.java extends IInterface {
  public static IDeviceInfoManager.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof IDeviceInfoManager.java) {
- return (IDeviceInfoManager.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (IDeviceInfoManager) iface;
  }
  return new Proxy(obj);
  }
@@ -39,7 +39,7 @@ public interface IDeviceInfoManager.java extends IInterface {
  }
  }
 
- public static class Proxy implements IDeviceInfoManager.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

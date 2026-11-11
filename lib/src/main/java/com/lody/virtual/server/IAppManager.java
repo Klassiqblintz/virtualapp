@@ -9,9 +9,9 @@ import java.util.List;
  * Stub interface for IAppManager.java.
  * Generated from AIDL for environments without an AIDL compiler.
  */
-public interface IAppManager.java extends IInterface {
- public static abstract class Stub extends android.os.Binder implements IAppManager.java {
- private static final String DESCRIPTOR = "com.lody.virtual.server.IAppManager.java";
+public interface  extends IInterface {
+ public static abstract class Stub extends android.os.Binder implements  {
+ private static final String DESCRIPTOR = "com.lody.virtual.server.";
 
  public Stub() {
  this.attachInterface(null, DESCRIPTOR);
@@ -20,8 +20,8 @@ public interface IAppManager.java extends IInterface {
  public static IAppManager.java asInterface(IBinder obj) {
  if (obj == null) return null;
  android.os.IInterface iface = obj.queryLocalInterface(DESCRIPTOR);
- if (iface != null && iface instanceof IAppManager.java) {
- return (IAppManager.java) iface;
+ if (iface != null && iface instanceof ) {
+ return (IAppManager) iface;
  }
  return new Proxy(obj);
  }
@@ -40,7 +40,7 @@ public interface IAppManager.java extends IInterface {
  }
  }
 
- public static class Proxy implements IAppManager.java {
+ public static class Proxy implements  {
  private IBinder mRemote;
  public Proxy(IBinder remote) { mRemote = remote; }
  @Override public IBinder asBinder() { return mRemote; }

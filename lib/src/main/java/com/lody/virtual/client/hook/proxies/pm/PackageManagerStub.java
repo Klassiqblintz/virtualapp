@@ -22,7 +22,7 @@ public final class PackageManagerStub extends MethodInvocationProxy<MethodInvoca
  super(new MethodInvocationStub<>(ActivityThread.sPackageManager.get()));
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  addMethodProxy(new ResultStaticMethodProxy("addPermissionAsync", true));
@@ -44,7 +44,7 @@ public final class PackageManagerStub extends MethodInvocationProxy<MethodInvoca
 ;
  }
 ;
- @Override;
+ @Override
  public void inject() throws Throwable {;
  final IInterface hookedPM = getInvocationStub().getProxyInterface();
  ActivityThread.sPackageManager.set(hookedPM);
@@ -53,7 +53,7 @@ public final class PackageManagerStub extends MethodInvocationProxy<MethodInvoca
  pmHookBinder.replaceService("package");
  }
 ;
- @Override;
+ @Override
  public boolean isEnvBad() {;
  return getInvocationStub().getProxyInterface() != ActivityThread.sPackageManager.get();
  }

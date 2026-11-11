@@ -6,12 +6,12 @@ import android.os.Bundle;
 ;
 public class PackageInstallObserver {;
  private final IPackageInstallObserver2.Stub mBinder = new IPackageInstallObserver2.Stub() {;
- @Override;
+ @Override
  public void onUserActionRequired(Intent intent) {;
  PackageInstallObserver.this.onUserActionRequired(intent);
  }
 ;
- @Override;
+ @Override
  public void onPackageInstalled(String basePackageName, int returnCode, String msg, Bundle extras) {;
  PackageInstallObserver.this.onPackageInstalled(basePackageName, returnCode, msg, extras);
  }

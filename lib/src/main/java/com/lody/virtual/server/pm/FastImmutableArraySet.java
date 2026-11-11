@@ -36,7 +36,7 @@ public final class FastImmutableArraySet<T> extends AbstractSet<T> {;
  mContents = contents;
  }
 ;
- @Override;
+ @Override
  public Iterator<T> iterator() {;
  FastIterator<T> it = mIterator;
  if (it == null) {;
@@ -48,7 +48,7 @@ public final class FastImmutableArraySet<T> extends AbstractSet<T> {;
  return it;
  }
 ;
- @Override;
+ @Override
  public int size() {;
  return mContents.length;
  }
@@ -61,17 +61,17 @@ public final class FastImmutableArraySet<T> extends AbstractSet<T> {;
  mContents = contents;
  }
 ;
- @Override;
+ @Override
  public boolean hasNext() {;
  return mIndex != mContents.length;
  }
 ;
- @Override;
+ @Override
  public T next() {;
  return mContents[mIndex++];
  }
 ;
- @Override;
+ @Override
  public void remove() {;
  throw new UnsupportedOperationException();
  }

@@ -47,12 +47,12 @@ public class VirtualLocationService extends IVirtualLocationManager.Stub {;
  VLocConfig() {;
  }
 ;
- @Override;
+ @Override
  public int describeContents() {;
  return 0;
  }
 ;
- @Override;
+ @Override
  public void writeToParcel(Parcel dest, int flags) {;
  dest.writeInt(this.mode);
  dest.writeParcelable(this.cell, flags);
@@ -70,12 +70,12 @@ public class VirtualLocationService extends IVirtualLocationManager.Stub {;
  }
 ;
  public static final Creator<VLocConfig> CREATOR = new Creator<VLocConfig>() {;
- @Override;
+ @Override
  public VLocConfig createFromParcel(Parcel source) {;
  return new VLocConfig(source);
  }
 ;
- @Override;
+ @Override
  public VLocConfig[] newArray(int size) {;
  return new VLocConfig[size];
  }
@@ -83,12 +83,12 @@ public class VirtualLocationService extends IVirtualLocationManager.Stub {;
  }
 ;
  private final PersistenceLayer mPersistenceLayer = new PersistenceLayer(VEnvironment.getVirtualLocationFile()) {;
- @Override;
+ @Override
  public int getCurrentVersion() {;
  return 1;
  }
 ;
- @Override;
+ @Override
  public void writePersistenceData(Parcel p) {;
  mGlobalConfig.writeToParcel(p, 0);
  p.writeInt(mLocConfigs.size());
@@ -100,7 +100,7 @@ public class VirtualLocationService extends IVirtualLocationManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void readPersistenceData(Parcel p) {;
  mGlobalConfig.set(new VLocConfig(p));
  mLocConfigs.clear();
@@ -122,7 +122,7 @@ public class VirtualLocationService extends IVirtualLocationManager.Stub {;
  mPersistenceLayer.read();
  }
 ;
- @Override;
+ @Override
  public int getMode(int userId, String pkg) throws RemoteException {;
  synchronized (mLocConfigs) {;
  VLocConfig config = getOrCreateConfig(userId, pkg);
@@ -131,7 +131,7 @@ public class VirtualLocationService extends IVirtualLocationManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void setMode(int userId, String pkg, int mode) throws RemoteException {;
  synchronized (mLocConfigs) {;
  getOrCreateConfig(userId, pkg).mode = mode;
@@ -154,43 +154,43 @@ public class VirtualLocationService extends IVirtualLocationManager.Stub {;
  return config;
  }
 ;
- @Override;
+ @Override
  public void setCell(int userId, String pkg, VCell cell) throws RemoteException {;
  getOrCreateConfig(userId, pkg).cell = cell;
  mPersistenceLayer.save();
  }
 ;
- @Override;
+ @Override
  public void setAllCell(int userId, String pkg, List<VCell> cell) throws RemoteException {;
  getOrCreateConfig(userId, pkg).allCell = cell;
  mPersistenceLayer.save();
  }
 ;
- @Override;
+ @Override
  public void setNeighboringCell(int userId, String pkg, List<VCell> cell) throws RemoteException {;
  getOrCreateConfig(userId, pkg).neighboringCell = cell;
  mPersistenceLayer.save();
  }
 ;
- @Override;
+ @Override
  public void setGlobalCell(VCell cell) throws RemoteException {;
  mGlobalConfig.cell = cell;
  mPersistenceLayer.save();
  }
 ;
- @Override;
+ @Override
  public void setGlobalAllCell(List<VCell> cell) throws RemoteException {;
  mGlobalConfig.allCell = cell;
  mPersistenceLayer.save();
  }
 ;
- @Override;
+ @Override
  public void setGlobalNeighboringCell(List<VCell> cell) throws RemoteException {;
  mGlobalConfig.neighboringCell = cell;
  mPersistenceLayer.save();
  }
 ;
- @Override;
+ @Override
  public VCell getCell(int userId, String pkg) throws RemoteException {;
  VLocConfig config = getOrCreateConfig(userId, pkg);
  mPersistenceLayer.save();
@@ -205,7 +205,7 @@ public class VirtualLocationService extends IVirtualLocationManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public List<VCell> getAllCell(int userId, String pkg) throws RemoteException {;
  VLocConfig config = getOrCreateConfig(userId, pkg);
  mPersistenceLayer.save();
@@ -220,7 +220,7 @@ public class VirtualLocationService extends IVirtualLocationManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public List<VCell> getNeighboringCell(int userId, String pkg) throws RemoteException {;
  VLocConfig config = getOrCreateConfig(userId, pkg);
  mPersistenceLayer.save();
@@ -235,13 +235,13 @@ public class VirtualLocationService extends IVirtualLocationManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void setLocation(int userId, String pkg, VLocation loc) throws RemoteException {;
  getOrCreateConfig(userId, pkg).location = loc;
  mPersistenceLayer.save();
  }
 ;
- @Override;
+ @Override
  public VLocation getLocation(int userId, String pkg) throws RemoteException {;
  VLocConfig config = getOrCreateConfig(userId, pkg);
  mPersistenceLayer.save();
@@ -256,12 +256,12 @@ public class VirtualLocationService extends IVirtualLocationManager.Stub {;
  }
  }
 ;
- @Override;
+ @Override
  public void setGlobalLocation(VLocation loc) throws RemoteException {;
  mGlobalConfig.location = loc;
  }
 ;
- @Override;
+ @Override
  public VLocation getGlobalLocation() throws RemoteException {;
  return mGlobalConfig.location;
  }

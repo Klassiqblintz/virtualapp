@@ -15,12 +15,12 @@ class MethodProxies {;
 ;
  static class NotifyChange extends MethodProxy {;
 ;
- @Override;
+ @Override
  public String getMethodName() {;
  return "notifyChange";
  }
 ;
- @Override;
+ @Override
  public boolean beforeCall(Object who, Method method, Object... args) {;
  if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {;
  return super.beforeCall(who, method, args);
@@ -64,7 +64,7 @@ class MethodProxies {;
  return super.beforeCall(who, method, args);
  }
 ;
- @Override;
+ @Override
  public boolean isEnable() {;
  return isAppProcess();
  }

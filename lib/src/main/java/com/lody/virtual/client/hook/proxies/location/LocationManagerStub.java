@@ -25,7 +25,7 @@ public class LocationManagerStub extends BinderInvocationProxy {;
  super(ILocationManager.Stub.asInterface, Context.LOCATION_SERVICE);
  }
 ;
- @Override;
+ @Override
  protected void onBindMethods() {;
  super.onBindMethods();
  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {;
@@ -67,7 +67,7 @@ public class LocationManagerStub extends BinderInvocationProxy {;
  mDefValue = def;
  }
 ;
- @Override;
+ @Override
  public Object call(Object who, Method method, Object... args) throws Throwable {;
  if (isFakeLocationEnable()) {;
  return mDefValue;
